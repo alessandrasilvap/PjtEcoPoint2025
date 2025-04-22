@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Eco Point</title>
-    <link rel="shortcut icon" href="/ecoPoint/public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
-    <link rel="stylesheet" href="/ecoPoint/public/css/cadastro.css"> <!--Código CSS do site todo-->
-    <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
+    <link rel="shortcut icon" href="./public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
+    <link rel="stylesheet" href="./public/css/cadastro.css"> <!--Código CSS do site todo-->
+    <link rel="stylesheet" href="./public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols para o painel de acessibilidade e da caixa de feedback-->
 </head>
 <body>
