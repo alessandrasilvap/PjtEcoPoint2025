@@ -21,9 +21,10 @@
     <div class="conteudo">
         <nav class="col-2 menu">
             <ul>
-                <li><a href="cadastro/index.php">CADASTRE-SE</a></li>
-                <li><a href="login/index.php">ENTRAR</a></li>
+                <li><a href="/pjtecopoint/index.php?url=cadastro">CADASTRE-SE</a></li>
+                <li><a href="/pjtecopoint/index.php?url=login">ENTRAR</a></li>
             </ul>
+
         </nav>
         <div class="col-3">
             <p class="chamada">Comece agora! Clique em <strong>CADASTRE-SE</strong> ou <strong>ENTRAR</strong> para acessar nossos recursos.</p>
