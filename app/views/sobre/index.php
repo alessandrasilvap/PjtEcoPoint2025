@@ -1,3 +1,7 @@
+<?php 
+include('app/core/protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

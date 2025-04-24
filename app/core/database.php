@@ -1,22 +1,10 @@
+<?php include('app/core/conexao.php')?>
+
 <?php
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "ecopoint";
-
-$conn = new mysqli($host, $usuario, $senha, $banco);
-
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-} else {
-    echo "Conexão bem-sucedida!";
-}
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Obter os dados brutos antes do hash
     $senha = $_POST['camposenha'];
     $confirmaSenha = $_POST['confirmasenha'];
-
 
     // Sanitizando os dados
     $nomecompleto = $conn->real_escape_string($_POST['nomecompleto']);

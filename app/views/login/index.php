@@ -1,3 +1,37 @@
+<?php  include_once  'app/core/conexao.php'; ?>
+
+<?php 
+
+if (isset($_POST['login']) and isset($_POST['senha'])) {
+
+    $login = $mysqli->real_escape_string($_POST['login']);
+    $senha = $mysqli->real_escape_string($_POST['senha']);
+
+        $sql_code = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code) or die('Falha na execução do código SQL:' . $mysqli->error);
+
+        $quantidade = $sql_query->num_rows;
+
+        if($quantidade == 1) {
+        
+        $usuario = $sql_query->fetch_assoc();
+        // echo "Você foi logado!";
+
+        if(!isset($_SESSION)) {
+            session_start();
+        }
+
+        $_SESSION['id'] = $usuario['id'];
+        header('Location: app/views/login/index.php');
+
+        } else {
+        echo "Email ou senha incorretos!";
+        }
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,13 +48,13 @@
         <form name="formulariologin" action="#" method="post" autocomplete="off" target="_blank" novalidate>
             <div id="comeco">
                 <h1>Login</h1>
-                <input type="text" id="usuario" placeholder="Usuário:" maxlength="6" size="31">
+                <input type="text" id="usuario" name="login" placeholder="Usuário:" maxlength="6" size="31">
                 <br>
                 <br>
-                <input type="password" id="senha" placeholder="Senha:" maxlength="8" size="31">
+                <input type="password" id="senha" name="senha" placeholder="Senha:" maxlength="8" size="31">
                 <br>
                 <br>
-                <button class="botaoverde" id="entrar" onclick="login()">ENTRAR</button>
+                <button class="botaoverde" type="submit" id="entrar">ENTRAR</button>
                 <br>
                 <br>
                 <button><a href="telacadastro.html" class="botaoverde">CADASTRE-SE</a></button>

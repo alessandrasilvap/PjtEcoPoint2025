@@ -1,3 +1,7 @@
+<?php 
+include('protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +37,12 @@
         <br>
         <br>
         <section>
+            <p>
+            Seu id de usuário é: <?php echo $_SESSION['id']; ?>
+            <br>
+            <a href="/app/core/logout.php">Sair</a>
+            </p>
+
             <h1>Informações</h1>
             <p>A reciclagem eletrônica, ou e-waste recycling, é o processo de reaproveitamento de dispositivos eletrônicos que chegaram ao fim de sua vida útil. Esse tipo de reciclagem é importante por várias razões:</p>
             <img class="informacao" src="../imagens/info.png" alt="site: https://www.iberdrola.com/sustentabilidade/que-e-lixo-eletronico">
