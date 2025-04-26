@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Agora o script só será executado após o carregamento do DOM
+    //Agora o script só será executado após o carregamento do DOM
     const formCadastro = document.getElementById("formCadastro");
 
     if (formCadastro) {
@@ -8,38 +8,38 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function validarcadastro(event) {
-    event.preventDefault(); // Impede o envio do formulário caso o formulário esteja errado
+    event.preventDefault(); //Impede o envio do formulário caso o formulário esteja errado
 
     var nomecompleto = document.getElementById('nomecompleto').value;
     var datanascimento = document.getElementById('datanascimento').value;
     var usuario = document.getElementById('campousuario').value;
     var senha = document.getElementById('camposenha').value;
-    var confirmasenha = document.getElementById('confirmasenha').value; // Agora está definida corretamente
+    var confirmasenha = document.getElementById('confirmasenha').value; //Agora está definida corretamente
     var cep = document.getElementById('cep').value;
     var num = document.getElementById('num').value;
     var tel = document.getElementById('tel').value;
     var cpf = document.getElementById('cpf').value;
     var Inseriremail = document.getElementById('inserirEmail').value;
 
-    // Verifica se todos os campos obrigatórios foram preenchidos
+    //Verifica se todos os campos obrigatórios foram preenchidos
     if (nomecompleto === '' || datanascimento === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
         alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.');
         return false;
     }
 
-    // Verifica se as senhas coincidem
+    //Verifica se as senhas coincidem
     if (senha !== confirmasenha) {
         alert('[ERRO] As senhas não coincidem.');
         return false;
     }
 
-    // Valida CPF
+    //Valida CPF
     if (!validarCPF(cpf)) {
         return false;
     }
 
-    // Envia o formulário
-    formCadastro.submit(); // Chama submit do formulário
+    //Envia o formulário
+    formCadastro.submit(); //Chama submit do formulário
 }
 
 
@@ -187,7 +187,7 @@ function validarIdade(dataNascimento) {
     
     if (idade < 12) {
       alert("Você deve ter pelo menos 10 anos para continuar.");
-      document.getElementById("datanascimento").value = ""; // Limpa o campo
+      document.getElementById("datanascimento").value = ""; //Limpa o campo
       return false;
     } else {
       return true;
