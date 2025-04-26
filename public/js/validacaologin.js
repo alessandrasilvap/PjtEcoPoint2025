@@ -1,6 +1,6 @@
 document.querySelector('form').addEventListener('submit', function(event) {
-    if (!validarlogin()) { // Verifica se a validação falhou
-        event.preventDefault(); // Previne o envio do formulário
+    if (!validarlogin()) { //Verifica se a validação falhou
+        event.preventDefault(); //Previne o envio do formulário
     }
 });
 
@@ -10,7 +10,7 @@ function validarlogin() {
 
     if (usuario === "" || senha === "") {
         alert('[ERRO] Usuário ou senha não preenchidos.');
-        return false; // Impede o envio do formulário se a validação falhar
+        return false; //Impede o envio do formulário se a validação falhar
     }
-    return true; // Permite o envio se a validação passar
+    return true; //Permite o envio se a validação passar
 }
