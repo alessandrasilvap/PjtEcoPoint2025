@@ -22,14 +22,14 @@ document.getElementById('increaseFont').addEventListener('click', function() {
   var currentFontSize = window.getComputedStyle(content, null).getPropertyValue('font-size');
   currentFontSize = parseInt(currentFontSize); //Converte o valor para inteiro
 
-  // Define o tamanho máximo permitido (em px)
+  //Define o tamanho máximo permitido (em px)
   var maxFontSize = 34;
   
-  // Verifica se o tamanho atual é menor que o máximo permitido
+  //Verifica se o tamanho atual é menor que o máximo permitido
   if (currentFontSize < maxFontSize) {
-    // Aumenta o tamanho da fonte em 2px
+    //Aumenta o tamanho da fonte em 2px
     content.style.fontSize = (currentFontSize + 2) + 'px';
-    // Ajusta o tamanho da caixa
+    //Ajusta o tamanho da caixa
     content.style.height = content.scrollHeight + 'px';
   }
 });
@@ -44,14 +44,14 @@ document.getElementById('decreaseFont').addEventListener('click', function() {
   var currentFontSize = window.getComputedStyle(content, null).getPropertyValue('font-size');
   currentFontSize = parseInt(currentFontSize); //Converte o valor para inteiro
 
-  // Define o tamanho mínimo permitido (em px)
+  //Define o tamanho mínimo permitido (em px)
   var minFontSize = 10;
   
-  // Verifica se o tamanho atual é maior que o mínimo permitido
+  //Verifica se o tamanho atual é maior que o mínimo permitido
   if (currentFontSize > minFontSize) {
-    // Diminui o tamanho da fonte em 2px
+    //Diminui o tamanho da fonte em 2px
     content.style.fontSize = (currentFontSize - 2) + 'px';
-    // Ajusta o tamanho da caixa
+    //Ajusta o tamanho da caixa
     content.style.height = content.scrollHeight + 'px';
   }
 });
