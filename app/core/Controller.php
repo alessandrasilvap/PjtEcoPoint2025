@@ -9,6 +9,13 @@ class Controller {
         require_once '../app/models/' . $model . '.php';
         return new $model();
     }
+
+    public function __construct() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
 }
 
 ?>
