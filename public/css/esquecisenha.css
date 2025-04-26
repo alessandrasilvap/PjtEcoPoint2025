@@ -80,7 +80,7 @@ a { /*Links*/
   fieldset {
     width: 45%; /*Largura*/
     height: 55%; /*Altura*/
-    left: 35%; /*Move a caixa 35% para a esquerda*/
+    left: 32%; /*Move a caixa 35% para a esquerda*/
   }
 }
 
@@ -93,7 +93,7 @@ a { /*Links*/
   fieldset {
     width: 50%; /*Largura*/
     height: 67%; /*Altura*/
-    left: 29%; /*Move a caixa 29% para a esquerda*/
+    left: 24%; /*Move a caixa 29% para a esquerda*/
   }
 }
 
