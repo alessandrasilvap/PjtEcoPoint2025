@@ -12,21 +12,13 @@
 </head>
 <body>
     <header></header>
-    <div id="user-info" style="position: absolute; top: 16em; right: 10px; display: none;">
-        <span id="nomenatela"></span>
-        <span id="arrow" onclick="toggleMenu()">▼</span>
-        <!--O dropdown aparecerá ao clicar na setinha, permitindo que o usuário saia da sessão-->
-        <div id="dropdown" style="display: none;">
-            <div id="logout" onclick="logout()">Sair</div>
-        </div>
-    </div>
     <div class="conteudo">
         <nav id="menu">
             <ul class="menu4">
-                <a href="./telasobrenos.html">Sobre Nós</a>
-                <a href="./telainformacoes.html">Informações</a>
-                <a href="#Ong's">Ong's</a>
-                <a href="./telamapa.html">Mapa</a>
+                <a href="<?= BASE_URL ?>/sobre">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/Informacoes">Informações</a>
+                <a href="<?= BASE_URL ?>/ongs">Ong's</a>
+                <a href="<?= BASE_URL ?>/mapa">Mapa</a>
             </ul>
         </nav>
         <br>
@@ -35,7 +27,7 @@
             <h1>ONG's</h1>
             <p>As ONGs de reciclagem eletrônica desempenham um papel importante na sustentabilidade, promovendo a coleta e o reaproveitamento de equipamentos eletrônicos. Elas trabalham para reduzir o impacto ambiental, conscientizar a população e facilitar o descarte correto de produtos eletrônicos, muitas vezes oferecendo oficinas, campanhas educativas e programas de reaproveitamento.</p>
             <br>
-            <p>Algumas ONGs conhecidas nesse campo incluem:</p> <img class="imagree" src="../imagens/canvain.png" alt="Recicle">
+            <p>Algumas ONGs conhecidas nesse campo incluem:</p> <img class="imagree" src="/ecoPoint/public/imagens/canvain.png" alt="Recicle">
             <ol>
                 <li><strong>Recicla Sampa</strong> - Focada na coleta e reciclagem de eletrônicos em São Paulo.</li>
                 <li><strong>E-Lixo</strong> - Realiza a coleta de equipamentos eletrônicos para reaproveitamento e reciclagem.</li>
@@ -51,9 +43,11 @@
                 <div>
                     <h3 class="integrantes">Integrantes</h3>
                     <ul class="lista">
-                        <li class="nome">Alessandra Cristina da Silva Pereira</li>
-                        <li class="nome">Caio Lucas Sales Ferreira</li>
+                    <li class="nome">Alessandra Cristina da Silva Pereira</li>
+                        <li class="nome">Bryan Caristiati Costa</li>
                         <li class="nome">Eric Luiz Xavier de Araujo</li>
+                        <li class="nome">Daniel Jesus Dias Alves</li>
+                        <li class="nome">Gabriel Araújo de Oliveira</li>
                     </ul>
                 </div>
                 <div class="contatos">
@@ -69,7 +63,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>ecopointverde@gmail.com.br</span>
+                            <span>ecopointverde@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -108,6 +102,5 @@
         </div>
     </div>
     <script src="/ecoPoint/public/js/acessibfeedback.js"></script> <!--Código JS do painel de acessibilidade e da caixa de feedback-->
-    <script src="/ecoPoint/public/js/menulateral.js"></script> <!--Código JS do menu de autenticação do usuário-->
 </body>
 </html>
