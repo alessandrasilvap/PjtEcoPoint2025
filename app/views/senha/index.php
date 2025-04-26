@@ -11,20 +11,20 @@
 </head>
 <body>
     <div class="conteudo">
-    <form name="formularioesqueci" action="#" method="post" autocomplete="off" novalidate>
+    <form action="" name="formularioesqueci" method="POST" autocomplete="off" novalidate>
         <fieldset>
             <section>
                 <h1>Redefinição de senha</h1> 
                 <h2>Siga as orientações:</h2>
                 <h3>Primeiro: Preencha os campos abaixo para solicitar a redefinição de senha.</h3>
                 <h3>Segundo: Será enviado para o e-mail informado um link com instruções, dessa maneira, poderá redefinir sua senha.</h3>
-                <input type="email" placeholder="Digite seu e-mail cadastrado:" size="50" id="esqueci">
+                <input type="email" id="esqueci" name="email" placeholder="Digite seu e-mail cadastrado:" size="50">
                 <br>
                 <br>
-                <input type="email" placeholder="Confirme o e-mail:" size="50" id="esquecisenha">
+                <input type="email" id="esquecisenha" name="email" placeholder="Confirme o e-mail:" size="50">
                 <br>
                 <button type="submit" id="enviar">ENVIAR</button>
-                <button> <a href="telalogin.html">VOLTAR</a></button>
+                <button> <a href="/ecoPoint/app/views/login">VOLTAR</a></button>
             </section>
         </fieldset>
     </form>
