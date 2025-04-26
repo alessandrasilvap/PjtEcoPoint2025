@@ -12,21 +12,13 @@
 </head>
 <body>
     <header>  <!-- Aqui fica a foto do Eco point, hospedada no CSS --> </header>
-    <div id="user-info" style="position: absolute; top: 16em; right: 10px; display: none;">
-        <span id="nomenatela"></span>
-        <span id="arrow" onclick="toggleMenu()">▼</span>
-        <!--O dropdown aparecerá ao clicar na setinha, permitindo que o usuário saia da sessão-->
-        <div id="dropdown" style="display: none;">
-            <div id="logout" onclick="logout()">Sair</div>
-        </div>
-    </div>
     <div class="conteudo">
         <nav id="menu">
             <ul class="menu3">
-                <a href="./telasobrenos.html">Sobre Nós</a>
-                <a href="#Informações">Informações</a>
-                <a href="./telaongs.html">Ong's</a>
-                <a href="./telamapa.html">Mapa</a>
+                <a href="<?= BASE_URL ?>/sobre">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/Informacoes">Informações</a>
+                <a href="<?= BASE_URL ?>/ongs">Ong's</a>
+                <a href="<?= BASE_URL ?>/mapa">Mapa</a>
             </ul>
         </nav>
         <br>
@@ -35,14 +27,14 @@
         <section>
             <h1>Informações</h1>
             <p>A reciclagem eletrônica, ou e-waste recycling, é o processo de reaproveitamento de dispositivos eletrônicos que chegaram ao fim de sua vida útil. Esse tipo de reciclagem é importante por várias razões:</p>
-            <img class="informacao" src="../imagens/info.png" alt="site: https://www.iberdrola.com/sustentabilidade/que-e-lixo-eletronico">
+            <img class="informacao" src="/ecoPoint/public/imagens/info.png" alt="site: https://www.iberdrola.com/sustentabilidade/que-e-lixo-eletronico">
             <ol id="listas">
                 <li>Redução de Resíduos: A eletrônica é uma das categorias de resíduos que mais cresce, e a reciclagem ajuda a reduzir o volume que vai para aterros sanitários.</li>
                 <li>Recuperação de Materiais: Dispositivos eletrônicos contêm metais preciosos, além de outros materiais recicláveis. A recuperação desses materiais diminui a necessidade de mineração e a extração de recursos naturais.</li>
                 <li>Proteção Ambiental: Muitos produtos eletrônicos contêm substâncias tóxica como chumbo, mercúrio e cádmio. O descarte inadequado pode levar à contaminação do solo e da água, prejudicando o meio ambiente e a saúde humana.</li>
                 <li>Economia Circular: A reciclagem eletrônica contribui para a economia circular, onde os materiais são continuamente reutilizados e reciclados, reduzindo o consumo de recursos novos.</li>
             </ol>
-            <img class="imagem" src="../imagens/fotoinfop.jpg" alt="Ilustrando a quantidade absurda de lixo eletrônico">
+            <img class="imagem" src="/ecoPoint/public/imagens/fotoinfop.jpg" alt="Ilustrando a quantidade absurda de lixo eletrônico">
             <h2><strong>Como Funciona a Reciclagem Eletrônica</strong></h2>
             <ol id="listas">
                 <li>Coleta: Dispositivos eletrônicos são coletados em pontos de coleta, lojas que aceitam devolução ou programas de coleta comunitária.</li>
@@ -51,7 +43,7 @@
                 <li>Reutilização: Componentes que ainda estão em boas condições podem ser reutilizados em novos dispositivos ou vendidos como peças sobressalentes.</li>
             </ol>
             
-            <img class="imagree" src="../imagens/canvain.png" alt="Recicle"> <h2><strong>Dicas para Descarte</strong></h2>
+            <img class="imagree" src="/ecoPoint/public/imagens/canvain.png" alt="Recicle"> <h2><strong>Dicas para Descarte</strong></h2>
             <ul id="listas">
                 <li>Nunca jogue eletrônicos no lixo comum.</li>
                 <li>Apague seus dados.</li>
@@ -95,7 +87,7 @@
             <p>Relação de países e seus lixos eletrônicos: ISLÂNDIA e SUÉCIA são os países que mais reciclam lixos eletrônicos; ÁUSTRIA e ALEMANHA são os países com menor quantidade de resíduos eletrônicos; CHINA e EUA são os países com maior quantidade resíduos eletrônicos.</p>
             <br>
             <p>A reciclagem eletrônica é essencial para a sustentabilidade e a proteção do meio ambiente. Ao reciclar dispositivos eletrônicos, você ajuda a preservar recursos, reduzir a poluição e contribuir para um futuro mais sustentável.</p>
-            <img class="imagre" src="../imagens/canvain.png" alt="Recicle">
+            <img class="imagre" src="/ecoPoint/public/imagens/canvain.png" alt="Recicle">
         </section>
         <br>
         <footer>
@@ -103,9 +95,11 @@
                 <div>
                     <h3 class="integrantes">Integrantes</h3>
                     <ul class="lista">
-                        <li class="nome">Alessandra Cristina da Silva Pereira</li>
-                        <li class="nome">Caio Lucas Sales Ferreira</li>
+                    <li class="nome">Alessandra Cristina da Silva Pereira</li>
+                        <li class="nome">Bryan Caristiati Costa</li>
                         <li class="nome">Eric Luiz Xavier de Araujo</li>
+                        <li class="nome">Daniel Jesus Dias Alves</li>
+                        <li class="nome">Gabriel Araújo de Oliveira</li>
                     </ul>
                 </div>
                 <div class="contatos">
@@ -121,7 +115,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>ecopointverde@gmail.com.br</span>
+                            <span>ecopointverde@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -159,7 +153,6 @@
             <button onclick="enviarFeedback()">Enviar Feedback</button>
         </div>
     </div>
-    <script src="/ecoPoint/public/js/menulateral.js"></script> <!--Código JS do menu de autenticação do usuário-->
     <script src="/ecoPoint/public/js/acessibfeedback.js"></script> <!--Código JS do painel de acessibilidade e da caixa de feedback-->
 </body>
 </html>
