@@ -1,90 +1,45 @@
-/*Essa função faz com que cada usuário tenha um id único ao se cadastrar, não vou saber
-explicar com detalhes*/
-function generate_uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-    function(c) {
-       var uuid = Math.random() * 16 | 0, v = c == 'x' ? uuid : (uuid & 0x3 | 0x8);
-       return uuid.toString(16);
-    });
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // Agora o script só será executado após o carregamento do DOM
+    const formCadastro = document.getElementById("formCadastro");
 
+    if (formCadastro) {
+        formCadastro.addEventListener("submit", validarcadastro);
+    }
+});
 
-
-/*Essa função é responsável por salvar os dados do campo usuário e campo senha*/
-/*Criei uma variavel chamada usuario e senha, e peguei os elementos do campo de usuario, senha e email, no html e seus valores*/
-function SalvarDados() {
-    var usuario = document.getElementById('campousuario').value;
-    var senha = document.getElementById('camposenha').value;
-    var email = document.getElementById('inserirEmail').value;
-
-    // Quando a gente coloca o JSON.parse é para converter uma string em um objeto.
-    /*Criei uma variável chamada usuarios e coloquei um JSON.parse para que, toda vez que criar um novo usuário
-    o JSON converter o objeto "novoUsuário" em uma string, pq se não converter, dá erro pra acessar as propriedades login, senha e email
-    daí junto com o JSON tem o sinal de "||" que significa "ou" e ao lado tem o "[]" que se chama Array*/
-    //Array é uma estrutura que serve pra armazenar qualquer tipo de dado, e abaixo o array está vazio
-    var usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-    //Criei um objeto com os dados abaixo, e chamando a funçao acima no id. Assim, cada novoUsuario (que é um objeto) vai ter seus próprios dados
-    var novoUsuario = {
-        id: generate_uuidv4(), //Chama primeira função que eu expliquei acima
-        login: usuario,
-        senha: senha,
-        email: email
-    };
-
-    //Aqui a gente pega a variável (usuarios) e Adiciona o novo usuário (objeto) ao array
-    usuarios.push(novoUsuario);
-
-
-    //Depois que puxamos os novos dados, a gente usa o localStorage.setItem para salvar os novos dados no array, dentro do localstorage
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    //E aqui, aparece uma mensagem no console (apertando f12 aparece aquela janela de inspecionar, e lá na aba "console" aparece a mensagem abaixo)
-    console.log(usuarios)
-    console.log('Dados salvos');
-
-    alert('Cadastro realizado com sucesso!')
-}
-
-
-
-//Validando todos os campos para serem preenchidos
 function validarcadastro(event) {
-    event.preventDefault(); //Impede que o formulário seja enviado, caso esteja fora do padrão
+    event.preventDefault(); // Impede o envio do formulário caso o formulário esteja errado
+
     var nomecompleto = document.getElementById('nomecompleto').value;
     var datanascimento = document.getElementById('datanascimento').value;
-    var genero = document.getElementById('genero').value;
     var usuario = document.getElementById('campousuario').value;
     var senha = document.getElementById('camposenha').value;
-    var confirmasenha = document.getElementById('confirmasenha').value;
+    var confirmasenha = document.getElementById('confirmasenha').value; // Agora está definida corretamente
     var cep = document.getElementById('cep').value;
     var num = document.getElementById('num').value;
     var tel = document.getElementById('tel').value;
     var cpf = document.getElementById('cpf').value;
     var Inseriremail = document.getElementById('inserirEmail').value;
 
-
-    //Impedindo que o formulário seja enviado com campos em branco
-    if (nomecompleto === '' || datanascimento === '' || genero === '' || senha === '' || confirmasenha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === ''){
-        alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.')
+    // Verifica se todos os campos obrigatórios foram preenchidos
+    if (nomecompleto === '' || datanascimento === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
+        alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.');
         return false;
     }
 
-    //Validando se as duas senhas estão iguais
-    if (senha !== confirmasenha){
-        alert('[ERRO] As senhas não coincidem.')
+    // Verifica se as senhas coincidem
+    if (senha !== confirmasenha) {
+        alert('[ERRO] As senhas não coincidem.');
         return false;
     }
 
-    //Não deixa passar a validação do CPF
+    // Valida CPF
     if (!validarCPF(cpf)) {
         return false;
     }
 
-    //aqui a gente chama a função acima, mas só se os dados forem devidamente validados.
-    SalvarDados();
-
-    window.location.href="../html/telalogin.html"
+    // Envia o formulário
+    formCadastro.submit(); // Chama submit do formulário
 }
 
 
@@ -146,7 +101,7 @@ function formatarTEL(input){
     if (tel.length === 11) { //Adiciona os parenteses e o hífen
         tel = `(${tel.slice(0, 2)}) ${tel.slice(2, 7)}-${tel.slice(7)}`;
     } else if (tel.length === 10) {
-        tel = `(${tel.slice(0, 2)}) ${tele.slice(2, 6)}-${tele.slice(6)}`;
+        tel = `(${tel.slice(0, 2)}) ${tel.slice(2, 6)}-${tel.slice(6)}`;
     }
     input.value = tel;
 }
