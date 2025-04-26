@@ -1,0 +1,26 @@
+.sessoes {
+    padding: 10px; /*Espaçamento entre o conteudo e borda*/
+    display: flex; /*Utilizada para organizar os elementos*/
+    justify-content: flex-end; /*Alinha os itens flexíveis no final do eixo principal do contêiner flexível*/
+    align-items: center; /*Controlar o alinhamento de itens*/
+}
+
+.user {
+    list-style: none; /*Remove os marcadores padrão de todas as listas de um site*/
+    display: flex; /*Utilizada para organizar os elementos*/
+    margin: 0; /*Margem lateral*/
+    padding: 0; /*Espaçamento entre o conteudo e borda*/
+}
+
+.usuario {
+    margin: 0 10px; /*Margem lateral*/
+}
+
+.sair {
+    color: black; /*Cor do texto*/
+    text-decoration: none; /*Remove o sublinhado de links*/
+}
+
+.sair:hover { 
+    color: white; /*Cor do texto*/
+}
