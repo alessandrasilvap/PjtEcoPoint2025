@@ -105,10 +105,18 @@ a { /*Links*/
   }
 
   #comeco {
-    width: 33%; /*Largura*/
+    width: 40%; /*Largura*/
     height: 60%; /*Altura*/
-    left: 34%; /*Move a caixa 34% para a esquerda*/
+    left: 29%; /*Move a caixa 34% para a esquerda*/
     top: 25%; /*Move a caixa 25% para baixo*/
+  }
+
+  input[type="text"], input[type="password"] {
+    margin-left: 10px; /*Move ambos os inputs 9px para a esquerda*/
+  }
+
+  button {
+    margin-left: 10px; /*Move ambos os inputs 9px para a esquerda*/
   }
 }
 
@@ -124,6 +132,14 @@ a { /*Links*/
     height: 37%; /*Altura*/
     left: 30%; /*Move a caixa 30% para a esquerda*/
     top: 35%; /*Move a caixa 35% para baixo*/
+  }
+
+  input[type="text"], input[type="password"] {
+    margin-left: 10px; /*Move ambos os inputs 9px para a esquerda*/
+  }
+
+  button {
+    margin-left: 26px; /*Move ambos os inputs 9px para a esquerda*/
   }
 }
 
