@@ -44,7 +44,7 @@ select {
 .cadastro {
   display: flex; /*Permite organizar elementos em um container de forma flexível*/
   justify-content: space-between; /*Alinha os elementos horizontalmente*/
-  width: 90%; /*Largura*/
+  width: 60%; /*Largura*/
   max-width: 1200px; /*Largura máxima*/
   background-color: white; /*Cor do fundo*/
   border-radius: 5px; /*Bordas arredondadas*/
@@ -100,7 +100,6 @@ select {
 
 
 #botoes { /*Posição dos botões*/
-  margin-left: 230px; /*Dimensão da margem esquerda*/
   margin-top: 5%; /*Distância entre um elemento e o elemento que está acima dele*/
 }
 
@@ -166,18 +165,18 @@ p {
 /*Computadores*/
 @media (max-width: 1280px) {
   #botoes {
-    margin-left: 15px; /*Move os botões 15px para a esquerda*/
+    margin-left: 150px; /*Move os botões 15px para a esquerda*/
   }
 
   .cadastro {
-    width: 65%; /*Largura*/
+    width: 60%; /*Largura*/
   }
 }
 
 
 @media (max-width: 1024px) {
   form {
-    margin-left: 5%; /*Move as caixas 5% para a esquerda*/
+    margin-left: 25%; /*Move as caixas 5% para a esquerda*/
   }
 
   #botoes {
@@ -185,7 +184,7 @@ p {
   }
 
   .cadastro {
-    width: 80%; /*Largura*/
+    width: 55%; /*Largura*/
   }
 }
 
@@ -201,7 +200,7 @@ p {
   }
 
   #botoes { /*Posição dos botões*/
-    margin-left: 95px; /*Move os botões 95px para a esquerda*/
+    margin-left: 150px; /*Move os botões 95px para a esquerda*/
   }
 }
 
@@ -209,7 +208,7 @@ p {
 /*Celulares*/
 @media(max-width: 450px) {
   form {
-    margin-left: 15%; /*Move as caixas 3% para a esquerda*/
+    margin-left: 5%; /*Move as caixas 3% para a esquerda*/
   }
 
   h2 {
