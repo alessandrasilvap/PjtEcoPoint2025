@@ -13,21 +13,13 @@
 </head>
 <body>
     <header></header>
-    <div id="user-info" style="position: absolute; top: 16em; right: 10px; display: none;">
-        <span id="nomenatela"></span>
-        <span id="arrow" onclick="toggleMenu()">▼</span>
-        <!--O dropdown aparecerá ao clicar na setinha, permitindo que o usuário saia da sessão-->
-        <div id="dropdown" style="display: none;">
-            <div id="logout" onclick="logout()">Sair</div>
-        </div>
-    </div>
     <div class="conteudo">
         <nav id="menu">
             <ul class="menu5">
-                <a href="./telasobrenos.html">Sobre Nós</a>
-                <a href="./telainformacoes.html">Informações</a>
-                <a href="./telaongs.html">Ong's</a>
-                <a href="#Mapa">Mapa</a>
+                <a href="<?= BASE_URL ?>/sobre">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/Informacoes">Informações</a>
+                <a href="<?= BASE_URL ?>/ongs">Ong's</a>
+                <a href="<?= BASE_URL ?>/mapa">Mapa</a>
             </ul>
         </nav>
         <br>
@@ -40,7 +32,7 @@
             <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
             <script>
                 //L.map('map') = Inicializa o mapa dentro do div com id map
-                //setView([-23.550520, -46.633308], 12) define a posição inicial do mapa (coordenadas de um dos pontos de coleta de lixo eletrônico) e o nível de zoom.
+                //setView([-23.550520, -46.633308], 12) define a posição inicial do mapa (coordenadas de um dos pontos de coleta de lixo eletrônico na zona sul do Rio) e o nível de zoom.
                 const map = L.map('map').setView([-22.976012, -43.229052], 8);
     
                 //Adiciona uma camada de tile (mapa base), conjuntos de dados geoespaciais disponibilizados gratuitamente
@@ -80,21 +72,21 @@
                     { coords: [-22.010545, -43.304444], nome: "T.T. BURGUER" },  //Outro ponto
                     { coords: [-22.023706, -43.481743], nome: "ESTACIONAMENTO TERREIRÃO" },  //Outro ponto
                     { coords: [-22.002490, -43.350012], nome: "VEZPA - PARQUE DAS ROSAS" },  //Outro ponto
-                    { coords: [-22.003301, -43.321321], nome: "ICAIU - CITTÁ AMÉRICA" }  //Outro ponto
-                    { coords: [-25.48813, -49.34549], nome: "Ecoponto Caiuá" }  //Outro ponto
-                    { coords: [-25.46293, -49.19528], nome: "Ecoponto Cajuru" }  //Outro ponto
-                    { coords: [-25.58104, -49.32730], nome: "Ecoponto Campo de Santana" }  //Outro ponto
-                    { coords: [-25.51209, -49.33182], nome: "Ecoponto CIC" }  //Outro ponto
-                    { coords: [-25.53202, -49.25127], nome: "Ecoponto Érico Veríssimo" }  //Outro ponto
-                    { coords: [-25.55015, -49.25444], nome: "Ecoponto Guaçuí" }  //Outro ponto
-                    { coords: [-25.49152, -49.20291], nome: "Ecoponto Icaraí" }  //Outro ponto
-                    { coords: [-25.55455, -49.24470], nome: "Ecoponto Jandaia" }  //Outro ponto
-                    { coords: [-25.42127, -49.36383], nome: "Ecoponto Metropolitano" }  //Outro ponto
-                    { coords: [-25.52940, -49.23031], nome: "Ecoponto Vila Nova" }  //Outro ponto
-                    { coords: [-25.50299, -49.22663], nome: "DMT Reciclagem" }  //Outro ponto
-                    { coords: [-26.22782, -52.67011], nome: "PREFEITURA DE PATO BRANCO" }  //Outro ponto
-                    { coords: [-8.03763, -34.94252], nome: "Reeecicle" }  //Outro ponto
-                    { coords: [-23.51544, -46.59045], nome: "Rapidosucata" }  //Outro ponto
+                    { coords: [-22.003301, -43.321321], nome: "ICAIU - CITTÁ AMÉRICA" },  //Outro ponto
+                    { coords: [-25.48813, -49.34549], nome: "Ecoponto Caiuá" },  //Outro ponto
+                    { coords: [-25.46293, -49.19528], nome: "Ecoponto Cajuru" },  //Outro ponto
+                    { coords: [-25.58104, -49.32730], nome: "Ecoponto Campo de Santana" },  //Outro ponto
+                    { coords: [-25.51209, -49.33182], nome: "Ecoponto CIC" },  //Outro ponto
+                    { coords: [-25.53202, -49.25127], nome: "Ecoponto Érico Veríssimo" },  //Outro ponto
+                    { coords: [-25.55015, -49.25444], nome: "Ecoponto Guaçuí" },  //Outro ponto
+                    { coords: [-25.49152, -49.20291], nome: "Ecoponto Icaraí" },  //Outro ponto
+                    { coords: [-25.55455, -49.24470], nome: "Ecoponto Jandaia" },  //Outro ponto
+                    { coords: [-25.42127, -49.36383], nome: "Ecoponto Metropolitano" },  //Outro ponto
+                    { coords: [-25.52940, -49.23031], nome: "Ecoponto Vila Nova" },  //Outro ponto
+                    { coords: [-25.50299, -49.22663], nome: "DMT Reciclagem" },  //Outro ponto
+                    { coords: [-26.22782, -52.67011], nome: "PREFEITURA DE PATO BRANCO" },  //Outro ponto
+                    { coords: [-8.03763, -34.94252], nome: "Reeecicle" },  //Outro ponto
+                    { coords: [-23.51544, -46.59045], nome: "Rapidosucata" },  //Outro ponto
                     { coords: [-23.51524, -46.59048], nome: "Rapidosucata" }  //Outro ponto
                 ];
                 pontos.forEach(ponto => {
@@ -103,11 +95,10 @@
                 });
             </script>
             <br>
-            <p>Para mais informações sobre os pontos indicados e outros locais de reciclagem eletrônica, entre em contato conosco ou acesse um dos sites abaixos.</p>
+            <p>Para mais informações sobre os pontos indicados e outros locais de reciclagem eletrônica, entre em contato conosco ou acesse o site da Comlubr.</p>
             <h4 class="comlurb">https://comlurb.prefeitura.rio/servico/coleta-seletiva/onde-descartar-materiais-que-nao-sao-coletados/</h4>
             <h4 class="comlurb">https://www.curitiba.pr.gov.br/servicos/ecopontos-descarte-correto-de-residuos/716</h4>
             <h4 class="comlurb">https://www.seteambiental.com.br/pevs/</h4>
-            <h4 class="comlurb">https://www.rapidosucata.com.br/langing-page/?gad_source=1&gad_campaignid=10052473604&gclid=CjwKCAjwn6LABhBSEiwAsNJrjnMqQC0RISQ3MG0hftJPSsAzNYjGo4rcmKNqd-aPTWgq0BmX777NXhoCMjoQAvD_BwE</h4>
             <br>
             <br>
         </section>
@@ -118,9 +109,11 @@
                 <div>
                     <h3 class="integrantes">Integrantes</h3>
                     <ul class="lista">
-                        <li class="nome">Alessandra Cristina da Silva Pereira</li>
-                        <li class="nome">Caio Lucas Sales Ferreira</li>
+                    <li class="nome">Alessandra Cristina da Silva Pereira</li>
+                        <li class="nome">Bryan Caristiati Costa</li>
                         <li class="nome">Eric Luiz Xavier de Araujo</li>
+                        <li class="nome">Daniel Jesus Dias Alves</li>
+                        <li class="nome">Gabriel Araújo de Oliveira</li>
                     </ul>
                 </div>
                 <div class="contatos">
@@ -136,7 +129,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>ecopointverde@gmail.com.br</span>
+                            <span>ecopointverde@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -175,6 +168,5 @@
         </div>
     </div>
     <script src="/ecoPoint/public/js/acessibfeedback.js"></script> <!--Código JS do painel de acessibilidade e da caixa de feedback-->
-    <script src="/ecoPoint/public/js/menulateral.js"></script> <!--Código JS do menu de autenticação do usuário-->
 </body>
 </html>
