@@ -5,8 +5,8 @@ document.querySelector('form').addEventListener('submit', function(event) {
 });
 
 function validarlogin() {
-    var usuario = document.getElementById('usuario').value;
-    var senha = document.getElementById('senha').value;
+    let usuario = document.getElementById('usuario').value;
+    let senha = document.getElementById('senha').value;
 
     if (usuario === "" || senha === "") {
         alert('[ERRO] Usuário ou senha não preenchidos.');

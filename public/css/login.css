@@ -1,88 +1,126 @@
-body { /*Imagem de fundo*/
-  background-image: url(../imagens/fotodofundo.png); /*Imagem*/
-  background-repeat: no-repeat; /*Se a imagem será repetida ou não*/
-  background-attachment: fixed; /*Fixa a imagem*/
-  background-size: cover; /*Ajusta a imagem*/
-  height: 100vh; /*Altura total da tela*/
-  margin: 0; /*Remove margem*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+*, html {
+  font-family: 'Montserrat', 'Arial', 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
 }
 
-
-input, select, button, textarea { /*Formatação dos campos de entrada*/
-  border-radius: 4em; /*Bordas arredondadas*/
-  padding: 5px; /*Espaçamento entre o conteudo e borda*/
-  margin: 5px; /*Espaçamento externo do elemento*/
-  height: 6%; /*Altura*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #09434b;
+  background-image: url(../imagens/fotodofundo-recortada.png); /*Imagem*/
+ /*Colocando a imagem no centro*/
+  background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
-
-#comeco { /*Formatação da caixa no meio*/
-  width: 325px; /*Largura*/
-  height: 400px; /*Altura*/
-  top: 32%; /*Move a caixa 32% para baixo*/
-  left: 38%; /*Move a caixa 42% para a esquerda*/
-  border: 1px double black; /*Bordas para as caixas*/
-  position: absolute; /*Alterar a posição de um elemento em relação à sua posição inicial*/
-  padding: 20px; /*Espaçamento entre o conteudo e borda*/
-  border-radius: 5%; /*Bordas arredondadas*/
-  box-sizing: border-box; /*Altera a forma como o navegador calcula a largura e a altura de um elemento*/
-  transform: rotate(90); /*Rotação da caixa*/
-  background-color: #4caa38; /*Cor do fundo*/
-  text-indent: 95px; /*Define o recuo do texto*/
-  opacity: 60%; /*Deixa meio transparente*/
-  position: fixed; /*Fixa o quadrado na tela*/
-  min-height: fit-content; /*Define a altura mínima do fieldset como o conteúdo interno*/
-  height: auto; /*Permite que a altura do fieldset se adapte automaticamente ao conteúdo*/
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.conteudo {
-  display: flex; /*Transforma o elemento em um container flexível*/
-  flex-direction: column; /*Define a direção dos elementos filhos como vertical (coluna)*/
-  overflow: auto; /*Permite que o conteúdo seja rolado se necessário*/
+.imagem-logo {
+  width: 100px;
+  border-radius: 50%;
 }
 
-
-input:hover, button:hover, select:hover, textarea:hover { /*Ativa borda e sombra ao passar o mouse*/
-  border: 1px solid blue; /*Bordas para as caixas*/
-  box-shadow: 1px 1px 2px silver; /*Sombra sutil*/
+.texto-logo {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+  color: white;
+  margin: 17px -46px;
 }
 
-
-input[type="text"], input[type="password"] {
-  margin-left: 9px; /*Move ambos os inputs 9px para a esquerda*/
-  margin-top: 2%;  /*Move ambos os inputs 2% para baixo*/
+#conteudo > .form { /*Formatação da caixa no meio*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 325px;
+  height: 400px;
+  border-radius: 5%;
+  box-sizing: border-box;
+  gap: 16px;
+  background-color: rgba(0, 128, 73, 0.233);
+  border: 1px solid rgba(46, 121, 88, 0.767);
+  box-shadow: 1px 1px 1px black;
+  margin-bottom: 30px;
 }
-
 
 h1 { /*Título*/
-  color: black; /*Cor do texto*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
+  color: rgb(255, 255, 255); /*Cor do texto*/
   margin-left: 6px; /*Move o título 6px para a esquerda*/
   margin-top: 2%; /*Move o título 2% para baixo*/
 }
 
+input { /*Links*/
+  width: 80%;
+  font-size: 18px;
+  font-weight: 600;
+  height: 40px;
+  /* padding: 13px 10px; */
+  color: rgb(3, 22, 24);
+  border-radius: 17px;
+  border: none;
+  outline: none;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.2s ease, transform 0.2s ease; 
+}
 
-button { /*Botões*/
-  width: 265px; /*Largura*/
-  height: 10%; /*Altura*/
-  top: 32%; /*Move ambos os button 32% para baixo*/
-  left: 40px; /*Move ambos os button 40px para a esquerda*/
-  text-decoration: none; /*Remove o sublinhado*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
+input:hover {
+  background-color: #bbd5d8;
+}
+
+.botoes{
+  margin-bottom: 10px;
+}
+
+#botao-criar-conta, #botao-entrar { /*Formatação dos campos de entrada*/
+  width: 80%;
+  height: 40px;
+  border-radius: 17px;
+  /* padding: 13px 10px; */
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  background-color: #0a4e53;
+  transition: background-color 0.3s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 
-a { /*Links*/
-  padding: 10px 20px; /*Espaçamento entre o conteudo e borda*/
-  color: black; /*Cor do texto*/
-  text-decoration: none; /*Remove o sublinhado*/
-  border-radius: 4px; /*Bordas arredondadas*/
-  text-indent: 5px; /*Define o recuo do texto*/
-  margin-left: 2px; /*Move ambos o texto 2px para a esquerda*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
+#botao-entrar:hover, #botao-criar-conta:hover {
+  background-color: #09334b;
+  color: white;
 }
+
+
+a {
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: #43a8b6;
+}
+
+
+
+
+
+
+
+
 
 
 
