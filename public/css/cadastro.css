@@ -1,161 +1,118 @@
-header { /*Imagem no topo*/
-  background-image: url(../imagens/barracadastro.png); /*Imagem*/
-  padding: 6em; /*Espaçamento entre o conteudo e borda*/
-  background-position: center; /*Colocando a imagem no centro*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+*, html {
+  font-family: 'Montserrat', 'Arial', 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
 }
-
-
-form {
-  margin-left: 20em; /*Move as caixas 20em para a esquerda*/
-}
-
 
 body {
-  height: 100%; /*Altura*/
-  margin: 0; /*Espaçamento externo do elemento*/
-  font-family:Arial, Helvetica, sans-serif /*Fonte do texto*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #09434b;
+  background-image: url(../imagens/fotodofundo-cadastro.png); /*Imagem*/
+ /*Colocando a imagem no centro*/
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+
 }
 
+.elementos-topo {
+  position: absolute;
+  color: white;
+  font-size: 19px;
+  padding: 3em;
 
-input, select, button, textarea { /*Formatação dos campos de entrada*/
-  border-radius: 1.4em; /*Bordas arredondadas*/
-  padding: 5px; /*Espaçamento entre o conteudo e borda*/
-  margin: 1px; /*Espaçamento externo do elemento*/
-  height: 6%; /*Altura*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-  font-size: 100%; /*Tamanho da fonte*/
-  max-width: 400px; /*Largura máxima*/
+  width: 750px;
+  top: -34px;
+  left: -11px;
+  z-index: 0;
 }
 
-
-input:hover, button:hover, select:hover, textarea:hover { /*Ativa borda e sombra ao passar o mouse*/
-  border: 1px solid blue; /*Bordas para as caixas*/
-  box-shadow: 1px 1px 2px silver; /*Sombra sutil*/
+.bolinha {
+  position: absolute;
+  background-color: rgba(10, 78, 83, 0.568);
+  border-radius: 50%;
+  height: 750px;
+  width: 750px;
+  top: -387px;
+  left: -57px;
+  z-index: -1;
+  
 }
 
-
-select {
-  width: 150px; /*Largura*/
-  height: 40px; /*Altura*/
-  font-size: 18px; /*Ajusta o tamanho do texto*/
-}
-
-
-.cadastro {
-  display: flex; /*Permite organizar elementos em um container de forma flexível*/
-  justify-content: space-between; /*Alinha os elementos horizontalmente*/
-  width: 60%; /*Largura*/
-  max-width: 1200px; /*Largura máxima*/
-  background-color: white; /*Cor do fundo*/
-  border-radius: 5px; /*Bordas arredondadas*/
-  padding: 20px; /*Espaçamento entre o conteudo e borda*/
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /*Sombra sutil*/
-  flex-wrap: wrap; /*Permite que as caixas quebrem linha se a tela for pequena*/
-}
-
-
-#caixaesquerda, #caixadireita { /*Caixas que estão os campos*/
-  flex: 1; /*Ambas as caixas ocupam espaço igual*/
-  margin: 0 10px; /*Margem lateral entre as caixas*/
-  padding: 20px; /*Espaçamento entre o conteudo e borda*/
-  border: 1px solid #ccc; /*Bordas para as caixas*/
-  border-radius: 5px; /*Bordas arredondadas*/
-  background-color: #ffffff; /*Cor do fundo*/
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*Sombra sutil*/
-}
-
-
-.conteudo {
+#container {
   display: flex; /*Transforma o elemento em um container flexível*/
+  align-items: center;
+  justify-content: center;
   flex-direction: column; /*Define a direção dos elementos filhos como vertical (coluna)*/
-  overflow: auto; /*Permite que o conteúdo seja rolado se necessário*/
+  width: 700px;
+  margin-top: 30em;
+}
+
+#formCadastro > .titulos { /*Título*/
+    /* margin-left: 6px; */
+    margin: 17px 0px 5px 0px;
+    font-size: 40px;
+    color: #ffffff;
+    text-indent: 25px;
+    text-align: start
+
 }
 
 
-#caixaesquerda input, #caixadireita input{
-  height: 2.2rem; /*Altura*/
+
+#informacoes-pessoais, #informacoes-complementares, #informacoes-acesso {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  gap: 15px 30px; /* Espaço entre linhas e colunas */
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
 
+.campo {
+  display: flex;
+  flex-direction: column; /* Faz o label ficar em cima do input */
+}
 
-#buscar {
-  width: 100px; /*Largura*/
-  height: 3rem; /*Altura*/
-  text-decoration: none; /*Remove o sublinhado*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-  background-color: #2c612f; /*Cor do fundo*/
+.campo label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.campo input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20em;
+}
+
+.campo button {
+  margin-top: 23px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 10em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 23px;
+  background-color: rgb(10, 78, 83); /*Cor do fundo*/
   color: white; /*Cor do texto*/
-  margin-bottom: 1rem; /*Dimensão da margem do botão*/
 }
 
 
 #buscar:hover {
-  background-color: #1a4729; /*Cor do fundo*/
+  background-color: rgb(10, 56, 83); /*Cor do fundo*/
+  cursor: pointer;
 }
 
 
-#num, #complemento {
-  width: 190px; /*Largura*/
-  height: 3rem; /*Altura*/
-}
-
-
-#botoes { /*Posição dos botões*/
-  margin-top: 5%; /*Distância entre um elemento e o elemento que está acima dele*/
-}
-
-
-button { /*Botões*/
-  width: 265px; /*Largura*/
-  height: 10%; /*Altura*/
-  text-decoration: none; /*Remove o sublinhado*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-  background-color: #2c612f; /*Cor do fundo*/
-  color: white; /*Cor do texto*/
-}
-
-
-a { /*Links*/
-  padding: 10px 20px; /*Espaçamento entre o conteudo e borda*/
-  color: white; /*Cor do texto*/
-  text-decoration: none; /*Remove o sublinhado*/
-  border-radius: 4px; /*Bordas arredondadas*/
-  text-indent: 5px; /*Define o recuo do texto*/
-  margin-left: 2px; /*Dimensão da margem esquerda*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-}
-
-
-h2 { /*Título*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-  margin-left: 6px; /*Dimensão da margem esquerda*/
-  margin-top: 1%; /*Dimensão da margem de baixo*/
-  font-size: 350%; /*Tamanho da letra*/
-  color: #468749; /*Cor do texto*/
-  text-indent: 25px; /*Define o recuo do texto*/
-}
-
-
-h3 { /*Título da primeira caixa*/
-  color: #468749; /*Cor do texto*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-  margin-left: 6px; /*Dimensão da margem esquerda*/
-  font-size: 130%; /*Tamanho da letra*/
-}
-
-
-h4 { /*Título da segunda caixa*/
-  font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
-  margin-left: 6px; /*Dimensão da margem esquerda*/
-  margin-top: 1%; /*Dimensão da margem de baixo*/
-  font-size: 150%; /*Tamanho da letra*/
-  color: #468749; /*Cor do texto*/
-}
-
-
-p {
-  color:#468749; /*Cor do texto*/
-  margin-left: 10px; /*Move o título 10px para a esquerda*/
-}
 
 
 
