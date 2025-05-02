@@ -16,7 +16,7 @@
             <p class="texto-logo">Conecte-se para fazer a diferença</p>
         </section>
         <section id="conteudo">
-            <form action="/ecoPoint/login/autenticar" method="POST" autocomplete="off" target="_blank" novalidate class="form">
+            <form action="/ecoPoint/login/autenticar" method="POST" autocomplete="off" novalidate class="form">
                 <h1>Login</h1>
                 <label for="usuario" hidden>Login</label>
                 <input type="text" id="usuario" name="login" placeholder="Usuário" maxlength="6" size="31">
@@ -31,7 +31,7 @@
                     Criar uma conta
             </button>
                 
-            <p><a href="<?= BASE_URL ?>/senha" target="_blank">Esqueci minha senha</a></p>
+            <p><a href="<?= BASE_URL ?>/senha" target="_self">Esqueci minha senha</a></p>
             <p><a href="<?= BASE_URL ?>/home">Voltar à tela inicial</a></p>
         </section>
             </form>

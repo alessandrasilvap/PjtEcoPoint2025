@@ -14,7 +14,7 @@
         <h1>Cadastre-se</h1>
         <p>Entre em um mundo mais verde</p>
     </header>
-    <div class="bolinha">
+    <div class="bolinha topo">
     </div>
     <main>
         <section id="container">
@@ -84,7 +84,7 @@
                         <input type="text" id="tel" name="telefone" placeholder="(00) 00000-0000" size="50" oninput="formatarTEL(this)">
                     </div>
                 </section>
-                <h2 class="titulos">Crie seu acesso</h2>
+                <h2 class="titulos">Informações de acesso</h2>
                 <section id="informacoes-acesso">
                     
                     <div class="campo">
@@ -101,16 +101,11 @@
                         <label for="camposenha"> Senha </label>
                         <input type="password" id="camposenha" name="senha" placeholder="Crie sua senha" maxlength="8" size="50">
                     </div>
-            
-                    
                 </section>
-            
-            
-            
                 <section id="botoes">
-                    <button type="submit">CADASTRAR</button>
-                    <button type="button"><a href="home">VOLTAR</a></button>
-                    <button type="reset" id="botaolimpar">LIMPAR</button>
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" onclick="window.location.href='<?= BASE_URL ?>/home'"> Voltar </button>
+                    <button type="reset" id="botaolimpar">Limpar</button>
                 </section>
             </form>
         </section>

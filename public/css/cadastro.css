@@ -17,6 +17,7 @@ body {
  /*Colocando a imagem no centro*/
   background-repeat: no-repeat;
   overflow-x: hidden;
+  background-attachment: fixed;
 
 }
 
@@ -25,7 +26,6 @@ body {
   color: white;
   font-size: 19px;
   padding: 3em;
-
   width: 750px;
   top: -34px;
   left: -11px;
@@ -38,11 +38,19 @@ body {
   border-radius: 50%;
   height: 750px;
   width: 750px;
+  z-index: -1;
+}
+
+.topo {
   top: -387px;
   left: -57px;
-  z-index: -1;
-  
 }
+
+/* 
+.baixo {
+  bottom: -387px;
+  right: -57px;
+} */
 
 #container {
   display: flex; /*Transforma o elemento em um container flexível*/
@@ -50,7 +58,7 @@ body {
   justify-content: center;
   flex-direction: column; /*Define a direção dos elementos filhos como vertical (coluna)*/
   width: 700px;
-  margin-top: 30em;
+  margin-top: 34em;
 }
 
 #formCadastro > .titulos { /*Título*/
@@ -98,10 +106,9 @@ body {
   margin-top: 23px;
   padding: 10px;
   font-size: 1rem;
-  width: 10em;
+  width: 5em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 23px;
   background-color: rgb(10, 78, 83); /*Cor do fundo*/
   color: white; /*Cor do texto*/
 }
@@ -113,8 +120,30 @@ body {
 }
 
 
+#botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 30px;
+  max-width: 800px;
+  margin: auto;
+  padding: 37px 0;
+}
 
+#botoes button {
+  padding: 10px;
+  font-size: 1rem;
+  /* width: 10em; */
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(10, 78, 83);
+  color: white;
+  transition: background-color 0.3s ease, color 0.2s ease, transform 0.2s ease; 
+}
 
+#botoes button:hover {
+  background-color: rgb(10, 56, 83); /*Cor do fundo*/
+  cursor: pointer;
+}
 
 
 
