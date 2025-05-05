@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
 function validarcadastro(event) {
     event.preventDefault(); //Impede o envio do formulário caso o formulário esteja errado
 
-    var nomecompleto = document.getElementById('nomecompleto').value;
+    var nomecompleto = document.getElementById('nomecompleto').value;//
     var datanascimento = document.getElementById('datanascimento').value;
     var usuario = document.getElementById('campousuario').value;
     var senha = document.getElementById('camposenha').value;
-    var confirmasenha = document.getElementById('confirmasenha').value; //Agora está definida corretamente
+    var confirmasenha = document.getElementById('confirmasenha').value;
     var cep = document.getElementById('cep').value;
     var num = document.getElementById('num').value;
     var tel = document.getElementById('tel').value;
@@ -22,7 +22,7 @@ function validarcadastro(event) {
     var Inseriremail = document.getElementById('inserirEmail').value;
 
     //Verifica se todos os campos obrigatórios foram preenchidos
-    if (nomecompleto === '' || datanascimento === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
+    if (nomecompleto === '' || datanascimento === '' || confirmasenha === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
         alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.');
         return false;
     }
@@ -108,53 +108,52 @@ function formatarTEL(input){
 
 
 
-//Validando o CPF com o digito verificador
-function validarCPF(cpf) {
-    /*O código implementa o algorito de validação de CPF definido pela Receita Federal
-    O calculo do primeiro dígito verificar(dv1):
-    -Multiplica os primeiros 9 dígitos do CPF por pesos decrescente de 10 a 2;
-    -Calcula o resto da divisão da soma pelo número 11;
-    -Se o resto for 10 ou 11, o dv1 é 0; caso contrário, é o próprio resto.
-    O calculo do segundo dígito verificador(dv2):
-    -Multiplica os primeiros 9 dígitos do CPF por pesos decrescente de 11 a 2, incluindo o dv1;
-    -Calcula o resto da divisão da soma pelo número 11;
-    -Se o resto for 10 ou 11, o dv2 é 0; caso contrário, é o próprio resto.
-    O código verifica se os 2 dígitos verificadores calculados correspondem aos 2 últimos dígitos do CPF informado, Se correspondem, o CPF é considerado válido.*/
+// Máscara ao digitar
+document.getElementById('cpf').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
 
-    soma = 0;
-    soma += cpf[0] * 10;
-    soma += cpf[1] * 9;
-    soma += cpf[2] * 8;
-    soma += cpf[3] * 7;
-    soma += cpf[4] * 6;
-    soma += cpf[5] * 5;
-    soma += cpf[6] * 4;
-    soma += cpf[7] * 3;
-    soma += cpf[8] * 2;
-    soma = (soma * 10) % 11;
-    if (soma == 10 || soma == 11) soma = 0;
-    if (soma != cpf[9]) {
-      alert('[ERRO] CPF inválido!');
-      return false;
+    // Aplica a máscara 000.000.000-00
+    if (value.length > 3 && value.length <= 6)
+        value = value.replace(/(\d{3})(\d+)/, '$1.$2');
+    else if (value.length > 6 && value.length <= 9)
+        value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+    else if (value.length > 9)
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+
+    e.target.value = value;
+});
+
+// Validação do CPF
+function validarCPF(cpfStr) {
+    let cpf = cpfStr.replace(/\D/g, ''); // Remove pontos e hífen
+
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+        alert('CPF inválido!');
+        return false;
+    }
+
+    let soma = 0;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    let dv1 = (soma * 10) % 11;
+    if (dv1 === 10 || dv1 === 11) dv1 = 0;
+    if (dv1 !== parseInt(cpf.charAt(9))) {
+        alert('CPF inválido!');
+        return false;
     }
 
     soma = 0;
-    soma += cpf[0] * 11;
-    soma += cpf[1] * 10;
-    soma += cpf[2] * 9;
-    soma += cpf[3] * 8;
-    soma += cpf[4] * 7;
-    soma += cpf[5] * 6;
-    soma += cpf[6] * 5;
-    soma += cpf[7] * 4;
-    soma += cpf[8] * 3;
-    soma += cpf[9] * 2;
-    soma = (soma * 10) % 11;
-    if (soma == 10 || soma == 11) soma = 0;
-    if (soma != cpf[10]) {
-      alert('[ERRO] CPF inválido!');
-      return false;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
     }
+    let dv2 = (soma * 10) % 11;
+    if (dv2 === 10 || dv2 === 11) dv2 = 0;
+    if (dv2 !== parseInt(cpf.charAt(10))) {
+        alert('CPF inválido!');
+        return false;
+    }
+
     return true;
 }
 

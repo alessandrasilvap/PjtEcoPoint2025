@@ -1,7 +1,6 @@
 <?php
 
 class Usuario {
-
     private $nome;
     private $email;
     private $cpf;
@@ -22,8 +21,6 @@ class Usuario {
         }
     }
 
-    //Métodos setters e getters para cada propriedade (Nome, Email, etc.)
-
     public function setDados($dados) {
         $this->nome = $dados['nome'];
         $this->email = $dados['email'];
@@ -40,7 +37,7 @@ class Usuario {
         $this->nascimento = $dados['nascimento'];
     }
 
-    //Getter Methods
+    // Getters
     public function getNome() { return $this->nome; }
     public function getEmail() { return $this->email; }
     public function getCpf() { return $this->cpf; }
@@ -55,6 +52,39 @@ class Usuario {
     public function getTelefone() { return $this->telefone; }
     public function getNascimento() { return $this->nascimento; }
 
-}
+    //Inserir no banco de dados
+    public function inserir($pdo) {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO usuario 
+            (nome, email, cpf, login, senha, endereco, cidade, bairro, cep, numero, complemento, telefone, nascimento) 
+            VALUES 
+            (:nome, :email, :cpf, :login, :senha, :endereco, :cidade, :bairro, :cep, :numero, :complemento, :telefone, :nascimento)");
 
-?>
+            $stmt->bindValue(':nome', $this->getNome());
+            $stmt->bindValue(':email', $this->getEmail());
+            $stmt->bindValue(':cpf', $this->getCpf());
+            $stmt->bindValue(':login', $this->getLogin());
+            $stmt->bindValue(':senha', $this->getSenha());
+            $stmt->bindValue(':endereco', $this->getEndereco());
+            $stmt->bindValue(':cidade', $this->getCidade());
+            $stmt->bindValue(':bairro', $this->getBairro());
+            $stmt->bindValue(':cep', $this->getCep());
+            $stmt->bindValue(':numero', $this->getNumero());
+            $stmt->bindValue(':complemento', $this->getComplemento());
+            $stmt->bindValue(':telefone', $this->getTelefone());
+            $stmt->bindValue(':nascimento', $this->getNascimento());
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erro ao inserir usuário: " . $e->getMessage());
+        }
+    }
+
+    public function buscarPorEmail($email) {
+        $pdo = Conexao::getConexao();
+        $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email = :email LIMIT 1");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+}

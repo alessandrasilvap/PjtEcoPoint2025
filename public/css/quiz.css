@@ -117,7 +117,7 @@ button {
     }
 
     .answers-container {
-        margin-right: 5em; /*Move o texto 5em para a direta*/
+        margin-left: 0em; /*Move o texto 5em para a direta*/
     }
 
     .button {
@@ -137,7 +137,7 @@ button {
     }
 
     .answers-container {
-        margin-left: 5em; /*Move o texto 5em para a esquerda*/
+        margin-left: 14em; /*Move o texto 5em para a esquerda*/
         display: grid; /*Permite criar layouts de grade bidimensionais*/
         grid-template-columns: 1fr; /*Define os nomes das linhas e as funções de dimensionamento das colunas do grid*/
     }
@@ -162,7 +162,7 @@ button {
     .answers-container {
         display: grid; /*Permite criar layouts de grade bidimensionais*/
         grid-template-columns: 1fr; /*Define os nomes das linhas e as funções de dimensionamento das colunas do grid*/
-        margin-left: 15em; /*Move o texto 15em para a esquerda*/
+        margin-left: 18em; /*Move o texto 15em para a esquerda*/
     }
 
     .button {
@@ -177,7 +177,7 @@ button {
     }
 
     .answers-container {
-        margin-left: 13em; /*Move o texto 13em para a esquerda*/
+        margin-left: 16em; /*Move o texto 13em para a esquerda*/
     }
 }
 
