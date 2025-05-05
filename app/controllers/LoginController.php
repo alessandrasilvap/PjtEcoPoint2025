@@ -21,7 +21,6 @@ class LoginController extends Controller {
 
         //Aqui estamos instanciando a classe UsuarioDAO
         $usuarioDAO = new UsuarioDAO();
-
         //Chama o método para buscar o usuário pelo login
         $usuario = $usuarioDAO->buscarPorLogin($login);
 
@@ -31,7 +30,7 @@ class LoginController extends Controller {
             $_SESSION['usuario'] = [
                 'id' => $usuario['id'],
                 'nome' => $usuario['nome'],
-                'email' => $usuario['email']
+                'login' => $usuario['login']
             ];
 
             //Redireciona para a página desejada

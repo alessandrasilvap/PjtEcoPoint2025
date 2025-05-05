@@ -1,48 +1,18 @@
-header {
-  background-image: url(../imagens/barracadastro.png); /*Imagem de fundo*/
-  padding: 6em; /*Espaçamento entre o conteúdo e a borda*/
-  background-position: center; /*Posicionamento da imagem no centro*/
+#mapa {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-
-section {
-  margin: 2%; /*Espaço entre caixa e marguem da página*/
-}
-
-
-.menu5 {
-  margin: 0px; /*Espaçamento externo do elementos*/
-  padding: 14px; /*Espaçamento entre o conteúdo e a borda*/
-  background-color: #468749; /*Cor de fundo*/
-  text-indent: 40px; /*Recuo do texto*/
-  text-align: center; /*Alinhar o texto no centro*/
-}
-
-
-a {
-  font-size: 125%; /*Tamanho da fonte*/
-  font-family: 'Times New Roman', Times, serif; /*Tipo de fonte*/
-  color: white; /*Cor do texto*/
-  padding: 14px 14px; /*Espaçamento entre o conteudo e borda*/
-  text-decoration: none; /*Remover sublinhado*/
-}
-
-
-a:hover:not(#menu) {
-  background-color: #2c612f; /*Cor de fundo ao passar o mouse*/
-}
-
-
-#menu {
-  background-color: #04AA6D; /*Cor de fundo*/
-}
-
 
 #map {
+  display: flex;
   width: 70%; /*Largura*/
   height: 500px; /*Altura*/
-  left: 10%; /*Move o mapa 10% para a esquerda*/
+
+  border-radius: 20px;
+  outline: 2px solid green ;
 }
+
 
 
 .comlurb, p {

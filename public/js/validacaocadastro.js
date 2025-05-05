@@ -1,47 +1,54 @@
-document.addEventListener("DOMContentLoaded", function() {
-    //Agora o script só será executado após o carregamento do DOM
-    const formCadastro = document.getElementById("formCadastro");
 
-    if (formCadastro) {
-        formCadastro.addEventListener("submit", validarcadastro);
-    }
-});
 
-function validarcadastro(event) {
-    event.preventDefault(); //Impede o envio do formulário caso o formulário esteja errado
 
-    var nomecompleto = document.getElementById('nomecompleto').value;
-    var datanascimento = document.getElementById('datanascimento').value;
-    var usuario = document.getElementById('campousuario').value;
-    var senha = document.getElementById('camposenha').value;
-    var confirmasenha = document.getElementById('confirmasenha').value; //Agora está definida corretamente
-    var cep = document.getElementById('cep').value;
-    var num = document.getElementById('num').value;
-    var tel = document.getElementById('tel').value;
-    var cpf = document.getElementById('cpf').value;
-    var Inseriremail = document.getElementById('inserirEmail').value;
+function formatarCPF(input) {
+    let cpf = input.value.replace(/\D/g, '');
 
-    //Verifica se todos os campos obrigatórios foram preenchidos
-    if (nomecompleto === '' || datanascimento === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
-        alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.');
-        return false;
+    if (cpf.length > 11) cpf = cpf.slice(0, 11);
+
+    if (cpf.length > 9) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, "$1.$2.$3-$4");
+    } else if (cpf.length > 6) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{1,3})/, "$1.$2.$3");
+    } else if (cpf.length > 3) {
+        cpf = cpf.replace(/(\d{3})(\d{1,3})/, "$1.$2");
     }
 
-    //Verifica se as senhas coincidem
-    if (senha !== confirmasenha) {
-        alert('[ERRO] As senhas não coincidem.');
-        return false;
-    }
-
-    //Valida CPF
-    if (!validarCPF(cpf)) {
-        return false;
-    }
-
-    //Envia o formulário
-    formCadastro.submit(); //Chama submit do formulário
+    input.value = cpf;
 }
 
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+        return false;
+    }
+
+    let soma = 0;
+
+    // Primeiro dígito verificador
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    let dv1 = 11 - (soma % 11);
+    if (dv1 >= 10) dv1 = 0;
+    if (dv1 !== parseInt(cpf.charAt(9))) {
+        return false;
+    }
+
+    // Segundo dígito verificador
+    soma = 0;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    let dv2 = 11 - (soma % 11);
+    if (dv2 >= 10) dv2 = 0;
+    if (dv2 !== parseInt(cpf.charAt(10))) {
+        return false;
+    }
+
+    return true;
+}
 
 
 //Formato XXXXX-XXX do CEP
@@ -56,7 +63,6 @@ function formatarCEP(input) {
     }
     input.value = cep;
 }
-
 
 
 document.getElementById('buscar').addEventListener('click', function() {
@@ -82,14 +88,11 @@ document.getElementById('buscar').addEventListener('click', function() {
 });
 
 
-
 document.getElementById('buscar').addEventListener('click', function() {
 document.getElementById('rua').textContent = '';
 document.getElementById('bairro').textContent = '';
 document.getElementById('cidade').textContent = '';
 });
-
-
 
 //Formato (XX) XXXXX-XXXX do TELEFONE
 function formatarTEL(input){
@@ -106,90 +109,72 @@ function formatarTEL(input){
     input.value = tel;
 }
 
-
-
-//Validando o CPF com o digito verificador
-function validarCPF(cpf) {
-    /*O código implementa o algorito de validação de CPF definido pela Receita Federal
-    O calculo do primeiro dígito verificar(dv1):
-    -Multiplica os primeiros 9 dígitos do CPF por pesos decrescente de 10 a 2;
-    -Calcula o resto da divisão da soma pelo número 11;
-    -Se o resto for 10 ou 11, o dv1 é 0; caso contrário, é o próprio resto.
-    O calculo do segundo dígito verificador(dv2):
-    -Multiplica os primeiros 9 dígitos do CPF por pesos decrescente de 11 a 2, incluindo o dv1;
-    -Calcula o resto da divisão da soma pelo número 11;
-    -Se o resto for 10 ou 11, o dv2 é 0; caso contrário, é o próprio resto.
-    O código verifica se os 2 dígitos verificadores calculados correspondem aos 2 últimos dígitos do CPF informado, Se correspondem, o CPF é considerado válido.*/
-
-    soma = 0;
-    soma += cpf[0] * 10;
-    soma += cpf[1] * 9;
-    soma += cpf[2] * 8;
-    soma += cpf[3] * 7;
-    soma += cpf[4] * 6;
-    soma += cpf[5] * 5;
-    soma += cpf[6] * 4;
-    soma += cpf[7] * 3;
-    soma += cpf[8] * 2;
-    soma = (soma * 10) % 11;
-    if (soma == 10 || soma == 11) soma = 0;
-    if (soma != cpf[9]) {
-      alert('[ERRO] CPF inválido!');
-      return false;
-    }
-
-    soma = 0;
-    soma += cpf[0] * 11;
-    soma += cpf[1] * 10;
-    soma += cpf[2] * 9;
-    soma += cpf[3] * 8;
-    soma += cpf[4] * 7;
-    soma += cpf[5] * 6;
-    soma += cpf[6] * 5;
-    soma += cpf[7] * 4;
-    soma += cpf[8] * 3;
-    soma += cpf[9] * 2;
-    soma = (soma * 10) % 11;
-    if (soma == 10 || soma == 11) soma = 0;
-    if (soma != cpf[10]) {
-      alert('[ERRO] CPF inválido!');
-      return false;
-    }
-    return true;
+function validarEmail(email) {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
 }
 
-
-
-//Formato exemplo@email.com do E-mail
-function validarEmail(input) {
-    var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(input);
-/*expressão regular  
-- ^ : início da string
-- [a-zA-Z0-9._%+-]+ : caracteres permitidos antes do @ (letras, números, ., _, %, +, -)
-- @ : símbolo @
-- [a-zA-Z0-9.-]+ : caracteres permitidos após o @ (letras, números, ., -)
-- \. : ponto antes da extensão
-- [a-zA-Z]{2,} : extensão do domínio (letras, mínimo 2 caracteres)
-- $ : fim da string*/
-}
-
-
-
-//Restrição de idade
 function validarIdade(dataNascimento) {
-    var data = new Date(dataNascimento); //A data de nascimento é convertida para um objeto
-    var dataAtual = new Date(); //Uma nova instância de Date é criada para obter a data atual
-    var anoAtual = dataAtual.getFullYear(); //O ano atual é extraído da data atual usando o método 'getFullYear()'
-    var anoNascimento = data.getFullYear();
-    
-    var idade = anoAtual - anoNascimento; //A idade é calculada subtraindo o ano de nascimento do ano atual.
-    
-    if (idade < 12) {
-      alert("Você deve ter pelo menos 10 anos para continuar.");
-      document.getElementById("datanascimento").value = ""; //Limpa o campo
-      return false;
-    } else {
-      return true;
+    const data = new Date(dataNascimento);
+    const hoje = new Date();
+    const idade = hoje.getFullYear() - data.getFullYear();
+    const mes = hoje.getMonth() - data.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoje.getDate() < data.getDate())) {
+        return idade - 1 >= 10;
     }
+
+    return idade >= 10;
 }
+
+function validarcadastro(event) {
+     event.preventDefault();
+    console.log('Função validarcadastro chamada!');
+
+    const nomecompleto = document.getElementById('nomecompleto').value.trim();
+    const datanascimento = document.getElementById('datanascimento').value;
+    const usuario = document.getElementById('campousuario').value.trim();
+    const senha = document.getElementById('camposenha').value;
+    const confirmasenha = document.getElementById('confirmasenha').value;
+    const cep = document.getElementById('cep').value.trim();
+    const num = document.getElementById('num').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const cpf = document.getElementById('cpf').value.trim();
+    const email = document.getElementById('inserirEmail').value.trim();
+
+    if (!nomecompleto || !datanascimento || !usuario || !senha || !confirmasenha || !cep || !num || !tel || !cpf || !email) {
+        alert('[ERRO] Todos os campos são obrigatórios!');
+        return false;
+    }
+
+    if (!validarIdade(datanascimento)) {
+        alert('[ERRO] Você deve ter pelo menos 10 anos para continuar.');
+        return false;
+    }
+
+    if (senha !== confirmasenha) {
+        alert('[ERRO] As senhas não coincidem.');
+        return false;
+    }
+
+    if (!validarCPF(cpf)) {
+        alert('[ERRO] CPF inválido!');
+        return false;
+    }
+
+    if (!validarEmail(email)) {
+        alert('[ERRO] E-mail inválido!');
+        return false;
+    }
+
+    document.getElementById("formCadastro").submit();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    //Agora o script só será executado após o carregamento do DOM
+    const formCadastro = document.getElementById("formCadastro");
+
+    if (formCadastro) {
+        formCadastro.addEventListener("submit", validarcadastro);
+    }
+});

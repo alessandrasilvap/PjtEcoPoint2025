@@ -12,7 +12,7 @@
 <body>
     <main>
         <section id="logo">
-            <img src="./public/imagens/logo-ecopoint.png" alt="imagem da logo aqui" class="imagem-logo">
+            <img src="./public/imagens/logo-ecopoint-dark.png" alt="imagem da logo aqui" class="imagem-logo">
             <p class="texto-logo">Conecte-se para fazer a diferença</p>
         </section>
         <section id="conteudo">

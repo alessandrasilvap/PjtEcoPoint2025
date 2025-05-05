@@ -16,6 +16,7 @@ body {
  /*Colocando a imagem no centro*/
   background-repeat: no-repeat;
   overflow-x: hidden;
+  background-size: cover;
 }
 
 #logo {

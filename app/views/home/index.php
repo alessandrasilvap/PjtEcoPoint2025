@@ -27,7 +27,7 @@
     </div>
     <main class="conteudo">
         <section class="elementos">
-            <img src="./public/imagens/logo-ecopoint.png" alt="imagem da logo aqui" class="logo">
+            <img src="./public/imagens/logo-ecopoint-dark.png" alt="imagem da logo aqui" class="logo">
             <div class="elemento-texto">
                 <h1 id="titulo-ecopoint">Eco Point</h1>
                 <p id="paragrafo-ecopoint">Soluções responsáveis para o descarte eletrônico</p>

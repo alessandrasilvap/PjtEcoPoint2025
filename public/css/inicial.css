@@ -14,6 +14,8 @@ header{ /*Imagem no topo*/
   
 }
 
+
+
 header > nav > a { /*Links*/
   font-size: 20px;
   font-weight: 500;
@@ -30,10 +32,11 @@ nav > .link:hover {
 
 body {
   background-color: #09434b;
-  background-image: url(../imagens/fotodofundo-recortada.png); /*Imagem*/
+  background-image: url(../imagens/fotodofundo-cadastro.png); /*Imagem*/
  /*Colocando a imagem no centro*/
   background-repeat: no-repeat;
   overflow-x: hidden;
+  background-size: contain;
 }
 
 .logo {
@@ -183,7 +186,7 @@ button:hover, .lermais:hover {
 
 p { /*O texto escrito no site*/
   font-size: 127%; /*Tamanho do texto*/
-  font-family: 'Montserrat', 'Arial', 'Times New Roman', Times, serif;/*Fonte*/
+
   flex: 1; /*Alinha espaços*/
 }
   

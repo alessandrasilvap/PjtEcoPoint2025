@@ -19,7 +19,7 @@
     <main>
         <section id="container">
             
-            <form action="/ecoPoint/cadastro/salvar" method="POST" id="formCadastro" name="formulariocadastro" onsubmit="validarcadastro(event)">
+            <form action="/ecoPoint/cadastro/salvar" method="POST" id="formCadastro" name="formulariocadastro">
                 <h2 class="titulos">Informações pessoais</h2>
                 <section id="informacoes-pessoais">
 
@@ -39,7 +39,7 @@
                     </div>
                     <div class="campo">
                         <label for="cpf"> CPF </label>
-                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" size="50">
+                        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" size="50" oninput="formatarCPF(this)">
                     </div>
 
                 </section>
