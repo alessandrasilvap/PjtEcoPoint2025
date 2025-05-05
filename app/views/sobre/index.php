@@ -12,83 +12,93 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
 </head>
 <body>
-    <header></header>
-    <div class="conteudo">
+    <header>
+        <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav id="menu">
-            <ul class="menu2">
-                <a href="<?= BASE_URL ?>/sobre">Sobre Nós</a>
-                <a href="<?= BASE_URL ?>/Informacoes">Informações</a>
-                <a href="<?= BASE_URL ?>/ongs">Ong's</a>
-                <a href="<?= BASE_URL ?>/mapa">Mapa</a>
+            <div id="borda-menu">
+                <a href="<?= BASE_URL ?>/sobre" class="link selecionado">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/Informacoes" class="link">Informações</a>
+                <a href="<?= BASE_URL ?>/ongs" class="link">Ong's</a>
+                <a href="<?= BASE_URL ?>/mapa" class="link">Mapa</a>
+            </div>
+        </nav>
+        <nav class="sessoes">
+            <ul class="user">
+                <li class="usuario" id="btnPerfil"><img src="./public/imagens/user-icon.png" alt="" id="user-icon"> <?= $_SESSION['usuario']['login']; ?></li>
+                <li class="usuario"><a href="/ecoPoint/logout" class="sair">🔓 Logout</a></li>
             </ul>
         </nav>
-        <br>
-        <br>
-        <section>
-            <nav class="sessoes">
-                <ul class="user">
-                    <li class="usuario" id="btnPerfil">👤 <?= $_SESSION['usuario']['nome']; ?></li>
-                    <br>
-                    <li class="usuario"><a href="/ecoPoint/logout" class="sair">🔓 Logout</a></li>
-                </ul>
-            </nav>
+    </header>
 
-            <h1>Sobre Nós</h1>
-            <p>Sejam bem-vindos ao <strong>Eco Point</strong>, o site criado e pensado para um projeto da faculdade Unisuam para o curso Análise e Desenvolvimento de Sistemas, porém imaginamos que poderá ir além.</p> 
-            
-            <img src="/ecoPoint/public/imagens/fotosobrenos1.jpg" alt="Primeira imagem ilustrativa do site Unsplash">
-    
-            <p>Somos uma equipe apaixonada por sustentabilidade e tecnologia, acreditando que pequenas ações podem gerar grandes transformações. Desde o início, nosso compromisso tem sido criar soluções inovadoras que impactem positivamente nossa comunidade.</p>
-            <p>Acreditamos que a participação ativa da comunidade é fundamental para o sucesso de qualquer iniciativa. Por isso, promovemos um ambiente aberto, onde todos podem contribuir e participar do processo (nossos contatos estão no fim da página).</p>
-            <p>A Eco Point foi criada com a necessidade urgente de enfrentar o crescente problema dos resíduos eletrônicos e de promover um futuro mais sustentável.</p>
-            <p>No mundo atual, a tecnologia evolui rapidamente, mas essa evolução traz consigo um desafio crescente: o descarte inadequado de resíduos eletrônicos. Com o aumento do consumo de dispositivos, a quantidade de lixo eletrônico gerada anualmente atinge níveis alarmantes. Cientes dessa realidade, nós decidimos agir.</p>
-            <p>Desde alguns meses, trabalhamos para conscientizar a comunidade sobre a importância da reciclagem de equipamentos eletrônicos, como celulares, computadores e eletrodomésticos. Garantindo que materiais valiosos sejam reaproveitados e que substâncias tóxicas sejam descartadas de maneira segura.</p>
-            <p>Acreditamos que a educação é fundamental. Com uma missão clara de promover a reciclagem e o reaproveitamento de materiais, buscamos transformar a forma como as pessoas pensam e lidam com os produtos tecnológicos que já não utilizam mais. Por isso, oferecemos palestras e campanhas informativas para engajar a população e promover práticas sustentáveis. Além disso, colaboramos com empresas e organizações locais para criar pontos de coleta e facilitar o descarte adequado de eletrônicos.</p>
-            <p>Estamos comprometidos em construir um futuro mais verde e saudável para todos.</p>
-    
-            <img src="/ecoPoint/public/imagens/fotosobrenos.jpg" alt="Imagem ilustrativa do site Unsplash">
-            <p><strong>Nosso projeto tem como foco três pilares principais:</strong></p>
-            <p>- Conscientização: Acreditamos que a educação é a chave para a mudança. Realizamos palestras e campanhas de sensibilização para informar a população sobre os impactos ambientais do lixo eletrônico e a importância da reciclagem. Queremos empoderar indivíduos e comunidades a tomarem decisões mais sustentáveis.</p>
-            <p>- Coleta e Reciclagem: Colaboramos com empresas e instituições para estabelecer pontos de coleta de eletrônicos, facilitando o descarte correto.</p>
-            <p>- Inovação e Pesquisa: Estamos sempre em busca de novas tecnologias e métodos que possam aprimorar nossos processos de reciclagem. Investimos em pesquisa para entender melhor o ciclo de vida dos produtos eletrônicos e como podemos maximizar o reaproveitamento de seus componentes.</p>
-            <p><strong>Nosso Compromisso</strong></p>
-            <p>No Eco Point, estamos comprometidos não apenas em reduzir o impacto ambiental dos resíduos eletrônicos, mas também em promover uma cultura de responsabilidade e cuidado com o planeta. Acreditamos que cada pequeno gesto conta e que, juntos, podemos fazer uma grande diferença.</p>
-            <p>Participe Conosco!</p>
+    <main>
+        
+        <h1 id="titulo">Sobre Nós</h1>
+        <section id="elementos">
+
+            <section id="container-img">
+                <img src="./public/imagens/reciclagem-simbolo2.png" alt="">
+            </section>
+            <section id="container-sobrenos">
+                <h2>Bem-vindos ao Eco Point!</h2>
+                <p>Este projeto nasceu na Unisuam, no curso de Análise e Desenvolvimento de Sistemas, com a missão de ir além do ambiente acadêmico.</p>
+                <p>Somos movidos pela sustentabilidade e pela tecnologia, acreditando que pequenas ações podem gerar grandes mudanças. Nosso foco é conscientizar sobre o descarte correto de resíduos eletrônicos, como celulares, computadores e eletrodomésticos, promovendo a reciclagem e o reaproveitamento de materiais.</p>
+                <p>Criamos este site para facilitar o acesso a pontos de coleta e estimular práticas mais responsáveis com o meio ambiente. Também realizamos campanhas e parcerias para informar e engajar a comunidade.</p>
+                <p>Juntos, podemos construir um futuro mais verde e saudável.</p>
+            </section>
+
         </section>
-        <br>
-        <br>
-        <footer>
-            <div class="footer-container">
+
+        <img src="/ecoPoint/public/imagens/fotosobrenos.jpg" alt="Imagem ilustrativa do site Unsplash">
+
+        <h2>Nossos Pilares</h2>
+
+        <p>O Eco Point se baseia em três pilares principais:</p>
+
+        <p><strong>Conscientização:</strong> Promovemos palestras e campanhas educativas para informar sobre os impactos do lixo eletrônico e incentivar práticas sustentáveis.</p>
+
+        <p><strong>Coleta e Reciclagem:</strong> Estabelecemos pontos de coleta em parceria com empresas e instituições, facilitando o descarte correto de eletrônicos.</p>
+
+        <p><strong>Inovação e Pesquisa:</strong> Buscamos constantemente novas soluções para aprimorar a reciclagem e o reaproveitamento de componentes eletrônicos.</p>
+
+        <h2>Nosso Compromisso</h2>
+
+        <p>Estamos empenhados em reduzir o impacto ambiental e fortalecer a cultura da responsabilidade ecológica. Acreditamos que cada atitude conta — e que juntos podemos transformar o mundo.</p>
+
+        <p>Participe com a gente!</p>
+    </main>
+        
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 class="integrantes">Integrantes</h3>
+                <ul class="lista">
+                    <li class="nome">Alessandra Cristina da Silva Pereira</li>
+                    <li class="nome">Bryan Caristiati Costa</li>
+                    <li class="nome">Eric Luiz Xavier de Araujo</li>
+                    <li class="nome">Daniel Jesus Dias Alves</li>
+                    <li class="nome">Gabriel Araújo de Oliveira</li>
+                </ul>
+            </div>
+            <div class="contatos">
+                <h3 class="contatos">Contatos</h3>
                 <div>
-                    <h3 class="integrantes">Integrantes</h3>
-                    <ul class="lista">
-                        <li class="nome">Alessandra Cristina da Silva Pereira</li>
-                        <li class="nome">Bryan Caristiati Costa</li>
-                        <li class="nome">Eric Luiz Xavier de Araujo</li>
-                        <li class="nome">Daniel Jesus Dias Alves</li>
-                        <li class="nome">Gabriel Araújo de Oliveira</li>
-                    </ul>
-                </div>
-                <div class="contatos">
-                    <h3 class="contatos">Contatos</h3>
-                    <div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(21) 96444-3878</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-instagram"></i>
-                            <span>@ecopoint_recicle</span> 
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>ecopointverde@gmail.com</span>
-                        </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(21) 96444-3878</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@ecopoint_recicle</span> 
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ecopointverde@gmail.com</span>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+
     <!--Menu de Acessibilidade-->
     <div id="menu-acessibilidade" class="menu-acessibilidade">
         <div class="btnAbre" onclick="toggleAcessMenu()">

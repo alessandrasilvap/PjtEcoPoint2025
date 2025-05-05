@@ -1,26 +1,94 @@
-.sessoes {
-    padding: 10px; /*Espaçamento entre o conteudo e borda*/
-    display: flex; /*Utilizada para organizar os elementos*/
-    justify-content: flex-end; /*Alinha os itens flexíveis no final do eixo principal do contêiner flexível*/
-    align-items: center; /*Controlar o alinhamento de itens*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+*, html {
+  font-family: 'Montserrat', 'Arial', 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
 }
 
-.user {
-    list-style: none; /*Remove os marcadores padrão de todas as listas de um site*/
-    display: flex; /*Utilizada para organizar os elementos*/
-    margin: 0; /*Margem lateral*/
-    padding: 0; /*Espaçamento entre o conteudo e borda*/
+header { /*Imagem no topo*/
+  display: flex;
+  flex-direction: row;
+  padding: 3em; /*Espaçamento entre o conteudo e borda*/
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.sessoes{
+  margin-left: 50px;
+ 
 }
 
 .usuario {
-    margin: 0 10px; /*Margem lateral*/
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #008049;
+  padding: 12px 14px;
+  border-radius: 15px;
+  margin: 0 10px; /*Margem lateral*/
+}
+
+.user {
+  list-style: none; /*Remove os marcadores padrão de todas as listas de um site*/
+  display: flex; /*Utilizada para organizar os elementos*/
+  margin: 0; /*Margem lateral*/
+  padding: 0; /*Espaçamento entre o conteudo e borda*/
 }
 
 .sair {
-    color: black; /*Cor do texto*/
-    text-decoration: none; /*Remove o sublinhado de links*/
+  color: black; /*Cor do texto*/
+  text-decoration: none; /*Remove o sublinhado de links*/
+  padding: 0px;
 }
 
 .sair:hover { 
-    color: white; /*Cor do texto*/
+  color: #008049; /*Cor do texto*/
 }
+
+#user-icon {
+  width: 30px;
+}
+
+#logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#menu { /*Menu no topo da página*/
+    margin-left: 100px;
+    /* padding: 14px; */
+    /* text-indent: 40px; */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  
+}
+
+
+ #borda-menu {
+  border: 2px solid #008049;
+  padding: 20px 0px;
+  /* width: 102%; */
+  text-align: center;
+  border-radius: 20px;
+  background-color: #008049;
+ }
+
+a { /*Os links no menu*/
+  color: rgb(255, 255, 255);
+  padding: 0px 39px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease; 
+}
+
+a:hover {
+  color: #60cc96;
+}
+
+.selecionado {
+  color: #60cc96;
+}
+

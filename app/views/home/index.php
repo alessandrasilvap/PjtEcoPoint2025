@@ -15,6 +15,26 @@
 <body>
     <header></header>
     <br>
+
+    <div class="bolinha">
+    </div>
+    <div class="bolinha-dois">
+    </div>
+    <main class="conteudo">
+        <section class="elementos">
+            <img src="./public/imagens/logo-ecopoint-dark.png" alt="imagem da logo aqui" class="logo">
+            <div class="elemento-texto">
+                <h1 id="titulo-ecopoint">Eco Point</h1>
+                <p id="paragrafo-ecopoint">Soluções responsáveis para o descarte eletrônico</p>
+                <div id="elemento-botao">
+                    <button type="button" id="btn-comece">
+                        Comece aqui
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+
     <div class="conteudo">
         <nav class="col-2 menu">
             <ul>
@@ -26,6 +46,7 @@
             <p class="chamada">Comece agora! Clique em <strong>CADASTRE-SE</strong> ou <strong>ENTRAR</strong> para acessar nossos recursos.</p> 
             <hr>
         </div>
+
         <br>
         <br>
         <div class="col-s-12">

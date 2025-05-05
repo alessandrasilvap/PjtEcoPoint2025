@@ -6,24 +6,31 @@
     <title>Informações - Eco Point</title>
     <link rel="shortcut icon" href="/ecoPoint/public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
     <link rel="stylesheet" href="/ecoPoint/public/css/informacoes.css"> <!--Código CSS do site todo-->
+    <link rel="stylesheet" href="/ecoPoint/public/css/menu.css"> <!--Código CSS do site todo-->
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Link para utilização de ícones Font Awesome-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols para o painel de acessibilidade e da caixa de feedback-->
 </head>
 <body>
-    <header>  <!-- Aqui fica a foto do Eco point, hospedada no CSS --> </header>
-    <div class="conteudo">
+    <header>
+        <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav id="menu">
-            <ul class="menu3">
-                <a href="<?= BASE_URL ?>/sobre">Sobre Nós</a>
-                <a href="<?= BASE_URL ?>/Informacoes">Informações</a>
-                <a href="<?= BASE_URL ?>/ongs">Ong's</a>
-                <a href="<?= BASE_URL ?>/mapa">Mapa</a>
+            <div id="borda-menu">
+                <a href="<?= BASE_URL ?>/sobre" class="link ">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/Informacoes" class="link selecionado">Informações</a>
+                <a href="<?= BASE_URL ?>/ongs" class="link">Ong's</a>
+                <a href="<?= BASE_URL ?>/mapa" class="link">Mapa</a>
+            </div>
+        </nav>
+        <nav class="sessoes">
+            <ul class="user">
+                <li class="usuario" id="btnPerfil"><img src="./public/imagens/user-icon.png" alt="" id="user-icon"> <?= $_SESSION['usuario']['login']; ?></li>
+                <li class="usuario"><a href="/ecoPoint/logout" class="sair">🔓 Logout</a></li>
             </ul>
         </nav>
-        <br>
-        <br>
-        <br>
+    </header>
+    <main class="conteudo">
+
         <section>
             <h1>Informações</h1>
             <p>A reciclagem eletrônica, ou e-waste recycling, é o processo de reaproveitamento de dispositivos eletrônicos que chegaram ao fim de sua vida útil. Esse tipo de reciclagem é importante por várias razões:</p>
@@ -90,38 +97,38 @@
             <img class="imagre" src="/ecoPoint/public/imagens/canvain.png" alt="Recicle">
         </section>
         <br>
-        <footer>
-            <div class="footer-container">
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 class="integrantes">Integrantes</h3>
+                <ul class="lista">
+                <li class="nome">Alessandra Cristina da Silva Pereira</li>
+                    <li class="nome">Bryan Caristiati Costa</li>
+                    <li class="nome">Eric Luiz Xavier de Araujo</li>
+                    <li class="nome">Daniel Jesus Dias Alves</li>
+                    <li class="nome">Gabriel Araújo de Oliveira</li>
+                </ul>
+            </div>
+            <div class="contatos">
+                <h3 class="contatos">Contatos</h3>
                 <div>
-                    <h3 class="integrantes">Integrantes</h3>
-                    <ul class="lista">
-                    <li class="nome">Alessandra Cristina da Silva Pereira</li>
-                        <li class="nome">Bryan Caristiati Costa</li>
-                        <li class="nome">Eric Luiz Xavier de Araujo</li>
-                        <li class="nome">Daniel Jesus Dias Alves</li>
-                        <li class="nome">Gabriel Araújo de Oliveira</li>
-                    </ul>
-                </div>
-                <div class="contatos">
-                    <h3 class="contatos">Contatos</h3>
-                    <div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(21) 96444-3878</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-instagram"></i>
-                            <span>@ecopoint_recicle</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>ecopointverde@gmail.com</span>
-                        </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(21) 96444-3878</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@ecopoint_recicle</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ecopointverde@gmail.com</span>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <!--Menu de Acessibilidade-->
     <div id="menu-acessibilidade" class="menu-acessibilidade">
         <div class="btnAbre" onclick="toggleAcessMenu()">

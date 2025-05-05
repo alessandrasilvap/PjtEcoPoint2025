@@ -1,3 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+*, html {
+  font-family: 'Montserrat', 'Arial', 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #09434b;
+  background-image: url(../imagens/fotodofundo-recortada.png); /*Imagem*/
+ /*Colocando a imagem no centro*/
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  background-size: cover;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem-logo {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.texto-logo {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+  color: white;
+  margin: 17px -46px;
+}
+
+#conteudo > .form { /*Formatação da caixa no meio*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 325px;
+  height: 400px;
+  border-radius: 5%;
+  box-sizing: border-box;
+  gap: 16px;
+  background-color: rgba(0, 128, 73, 0.233);
+  border: 1px solid rgba(46, 121, 88, 0.767);
+  box-shadow: 1px 1px 1px black;
+  margin-bottom: 30px;
+}
+/*  */
+h1 { /*Título*/
+  color: rgb(255, 255, 255); /*Cor do texto*/
+  margin-left: 6px; /*Move o título 6px para a esquerda*/
+  margin-top: 2%; /*Move o título 2% para baixo*/
+  
 body { /*Imagem de fundo*/
   background-image: url(../imagens/fotodofundo.png); /*Imagem*/
   background-repeat: no-repeat; /*Se a imagem será repetida ou não*/
@@ -5,6 +68,7 @@ body { /*Imagem de fundo*/
   background-size: cover; /*Ajusta a imagem*/
   height: 100vh; /*Altura total da tela*/
   margin: 0; /*Remove margem*/
+
 }
 
 
@@ -83,9 +147,6 @@ a { /*Links*/
   margin-left: 2px; /*Move ambos o texto 2px para a esquerda*/
   font-family: 'Times New Roman', Times, serif; /*Fonte do texto*/
 }
-
-
-
 
 
 /*Responsividade*/

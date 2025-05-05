@@ -24,6 +24,10 @@ class LoginController extends Controller {
 
         // Consulta o banco
         $usuarioDAO = new UsuarioDAO();
+
+        //Chama o método para buscar o usuário pelo login
+
+
         $usuario = $usuarioDAO->buscarPorLogin($login);
 
         // Verifica o usuário e a senha
@@ -31,7 +35,7 @@ class LoginController extends Controller {
             $_SESSION['usuario'] = [
                 'id' => $usuario['id'],
                 'nome' => $usuario['nome'],
-                'email' => $usuario['email']
+                'login' => $usuario['login']
             ];
 
             // Sucesso: retorna JSON indicando login válido

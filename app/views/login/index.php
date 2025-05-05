@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
 </head>
 <body>
+
+    
+        <section id="logo">
+            <img src="./public/imagens/logo-ecopoint-dark.png" alt="imagem da logo aqui" class="imagem-logo">
+            <p class="texto-logo">Conecte-se para fazer a diferença</p>
+        </section>
+        <section id="conteudo">
+            <form action="/ecoPoint/login/autenticar" method="POST" autocomplete="off" novalidate class="form">
     <div class="conteudo">
         <form action="/ecoPoint/login/autenticar" method="POST" autocomplete="off" target="_blank" novalidate>
         <?php if (isset($_SESSION['erro_login'])): ?>
@@ -21,6 +29,7 @@
             <div id="mensagemErro" style="display: none; color: white; background-color: #d9534f; padding: 10px; border-radius: 5px; margin-top: 15px; text-align: center;"></div>
         <?php endif; ?>
             <div id="comeco">
+
                 <h1>Login</h1>
                 <input type="text" id="usuario" name="login" placeholder="Usuário:" maxlength="10" size="31">
                 <br>

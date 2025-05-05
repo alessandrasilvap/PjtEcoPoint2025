@@ -14,6 +14,69 @@ header { /*Imagem no topo*/
 }
 
 
+
+header > nav > a { /*Links*/
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 50px;
+  color: white; /*Cor do texto*/
+  text-decoration: none; /*Remove o sublinhado*/
+  z-index: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav > .link:hover {
+  color: #43a8b6;
+}
+
+body {
+  background-color: #09434b;
+  background-image: url(../imagens/fotodofundo-cadastro.png); /*Imagem*/
+ /*Colocando a imagem no centro*/
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  background-size: contain;
+}
+
+.logo {
+  width: 435px;
+  margin: 0 50px 15px 50px;
+  border-radius: 50%;
+  padding: 20px;
+  border: 2px solid rgb(7, 185, 142);
+}
+
+
+.bolinha {
+  position: absolute;
+  background-color: rgba(10, 78, 83, 0.568);
+  border-radius: 50%;
+  height: 750px;
+  width: 750px;
+  top: -387px;
+  right: -57px;
+  z-index: -1;
+  
+}
+
+.bolinha-dois {
+  position: absolute;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  right: -69px;
+  z-index: -1;
+  border: 2px solid rgb(7, 185, 142);
+}
+
+.elementos {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 120px;
+}
+
+
 .menu li {
   padding: 8px; /*Espaçamento entre o conteudo e borda*/
   margin-bottom: 7px; /*Margem inferior*/
@@ -99,8 +162,11 @@ button:hover, .lermais:hover {
 
 p { /*O texto escrito no site*/
   font-size: 127%; /*Tamanho do texto*/
+
+
   font-family: 'Times New Roman', Times, serif; /*Fonte*/
   margin-left: 7%; /*Move o texto 7% para a esquerda*/
+
   flex: 1; /*Alinha espaços*/
 }
   

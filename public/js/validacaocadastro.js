@@ -1,11 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
-    //Agora o script só será executado após o carregamento do DOM
-    const formCadastro = document.getElementById("formCadastro");
 
-    if (formCadastro) {
-        formCadastro.addEventListener("submit", validarcadastro);
+function formatarCPF(input) {
+    let cpf = input.value.replace(/\D/g, '');
+
+    if (cpf.length > 11) cpf = cpf.slice(0, 11);
+
+    if (cpf.length > 9) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, "$1.$2.$3-$4");
+    } else if (cpf.length > 6) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{1,3})/, "$1.$2.$3");
+    } else if (cpf.length > 3) {
+        cpf = cpf.replace(/(\d{3})(\d{1,3})/, "$1.$2");
     }
-});
+
+
+    input.value = cpf;
+}
+
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
 
 function validarcadastro(event) {
     event.preventDefault(); //Impede o envio do formulário caso o formulário esteja errado
@@ -24,24 +38,35 @@ function validarcadastro(event) {
     //Verifica se todos os campos obrigatórios foram preenchidos
     if (nomecompleto === '' || datanascimento === '' || confirmasenha === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
         alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.');
+
         return false;
     }
 
-    //Verifica se as senhas coincidem
-    if (senha !== confirmasenha) {
-        alert('[ERRO] As senhas não coincidem.');
+    let soma = 0;
+
+    // Primeiro dígito verificador
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    let dv1 = 11 - (soma % 11);
+    if (dv1 >= 10) dv1 = 0;
+    if (dv1 !== parseInt(cpf.charAt(9))) {
         return false;
     }
 
-    //Valida CPF
-    if (!validarCPF(cpf)) {
+    // Segundo dígito verificador
+    soma = 0;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    let dv2 = 11 - (soma % 11);
+    if (dv2 >= 10) dv2 = 0;
+    if (dv2 !== parseInt(cpf.charAt(10))) {
         return false;
     }
 
-    //Envia o formulário
-    formCadastro.submit(); //Chama submit do formulário
+    return true;
 }
-
 
 
 //Formato XXXXX-XXX do CEP
@@ -56,7 +81,6 @@ function formatarCEP(input) {
     }
     input.value = cep;
 }
-
 
 
 document.getElementById('buscar').addEventListener('click', function() {
@@ -82,14 +106,11 @@ document.getElementById('buscar').addEventListener('click', function() {
 });
 
 
-
 document.getElementById('buscar').addEventListener('click', function() {
 document.getElementById('rua').textContent = '';
 document.getElementById('bairro').textContent = '';
 document.getElementById('cidade').textContent = '';
 });
-
-
 
 //Formato (XX) XXXXX-XXXX do TELEFONE
 function formatarTEL(input){
@@ -106,7 +127,49 @@ function formatarTEL(input){
     input.value = tel;
 }
 
+function validarEmail(email) {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
+}
 
+function validarIdade(dataNascimento) {
+    const data = new Date(dataNascimento);
+    const hoje = new Date();
+    const idade = hoje.getFullYear() - data.getFullYear();
+    const mes = hoje.getMonth() - data.getMonth();
+
+
+    if (mes < 0 || (mes === 0 && hoje.getDate() < data.getDate())) {
+        return idade - 1 >= 10;
+    }
+
+    return idade >= 10;
+}
+
+function validarcadastro(event) {
+     event.preventDefault();
+    console.log('Função validarcadastro chamada!');
+
+    const nomecompleto = document.getElementById('nomecompleto').value.trim();
+    const datanascimento = document.getElementById('datanascimento').value;
+    const usuario = document.getElementById('campousuario').value.trim();
+    const senha = document.getElementById('camposenha').value;
+    const confirmasenha = document.getElementById('confirmasenha').value;
+    const cep = document.getElementById('cep').value.trim();
+    const num = document.getElementById('num').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const cpf = document.getElementById('cpf').value.trim();
+    const email = document.getElementById('inserirEmail').value.trim();
+
+    if (!nomecompleto || !datanascimento || !usuario || !senha || !confirmasenha || !cep || !num || !tel || !cpf || !email) {
+        alert('[ERRO] Todos os campos são obrigatórios!');
+        return false;
+    }
+
+    if (!validarIdade(datanascimento)) {
+        alert('[ERRO] Você deve ter pelo menos 10 anos para continuar.');
+        return false;
+    }
 
 // Máscara ao digitar
 document.getElementById('cpf').addEventListener('input', function(e) {
@@ -158,37 +221,32 @@ function validarCPF(cpfStr) {
 }
 
 
+    if (senha !== confirmasenha) {
+        alert('[ERRO] As senhas não coincidem.');
+        return false;
+    }
 
-//Formato exemplo@email.com do E-mail
-function validarEmail(input) {
-    var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(input);
-/*expressão regular  
-- ^ : início da string
-- [a-zA-Z0-9._%+-]+ : caracteres permitidos antes do @ (letras, números, ., _, %, +, -)
-- @ : símbolo @
-- [a-zA-Z0-9.-]+ : caracteres permitidos após o @ (letras, números, ., -)
-- \. : ponto antes da extensão
-- [a-zA-Z]{2,} : extensão do domínio (letras, mínimo 2 caracteres)
-- $ : fim da string*/
+    if (!validarCPF(cpf)) {
+        alert('[ERRO] CPF inválido!');
+        return false;
+    }
+
+    if (!validarEmail(email)) {
+        alert('[ERRO] E-mail inválido!');
+        return false;
+    }
+
+    document.getElementById("formCadastro").submit();
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    //Agora o script só será executado após o carregamento do DOM
+    const formCadastro = document.getElementById("formCadastro");
 
-
-//Restrição de idade
-function validarIdade(dataNascimento) {
-    var data = new Date(dataNascimento); //A data de nascimento é convertida para um objeto
-    var dataAtual = new Date(); //Uma nova instância de Date é criada para obter a data atual
-    var anoAtual = dataAtual.getFullYear(); //O ano atual é extraído da data atual usando o método 'getFullYear()'
-    var anoNascimento = data.getFullYear();
-    
-    var idade = anoAtual - anoNascimento; //A idade é calculada subtraindo o ano de nascimento do ano atual.
-    
-    if (idade < 12) {
-      alert("Você deve ter pelo menos 10 anos para continuar.");
-      document.getElementById("datanascimento").value = ""; //Limpa o campo
-      return false;
-    } else {
-      return true;
+    if (formCadastro) {
+        formCadastro.addEventListener("submit", validarcadastro);
     }
+
+});
+
 }

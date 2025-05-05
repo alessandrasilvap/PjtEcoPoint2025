@@ -8,6 +8,21 @@ body { /*Imagem de fundo*/
 }
 
 
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #09434b;
+  background-image: url(../imagens/fotodofundo-recortada.png); /*Imagem*/
+ /*Colocando a imagem no centro*/
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  background-size: cover;
+}
+
+
+
 fieldset { /*Formatação da caixa no meio*/
   width: 40%; /*Largura*/
   height: 42%; /*Altura*/

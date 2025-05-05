@@ -6,23 +6,30 @@
     <title>Ong's - Eco Point</title>
     <link rel="shortcut icon" href="/ecoPoint/public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
     <link rel="stylesheet" href="/ecoPoint/public/css/ongs.css"> <!--Código CSS do site todo-->
+    <link rel="stylesheet" href="/ecoPoint/public/css/menu.css"> <!--Código CSS do site todo-->
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Link para utilização de ícones Font Awesome-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
 </head>
 <body>
-    <header></header>
-    <div class="conteudo">
+    <header>
+        <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav id="menu">
-            <ul class="menu4">
-                <a href="<?= BASE_URL ?>/sobre">Sobre Nós</a>
-                <a href="<?= BASE_URL ?>/Informacoes">Informações</a>
-                <a href="<?= BASE_URL ?>/ongs">Ong's</a>
-                <a href="<?= BASE_URL ?>/mapa">Mapa</a>
+            <div id="borda-menu">
+                <a href="<?= BASE_URL ?>/sobre" class="link">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/Informacoes" class="link">Informações</a>
+                <a href="<?= BASE_URL ?>/ongs" class="link selecionado">Ong's</a>
+                <a href="<?= BASE_URL ?>/mapa" class="link">Mapa</a>
+            </div>
+        </nav>
+        <nav class="sessoes">
+            <ul class="user">
+                <li class="usuario" id="btnPerfil"><img src="./public/imagens/user-icon.png" alt="" id="user-icon"> <?= $_SESSION['usuario']['login']; ?></li>
+                <li class="usuario"><a href="/ecoPoint/logout" class="sair">🔓 Logout</a></li>
             </ul>
         </nav>
-        <br>
-        <br>
+    </header>
+    <main>
         <section>
             <h1>ONG's</h1>
             <p>As ONGs de reciclagem eletrônica desempenham um papel importante na sustentabilidade, promovendo a coleta e o reaproveitamento de equipamentos eletrônicos. Elas trabalham para reduzir o impacto ambiental, conscientizar a população e facilitar o descarte correto de produtos eletrônicos, muitas vezes oferecendo oficinas, campanhas educativas e programas de reaproveitamento.</p>
@@ -36,40 +43,39 @@
             </ol>
             <p>Essas organizações muitas vezes colaboram com empresas e governos para desenvolver iniciativas que incentivem a reciclagem e o descarte responsável.</p>
         </section>
-        <br>
-        <br>
-        <footer>
-            <div class="footer-container">
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 class="integrantes">Integrantes</h3>
+                <ul class="lista">
+                <li class="nome">Alessandra Cristina da Silva Pereira</li>
+                    <li class="nome">Bryan Caristiati Costa</li>
+                    <li class="nome">Eric Luiz Xavier de Araujo</li>
+                    <li class="nome">Daniel Jesus Dias Alves</li>
+                    <li class="nome">Gabriel Araújo de Oliveira</li>
+                </ul>
+            </div>
+            <div class="contatos">
+                <h3 class="contatos">Contatos</h3>
                 <div>
-                    <h3 class="integrantes">Integrantes</h3>
-                    <ul class="lista">
-                    <li class="nome">Alessandra Cristina da Silva Pereira</li>
-                        <li class="nome">Bryan Caristiati Costa</li>
-                        <li class="nome">Eric Luiz Xavier de Araujo</li>
-                        <li class="nome">Daniel Jesus Dias Alves</li>
-                        <li class="nome">Gabriel Araújo de Oliveira</li>
-                    </ul>
-                </div>
-                <div class="contatos">
-                    <h3 class="contatos">Contatos</h3>
-                    <div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(21) 96444-3878</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-instagram"></i>
-                            <span>@ecopoint_recicle</span> 
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>ecopointverde@gmail.com</span>
-                        </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(21) 96444-3878</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@ecopoint_recicle</span> 
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ecopointverde@gmail.com</span>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+    
     <!--Menu de Acessibilidade-->
     <div id="menu-acessibilidade" class="menu-acessibilidade">
         <div class="btnAbre" onclick="toggleAcessMenu()">
