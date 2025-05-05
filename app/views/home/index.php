@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Point - Home</title>
+    <title>Eco Point</title>
     <link rel="shortcut icon" href="/ecoPoint/public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
     <link rel="stylesheet" href="/ecoPoint/public/css/inicial.css"> <!--Código CSS do site todo-->
     <link rel="stylesheet" href="/ecoPoint/public/css/quiz.css"><!--Código CSS do quiz dentro do site-->
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Link para utilização de ícones Font Awesome-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
+    <link rel="stylesheet" href="/ecoPoint/globalstyles.css">
 </head>
 <body>
-    <header>
-        <nav class="col-6 menu"> 
-            <a href="#home" class="link">Home</a>
-            <a href="#quiz" class="link">Quiz</a>   
-            <a href="<?= BASE_URL ?>/login" class="link">Login</a>
-            <a href="<?= BASE_URL ?>/cadastro" class="link">Cadastre-se</a>
-        </nav>
-    </header>
+    <header></header>
     <br>
+
     <div class="bolinha">
     </div>
     <div class="bolinha-dois">
@@ -39,14 +34,27 @@
             </div>
         </section>
         
+
+    <div class="conteudo">
+        <nav class="col-2 menu">
+            <ul>
+                <a href="<?= BASE_URL ?>/cadastro"><li>CADASTRE-SE</li></a>
+                <a href="<?= BASE_URL ?>/login"><li>ENTRAR</li></a>
+            </ul>
+        </nav>
+        <div class="col-3">
+            <p class="chamada">Comece agora! Clique em <strong>CADASTRE-SE</strong> ou <strong>ENTRAR</strong> para acessar nossos recursos.</p> 
+            <hr>
+        </div>
+
         <br>
         <br>
-        <!-- <div class="col-s-12">
+        <div class="col-s-12">
             <h1>Sobre Nós</h1>
             <p>Sejam bem-vindos ao <strong>Eco Point</strong>, o site criado e pensado para um projeto da faculdade Unisuam para o curso Análise e Desenvolvimento de Sistemas, porém imaginamos que poderá ir além.</p>
             <p>Somos uma equipe apaixonada por sustentabilidade e tecnologia, acreditando que pequenas ações podem gerar grandes transformações. Desde o início, nosso compromisso tem sido... <strong><a href="../html/telalogin.html" class="ler" target="_blank">Ler mais</a></p></strong>
-        </div> -->
-        <section class="noticias col 12 col-s-12">
+        </div>
+        <div class="noticias col 12 col-s-12">
             <br>
             <br>
             <br>
@@ -132,11 +140,11 @@
                 <div class="titulo">Reciclagem: lixo eletrônico e o descarte adequado no Brasil</div>
                 <a href="https://www.youtube.com/watch?app=desktop&v=YYWIc-gVoI4" class="lermais" target="_blank">Ler mais</a>
             </div>
-        </section>
+        </div>
         <br>
         <br>
         <!--QUIZ-->
-        <h2 id="quiz">Quiz Eco Point</h2>
+        <h2>Quiz Eco Point</h2>
         <p>Teste seu conhecimento sobre Reciclagem eletrônica! Você pode ser tornar um especialista no assunto. Participe do nosso Quiz Eco Point e descubra como você pode fazer a diferença!</p>
         <br>
         <div class="container">
@@ -156,7 +164,6 @@
         </div>
         <br>
         <br>
-    </main>
         <footer>
             <div class="footer-container">
                 <div>
@@ -188,6 +195,7 @@
                 </div>
             </div>
         </footer>
+    </div>
     <!--Menu de Acessibilidade-->
     <div id="menu-acessibilidade" class="menu-acessibilidade">
         <div class="btnAbre" onclick="toggleAcessMenu()">
