@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Point</title>
+    <title>Eco Point - Home </title>
     <link rel="shortcut icon" href="/ecoPoint/public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
     <link rel="stylesheet" href="/ecoPoint/public/css/inicial.css"> <!--Código CSS do site todo-->
     <link rel="stylesheet" href="/ecoPoint/public/css/quiz.css"><!--Código CSS do quiz dentro do site-->
@@ -13,14 +13,19 @@
     <link rel="stylesheet" href="/ecoPoint/globalstyles.css">
 </head>
 <body>
-    <header></header>
-    <br>
-
+<header>
+    <nav class="col-6 menu">
+        <a href="#home" class="link">Home</a>
+        <a href="#quiz" class="link">Quiz</a>
+        <a href="<?= BASE_URL ?>/login" class="link">Login</a>
+        <a href="<?= BASE_URL ?>/cadastro" class="link">Cadastre-se</a>
+    </nav>
+</header>
     <div class="bolinha">
     </div>
     <div class="bolinha-dois">
     </div>
-    <main class="conteudo">
+
         <section class="elementos">
             <img src="./public/imagens/logo-ecopoint-dark.png" alt="imagem da logo aqui" class="logo">
             <div class="elemento-texto">
@@ -33,27 +38,7 @@
                 </div>
             </div>
         </section>
-        
-
     <div class="conteudo">
-        <nav class="col-2 menu">
-            <ul>
-                <a href="<?= BASE_URL ?>/cadastro"><li>CADASTRE-SE</li></a>
-                <a href="<?= BASE_URL ?>/login"><li>ENTRAR</li></a>
-            </ul>
-        </nav>
-        <div class="col-3">
-            <p class="chamada">Comece agora! Clique em <strong>CADASTRE-SE</strong> ou <strong>ENTRAR</strong> para acessar nossos recursos.</p> 
-            <hr>
-        </div>
-
-        <br>
-        <br>
-        <div class="col-s-12">
-            <h1>Sobre Nós</h1>
-            <p>Sejam bem-vindos ao <strong>Eco Point</strong>, o site criado e pensado para um projeto da faculdade Unisuam para o curso Análise e Desenvolvimento de Sistemas, porém imaginamos que poderá ir além.</p>
-            <p>Somos uma equipe apaixonada por sustentabilidade e tecnologia, acreditando que pequenas ações podem gerar grandes transformações. Desde o início, nosso compromisso tem sido... <strong><a href="../html/telalogin.html" class="ler" target="_blank">Ler mais</a></p></strong>
-        </div>
         <div class="noticias col 12 col-s-12">
             <br>
             <br>
@@ -144,7 +129,7 @@
         <br>
         <br>
         <!--QUIZ-->
-        <h2>Quiz Eco Point</h2>
+        <h2 id="quiz">Quiz Eco Point</h2>
         <p>Teste seu conhecimento sobre Reciclagem eletrônica! Você pode ser tornar um especialista no assunto. Participe do nosso Quiz Eco Point e descubra como você pode fazer a diferença!</p>
         <br>
         <div class="container">
