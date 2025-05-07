@@ -41,7 +41,7 @@
                 Criar uma conta
             </button>
             
-            <p><a href="<?= BASE_URL ?>/senha" target="_blank">Esqueci minha senha</a></p>
+            <p><a href="<?= BASE_URL ?>/senha" target="_self">Esqueci minha senha</a></p>
             <p><a href="<?= BASE_URL ?>/home">Voltar à tela inicial</a></p>
     
         </form>
