@@ -1,4 +1,3 @@
-
 function formatarCPF(input) {
     let cpf = input.value.replace(/\D/g, '');
 
@@ -12,7 +11,6 @@ function formatarCPF(input) {
         cpf = cpf.replace(/(\d{3})(\d{1,3})/, "$1.$2");
     }
 
-
     input.value = cpf;
 }
 
@@ -20,25 +18,6 @@ function validarCPF(cpf) {
     cpf = cpf.replace(/\D/g, '');
 
     if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
-
-function validarcadastro(event) {
-    event.preventDefault(); //Impede o envio do formulário caso o formulário esteja errado
-
-    var nomecompleto = document.getElementById('nomecompleto').value;//
-    var datanascimento = document.getElementById('datanascimento').value;
-    var usuario = document.getElementById('campousuario').value;
-    var senha = document.getElementById('camposenha').value;
-    var confirmasenha = document.getElementById('confirmasenha').value;
-    var cep = document.getElementById('cep').value;
-    var num = document.getElementById('num').value;
-    var tel = document.getElementById('tel').value;
-    var cpf = document.getElementById('cpf').value;
-    var Inseriremail = document.getElementById('inserirEmail').value;
-
-    //Verifica se todos os campos obrigatórios foram preenchidos
-    if (nomecompleto === '' || datanascimento === '' || confirmasenha === '' || senha === '' || usuario === '' || cep === '' || num === '' || tel === '' || cpf === '' || Inseriremail === '') {
-        alert('[ERRO] Os campos são obrigatórios, por favor não deixe de preencher.');
-
         return false;
     }
 
@@ -138,7 +117,6 @@ function validarIdade(dataNascimento) {
     const idade = hoje.getFullYear() - data.getFullYear();
     const mes = hoje.getMonth() - data.getMonth();
 
-
     if (mes < 0 || (mes === 0 && hoje.getDate() < data.getDate())) {
         return idade - 1 >= 10;
     }
@@ -171,56 +149,6 @@ function validarcadastro(event) {
         return false;
     }
 
-// Máscara ao digitar
-document.getElementById('cpf').addEventListener('input', function(e) {
-    let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
-
-    // Aplica a máscara 000.000.000-00
-    if (value.length > 3 && value.length <= 6)
-        value = value.replace(/(\d{3})(\d+)/, '$1.$2');
-    else if (value.length > 6 && value.length <= 9)
-        value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
-    else if (value.length > 9)
-        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
-
-    e.target.value = value;
-});
-
-// Validação do CPF
-function validarCPF(cpfStr) {
-    let cpf = cpfStr.replace(/\D/g, ''); // Remove pontos e hífen
-
-    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
-        alert('CPF inválido!');
-        return false;
-    }
-
-    let soma = 0;
-    for (let i = 0; i < 9; i++) {
-        soma += parseInt(cpf.charAt(i)) * (10 - i);
-    }
-    let dv1 = (soma * 10) % 11;
-    if (dv1 === 10 || dv1 === 11) dv1 = 0;
-    if (dv1 !== parseInt(cpf.charAt(9))) {
-        alert('CPF inválido!');
-        return false;
-    }
-
-    soma = 0;
-    for (let i = 0; i < 10; i++) {
-        soma += parseInt(cpf.charAt(i)) * (11 - i);
-    }
-    let dv2 = (soma * 10) % 11;
-    if (dv2 === 10 || dv2 === 11) dv2 = 0;
-    if (dv2 !== parseInt(cpf.charAt(10))) {
-        alert('CPF inválido!');
-        return false;
-    }
-
-    return true;
-}
-
-
     if (senha !== confirmasenha) {
         alert('[ERRO] As senhas não coincidem.');
         return false;
@@ -246,7 +174,4 @@ document.addEventListener("DOMContentLoaded", function() {
     if (formCadastro) {
         formCadastro.addEventListener("submit", validarcadastro);
     }
-
 });
-
-}
