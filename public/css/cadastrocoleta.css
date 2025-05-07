@@ -1,0 +1,132 @@
+/* Container geral */
+.cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 2em auto;
+  padding: 0;
+}
+
+/* Caixa interna */
+#caixa {
+  width: 100%;
+}
+
+/* Títulos */
+h2, h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #468749;
+  text-align: center;
+}
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Campos padrão */
+input[type="text"], textarea {
+  width: 60%;
+  padding: 5px 8px;
+  margin: 6px auto;
+  font-size: 13px;
+  border-radius: 0.6em;
+  border: 1px solid #ccc;
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Textarea menor */
+textarea {
+  height: 50px;
+}
+
+/* Grupo CEP + botão Buscar */
+.cep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 60%;
+  margin: 6px auto;
+}
+
+.cep input {
+  flex: 2;
+}
+
+#buscar {
+  flex: 1;
+  min-width: 70px;
+  max-width: 80px;
+  height: 2rem;
+  background-color: #2c612f;
+  color: white;
+  font-size: 12px;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+}
+
+#buscar:hover {
+  background-color: #1a4729;
+}
+
+/* Grupo Número + Complemento */
+.numero-complemento {
+  display: flex;
+  gap: 6px;
+  width: 60%;
+  margin: 6px auto;
+}
+.numero-complemento input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Botão Enviar compacto */
+button[type="submit"] {
+  width: 140px;
+  background-color: #2c612f;
+  color: white;
+  font-size: 0.85rem;
+  margin: 1rem auto;
+  padding: 6px 0;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  display: block;
+}
+
+/* Hover padrão */
+input:hover, button:hover, textarea:hover {
+  border: 1px solid #468749;
+  box-shadow: 0 0 3px #468749;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cadastro {
+      width: 90%;
+  }
+
+  .cep-group,
+  .numero-complemento {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  input[type="text"],
+  textarea {
+      width: 90%;
+  }
+
+  button[type="submit"] {
+      width: 90%;
+  }
+}
