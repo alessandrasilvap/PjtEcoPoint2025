@@ -17,7 +17,7 @@
             <p class="texto-logo">Conecte-se para fazer a diferença</p>
         </section>
     <div id="conteudo">
-        <form action="/ecoPoint/login/autenticar" method="POST" autocomplete="off" target="_blank" novalidate class="form">
+        <form action="/ecoPoint/login/autenticar" method="POST" autocomplete="on" target="_blank" novalidate class="form">
             <?php if (isset($_SESSION['erro_login'])): ?>
             <div id="mensagemErro" style="color: white; background-color: #d9534f; padding: 10px; border-radius: 5px; margin-top: 15px; text-align: center;">
             <?= $_SESSION['erro_login'] ?>
