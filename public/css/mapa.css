@@ -17,14 +17,14 @@
 
 .comlurb, p {
   font-size: 127%; /*Tamanho da fonte*/
-  font-family: 'Times New Roman', Times, serif; /*Tipo de fonte*/
+
   margin: 20px; /*Espaçamento externo do elementos*/
 }
 
 
 h1 {
   color: #468749; /*Cor do texto*/
-  font-family: 'Times New Roman', Times, serif; /*Tipo de fonte*/
+
   font-size: 250%; /*Tamanho da fonte*/
 }
 
@@ -44,8 +44,10 @@ footer {
 }
 
 
+
 .integrantes, .contatos {
   margin: 0 20px; /*Espaçamento externo do elemento*/
+  color: white;
 }
 
 
