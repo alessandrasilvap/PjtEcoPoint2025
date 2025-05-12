@@ -87,88 +87,113 @@ footer {
 
 
 
+/* RESPONSIVIDADE */
 
-/*Responsividade*/
-/*Computadores*/
+/* Telas até 1280px */
 @media (max-width: 1280px) {
   .footer-container {
-    width: 60%; /*Largura*/
+    width: 60%;
   }
 }
 
-
+/* Telas até 1024px */
 @media (max-width: 1024px) {
   .footer-container {
-    margin-left: 150px; /*Move as caixas 150px para a esquerda*/
+    margin-left: 150px;
   }
 }
 
-
-/*Celulares*/
-@media(max-width: 450px) {
-  a {
-    font-size: 110%; /*Tamanho da fonte*/
-    padding: 5px 5px; /*Espaçamento entre o conteudo e borda*/
+/* Telas até 768px (NOVO BLOCO ADICIONADO) */
+@media (max-width: 768px) {
+  #map {
+    width: 90%;
+    height: 350px;
   }
 
   .footer-container {
-    margin-left: 2px; /*Move o texto 2px para a esquerda*/
+    flex-direction: column;
+    width: 90%;
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 200%;
+  }
+
+  .comlurb,
+  p {
+    font-size: 110%;
+  }
+
+  a {
+    font-size: 100%;
+    padding: 5px;
   }
 }
 
+/* Telas até 450px */
+@media (max-width: 450px) {
+  a {
+    font-size: 110%;
+    padding: 5px;
+  }
 
+  .footer-container {
+    margin-left: 2px;
+  }
+}
+
+/* Telas entre 480px e 540px */
 @media (min-width: 480px) and (max-width: 540px) {
   .footer-container {
-    margin-left: 90px; /*Move o texto 90px para a esquerda*/
-    font-size: 70%; /*Tamanho da fonte*/
+    margin-left: 90px;
+    font-size: 70%;
   }
 }
 
-
-@media(max-width: 375px) {
-  .menu5 {
-    text-indent: 10px; /*Recuo do texto*/
-  }
-
+/* Telas até 375px */
+@media (max-width: 375px) {
   a {
-    font-size: 90%; /*Tamanho da fonte*/
-    padding: 3px 3px; /*Espaçamento entre o conteudo e borda*/
+    font-size: 90%;
+    padding: 3px;
   }
 
   #map {
-    height: 300px; /*Altura*/
+    height: 300px;
   }
 
-  .comlurb, p {
-    font-size: 90%; /*Tamanho da fonte*/
+  .comlurb,
+  p {
+    font-size: 90%;
   }
 
   .footer-container {
-    margin-left: 30px; /*Move o texto 30px para a esquerda*/
-    font-size: 70%; /*Tamanho da fonte*/
+    margin-left: 30px;
+    font-size: 70%;
   }
 }
 
-@media(max-width: 344px) {
-  .menu5 {
-    text-indent: 10px; /*Recuo do texto*/
-  }
-
+/* Telas até 344px */
+@media (max-width: 344px) {
   a {
-    font-size: 90%; /*Tamanho da fonte*/
-    padding: 3px 3px; /*Espaçamento entre o conteudo e borda*/
+    font-size: 90%;
+    padding: 3px;
   }
 
   #map {
-    height: 300px; /*Altura*/
+    height: 300px;
   }
 
-  .comlurb, p {
-    font-size: 90%; /*Tamanho da fonte*/
+  .comlurb,
+  p {
+    font-size: 90%;
   }
 
-  .footer-container { 
-    margin-left: 25px; /*Move o texto 25px para a esquerda*/
-    font-size: 70%; /*Tamanho da fonte*/
+  .footer-container {
+    margin-left: 25px;
+    font-size: 70%;
   }
 }
+

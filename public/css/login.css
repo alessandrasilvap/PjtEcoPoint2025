@@ -121,119 +121,63 @@ a:hover {
 
 
 
-
-
-
-
-
-
-
-
-/*Responsividade*/
-/*Computadores*/
-@media (max-width: 1280px) {
-  #comeco {
-    width: 25%; /*Largura*/
-    height: 55%; /*Altura*/
-    left: 43%; /*Move a caixa 43% para a esquerda*/
-  }
-}
-
-
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   body {
-    background-position: top center; /*Define a posição inicial de uma imagem de fundo*/
+    background-position: top center;
+    padding: 20px;
   }
 
-  #comeco {
-    width: 40%; /*Largura*/
-    height: 60%; /*Altura*/
-    left: 29%; /*Move a caixa 34% para a esquerda*/
-    top: 25%; /*Move a caixa 25% para baixo*/
+  #logo {
+    margin-top: 20px;
   }
 
-  input[type="text"], input[type="password"] {
-    margin-left: 10px; /*Move ambos os inputs 9px para a esquerda*/
+  .imagem-logo {
+    width: 80px;
   }
 
-  button {
-    margin-left: 10px; /*Move ambos os inputs 9px para a esquerda*/
-  }
-}
-
-
-/*Tablets*/
-@media(min-width: 600px) and (max-width: 912px){
-  body {
-    background-position: top center; /*Define a posição inicial de uma imagem de fundo*/
+  .texto-logo {
+    font-size: 18px;
+    margin: 12px 0;
   }
 
-  #comeco {
-    width: 40%; /*Largura*/
-    height: 37%; /*Altura*/
-    left: 30%; /*Move a caixa 30% para a esquerda*/
-    top: 35%; /*Move a caixa 35% para baixo*/
+  #conteudo > .form {
+    width: 90%;
+    height: auto;
+    padding: 20px 10px;
+    gap: 12px;
+    border-radius: 10px;
   }
 
-  input[type="text"], input[type="password"] {
-    margin-left: 10px; /*Move ambos os inputs 9px para a esquerda*/
+  input, 
+  #botao-criar-conta, 
+  #botao-entrar {
+    font-size: 16px;
+    width: 90%;
+    height: 36px;
   }
 
-  button {
-    margin-left: 26px; /*Move ambos os inputs 9px para a esquerda*/
-  }
-}
-
-
-/*Celulares*/
-@media(max-width: 450px) {
-  body {
-    background-position: top center; /*Define a posição inicial de uma imagem de fundo*/
+  a {
+    font-size: 14px;
+    display: block;
+    margin: 5px 0;
+    text-align: center;
   }
 
-  #comeco {
-    width: 80%; /*Largura*/
-    height: 50%; /*Altura*/
-    left: 10%; /*Move a caixa 10% para a esquerda*/
-    top: 30%; /*Move a caixa 30% para baixo*/
-  }
-}
-
-
-@media (min-width: 480px) and (max-width: 540px) {
-  body {
-    background-position: top center; /*Define a posição inicial de uma imagem de fundo*/
+  .painel-acessibilidade,
+  .painel-feedback {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
   }
 
-  #comeco {
-    width: 60%; /*Largura*/
-    left: 20%; /*Move a caixa 20% para a esquerda*/
+  textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #mensagemErro {
+    font-size: 14px;
+    padding: 8px;
   }
 }
 
-
-@media(max-width: 375px) {
-  body {
-    background-position: top center; /*Define a posição inicial de uma imagem de fundo*/
-  }
-
-  #comeco {
-    width: 90%; /*Largura*/
-    height: 50%; /*Altura*/
-    left: 5%; /*Move a caixa 5% para a esquerda*/
-  }
-}
-
-
-@media(max-width: 344px) {
-  body { 
-    background-position: top center; /*Define a posição inicial de uma imagem de fundo*/
-  }
-
-  #comeco {
-    width: 95%; /*Largura*/
-    height: 50%; /*Altura*/
-    left: 2%; /*Move a caixa 2% para a esquerda*/
-    top: 30%; /*Move a caixa 30% para baixo*/
-  }
-}

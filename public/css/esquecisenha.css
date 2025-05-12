@@ -12,10 +12,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #09434b;
-  background-image: url(../imagens/fotodofundo-recortada.png); /*Imagem*/
+  background-image: url(../imagens/fotodofundo-cadastro.png); /*Imagem*/
  /*Colocando a imagem no centro*/
   background-repeat: no-repeat;
   overflow-x: hidden;
+  background-size: cover;
 }
 
 #logo {

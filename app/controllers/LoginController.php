@@ -8,6 +8,7 @@ class LoginController extends Controller {
     }
 
         public function autenticar() {
+    
         //Pega os dados enviados via POST
         $login = trim(strip_tags($_POST['login'] ?? ''));
         $senha = $_POST['senha'] ?? '';
@@ -24,6 +25,7 @@ class LoginController extends Controller {
 
         // Consulta o banco
         $usuarioDAO = new UsuarioDAO();
+
 
         //Chama o método para buscar o usuário pelo login
 

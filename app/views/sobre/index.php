@@ -15,6 +15,8 @@
     <header>
         <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav id="menu">
+            <button> <a href="/ecoPoint/app/views/crud">crud</a></button>
+            <button> <a href="/ecoPoint/app/views/editar/">editar</a></button>
             <div id="borda-menu">
                 <a href="<?= BASE_URL ?>/sobre" class="link selecionado">Sobre Nós</a>
                 <a href="<?= BASE_URL ?>/Informacoes" class="link">Informações</a>

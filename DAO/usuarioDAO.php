@@ -80,6 +80,21 @@ class UsuarioDAO {
             die("Erro ao atualizar a senha: " . $e->getMessage());
         }
     }
+    public function buscarPorId($id) {
+    $sql = "SELECT * FROM usuario WHERE id = :id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function atualizarNomeEmail($usuarioId, $login, $email) {
+    $sql = "UPDATE usuario SET login = ?, email = ? WHERE id = ?";
+    $stmt = $this->conn->prepare($sql);
+    return $stmt->execute([$login, $email, $usuarioId]);
+}
+
+
 }
 
 ?>

@@ -136,128 +136,41 @@ body {
 }
 
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .elementos-topo {
+    text-align: center;
+    padding: 2em 1em;
+    font-size: 0.9em;
+  }
 
+  .bolinha {
+    width: 100vw;
+    height: 100vw;
+    left: -30vw;
+    top: -50vw;
+  }
 
+  #informacoes-pessoais,
+  #informacoes-complementares,
+  #informacoes-acesso {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
 
-/*Responsividade*/
-/*Computadores*/
-@media (max-width: 1280px) {
+  .campo input,
+  .campo button {
+    width: 100%;
+  }
+
   #botoes {
-    margin-left: 150px; /*Move os botões 15px para a esquerda*/
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px 0;
   }
 
-  .cadastro {
-    width: 60%; /*Largura*/
-  }
-}
-
-
-@media (max-width: 1024px) {
-  form {
-    margin-left: 25%; /*Move as caixas 5% para a esquerda*/
-  }
-
-  #botoes {
-    margin-right: 10em; /*Move os botões 10em para a direita*/
-  }
-
-  .cadastro {
-    width: 55%; /*Largura*/
-  }
-}
-
-
-/*Tablets*/
-@media(min-width: 600px) and (max-width: 912px){
-  form {
-    margin-left: 10%; /*Move as caixas 10% para a esquerda*/
-  }
-
-  #caixaesquerda, #caixadireita { /*Caixas que estão os campos*/
-    height: 60%; /*Altura*/
-  }
-
-  #botoes { /*Posição dos botões*/
-    margin-left: 150px; /*Move os botões 95px para a esquerda*/
-  }
-}
-
-
-/*Celulares*/
-@media(max-width: 450px) {
-  form {
-    margin-left: 5%; /*Move as caixas 3% para a esquerda*/
-  }
-
-  h2 {
-    font-size: 200%; /*Tamanho da letra*/
-  }
-  
-  h3 {
-    font-size: 90%; /*Tamanho da letra*/
-  }
-  
-  h4 {
-    font-size: 100%; /*Tamanho da letra*/
-  }
-
-  p {
-    font-size: 80%; /*Tamanho da letra*/
-  }
-
-  select {
-    font-size: 10px; /*Tamanho da letra*/
-  }
-
-  input, select, button, textarea {
-    height: 4%; /*Altura*/
-    max-width: 200px; /*Largura máxima*/
-  }
-
-  .cadastro {
-    width: 80%; /*Largura*/
-  }
-
-  #caixaesquerda, #caixadireita { /*Caixas que estão os campos*/
-    height: 35rem; /*Altura*/
-  }
-
-  #caixaesquerda input, #caixadireita input{
-    height: 1rem; /*Altura*/
-  }
-
-  #buscar {
-    width: 100px; /*Largura*/
-    height: 2rem; /*Altura*/
-  }
-}
-
-
-@media (min-width: 480px) and (max-width: 540px) {
-  form {
-    margin-left: 3%; /*Move as caixas 3% para a esquerda*/
-  }
-
-  .cadastro {
-    width: 90%; /*Largura*/
-  }
-
-  #botoes { /*Posição dos botões*/
-    margin-left: 95px; /*Move os botões 95px para a esquerda*/
-  }
-}
-
-
-@media(max-width: 360px) {
-  form {
-    margin-left: 2%; /*Move as caixas 2% para a esquerda*/
-  }
-
-  .cadastro {
-    width: 90%; /*Largura*/
-  }
-
-  #botoes { /*Posição dos botões*/
-    margin-left: 55px; /*Move os botões 55px para a esquerda*/
+  #formCadastro > .titulos {
+    font-size: 2rem;
+    text-align: center;
   }
 }

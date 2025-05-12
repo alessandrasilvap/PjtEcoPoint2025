@@ -18,6 +18,7 @@
 
         <section class="conteudo">
             <form action="" name="formularioesqueci" id="senhaForm" method="POST" autocomplete="off" novalidate>
+                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') echo 'Formulário enviado!'; ?>
                 <section class="titulos">
                     <p> Informe abaixo seu e-mail cadastrado e enviaremos um link de redefinição de senha através dele.</p>
                     <p> Obs: Não esqueça de checar o spam.</p>
@@ -25,7 +26,7 @@
 
                 <section class="input-email">
                     <label for="esquecisenha" hidden> E-mail </label>
-                    <input type="email" id="esquecisenha" name="email" placeholder="Digite seu e-mail cadastrado" size="50">
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail cadastrado" size="50">
                 </section>
 
                 <section class="botoes">
