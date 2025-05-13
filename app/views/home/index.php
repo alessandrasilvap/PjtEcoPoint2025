@@ -38,6 +38,46 @@
                 </div>
             </div>
         </section>
+
+
+        <section class="sessao-noticias">
+            <h1>O que acontece no mundo sustentável</h1>
+            <div class="card-container">
+                <div class="card">
+                    <img src="/ecoPoint/public/imagens/lixo-e.jpg" alt="">
+                    <div class="card-content">
+                        <h3>Brasil é o maior gerador de resíduo eletrônico da América do Sul</h3>
+                        
+                        <a href="" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/ecoPoint/public/imagens/lixo-e.jpg" alt="">
+                    <div class="card-content">
+                        <h3>Agenda 2030</h3>
+                        <p>A Agenda 2030 da ONU é um plano global para atingirmos em 2030 um mundo melhor para todos os povos e nações. (...)</p>
+                        <a href="" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/ecoPoint/public/imagens/imglink3.png" alt="">
+                    <div class="card-content">
+                        <h3>Card 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p>
+                        <a href="" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="card" onclick="alternarNotícias(this)">
+                    <img src="/ecoPoint/public/imagens/imglink1.png" alt="">
+                    <div class="card-content">
+                        <h3>Card 4</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p>
+                        <a href="" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     <div class="conteudo">
         <div class="noticias col 12 col-s-12">
             <br>
@@ -45,7 +85,7 @@
             <br>
             <div class="item" onclick="alternarNotícias(this)"> <!--OnClick é um evento do JavaScript que esta sendo chamado com o "this"-->
                 <img src="/ecoPoint/public/imagens/imglink1.png" alt="Imagem da Notícia 1" class="nova-image">
-                <div class="titulo"><p>Brasil é o maior gerador de resíduo eletrônico da América do Sul</p></div>
+                <div class="titulo"><p>O Brasil é o maior gerador de lixo eletronico da América do Sul</p></div>
                 <a href="https://monitormercantil.com.br/brasil-e-o-maior-gerador-de-residuos-eletronicos-na-america-do-sul/" class="lermais" target="_blank">Ler mais</a>
             </div>
     

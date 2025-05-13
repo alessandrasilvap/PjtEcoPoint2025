@@ -3,11 +3,11 @@
 *, html {
   font-family: 'Montserrat', 'Arial', 'Times New Roman', Times, serif;
   margin: 0;
+  padding: 0;
 }
 
 header{ /*Imagem no topo*/
   list-style-type: none; /*Remove os marcadores padrão de todas as listas de um site*/
-  
   text-align: center; /*Centraliza os itens*/
   font-size: 100%; /*Tamanho da fonte*/
   padding: 3em; /*Espaçamento entre o conteudo e borda*/
@@ -30,12 +30,14 @@ nav > .link:hover {
 }
 
 body {
+ 
+  height: 100vh;
   background-color: #09434b;
   background-image: url(../imagens/fotodofundo-recortada.png); /*Imagem*/
  /*Colocando a imagem no centro*/
   background-repeat: no-repeat;
   overflow-x: hidden;
-  background-size: contain;
+  background-size: auto;
 }
 
 .logo {
@@ -67,6 +69,7 @@ body {
   right: -69px;
   z-index: -1;
   border: 2px solid rgb(7, 185, 142);
+  overflow-x: hidden;
 }
 
 .elementos {
@@ -204,8 +207,61 @@ h2 {
   margin-top: 68%; /*Move o título 68% para baixo*/
 }
 
+.sessao-noticias {
+  padding: 48px 10px;
+}
 
+.sessao-noticias h1 {
+  margin-top: 50px;
+  text-align: center;
+  color: #fff;
+}
 
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.card {
+  width: 325px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.card-content .btn{
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  color: #fff;
+}
 
 
 
@@ -236,6 +292,7 @@ footer { /*Rodape completo*/
   background-color: #468749; /*Cor do fundo*/
   color: white; /*Cor do texto*/
   padding: 20px; /*Espaçamento entre o conteudo e borda*/
+  width: 100%;
 }
 
 
