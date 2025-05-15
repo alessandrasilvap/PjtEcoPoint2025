@@ -40,9 +40,8 @@
         </section>
 
 
-<<<<<<< HEAD
 
-=======
+
         <section class="sessao-noticias">
             <h1>O que acontece no mundo sustentável</h1>
             <div class="card-container">
@@ -80,7 +79,7 @@
                 </div>
             </div>
         </section>
->>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
+
 
     <div class="conteudo">
         <div class="noticias col 12 col-s-12">

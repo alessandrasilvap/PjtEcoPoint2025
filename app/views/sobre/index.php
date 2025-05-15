@@ -95,10 +95,9 @@
             <div class="user-submenu">
                 <a href="/ecoPoint/app/views/editar/editar_perfil.php"><i class="bi bi-pencil-fill"></i> Editar Perfil</a>
                 <a href="/ecoPoint/logout"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
-<<<<<<< HEAD
+
                 
-=======
->>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
+
             </div>
         </div>
     </div>
