@@ -3,11 +3,14 @@ session_start();
 require_once __DIR__ . '/../../../DAO/conexao.php';
 require_once __DIR__ . '/../../../DAO/usuarioDAO.php';
 
+<<<<<<< HEAD
 // Gera token CSRF se não existir
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
+=======
+>>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['id'])) {
     header("Location: /login/index.php");
@@ -32,6 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
 
     $usuarioDAO->atualizarNomeEmail($usuarioId, $login, $email);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
     // Atualiza a variável de sessão
     $_SESSION['usuario']['login'] = $login;
     $_SESSION['usuario']['email'] = $email;
@@ -41,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['atualizar'])) {
     unset($_SESSION['redirect_after_edit']);
     header("Location: $redirectTo?success=1");
     exit();
+<<<<<<< HEAD
     // -------------------------------------------------------
 
     //validação PHP:
@@ -92,12 +100,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
 }
 ?>
 
+=======
+
+
+}
+?>
+>>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Editar Perfil</title>
 </head>
+<<<<<<< HEAD
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <style>
 
@@ -201,11 +216,21 @@ button.btn-danger:hover {
 <h2>Editar Perfil</h2>
 <form method="POST" enctype="">
 
+=======
+ <link rel="stylesheet" href="/ecoPoint/public/css/editarPerfil.css">
+
+<body>
+
+<h2>Editar Perfil</h2>
+
+<form method="POST">
+>>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
     <label for="login">Nome:</label><br>
     <input type="text" id="login" name="login" value="<?php echo htmlspecialchars($usuario['login']); ?>" required><br><br>
 
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($usuario['email']); ?>" required><br><br>
+<<<<<<< HEAD
 <div class=".button-group">
     <button class="atualizar" type="submit" name="atualizar">Atualizar</button>
     <button type="button" id="btnExcluir" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir Conta</button>
@@ -237,6 +262,17 @@ document.getElementById('btnExcluir').addEventListener('click', function() {
     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
     <input type="hidden" name="excluirConta" value="1">
 </form>
+=======
+
+    <button type="submit" name="atualizar">Atualizar</button>
+</form>
+<?php if (isset($_POST['success'])): ?>
+    <p>Dados atualizados com sucesso!</p>
+<?php endif; ?>
+
+
+
+>>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
 </body>
 </html>
 

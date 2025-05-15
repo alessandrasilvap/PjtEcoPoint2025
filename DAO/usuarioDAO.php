@@ -93,6 +93,7 @@ class UsuarioDAO {
     $sql = "UPDATE usuario SET login = ?, email = ? WHERE id = ?";
     $stmt = $this->conn->prepare($sql);
     return $stmt->execute([$login, $email, $usuarioId]);
+<<<<<<< HEAD
     }
 
    public function excluirConta($id) {
@@ -106,6 +107,9 @@ class UsuarioDAO {
             return false;
         }
     }
+=======
+}
+>>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
 
 
 }
