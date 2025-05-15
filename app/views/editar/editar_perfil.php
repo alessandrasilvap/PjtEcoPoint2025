@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
         session_destroy();
 
         // Ajuste para caminho correto do login
-        header('Location: /ecoPoint/app/views/cadastro/index.php');
+        header('Location: /ecoPoint/');
         exit();
     } else {
         echo "Erro ao excluir a conta.";
