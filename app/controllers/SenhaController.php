@@ -18,10 +18,9 @@ class SenhaController extends Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $email = $_POST['email'];
-            $confirmaEmail = $_POST['confirma_email'];
 
             //Validação inicial
-            if (empty($email) || empty($confirmaEmail)) {
+            if (empty($email)) {
                 echo "<script>alert('Preencha todos os campos.'); window.history.back();</script>";
                 return;
             }
@@ -31,13 +30,6 @@ class SenhaController extends Controller {
                 echo "<script>alert('E-mail inválido.'); window.history.back();</script>";
                 return;
             }
-
-            //Confirmação de e-mail
-            if ($email !== $confirmaEmail) {
-                echo "<script>alert('Os e-mails não coincidem.'); window.history.back();</script>";
-                return;
-            }
-
 
             $usuarioDAO = new UsuarioDAO();
             $usuario = $usuarioDAO->buscarPorEmail($email);

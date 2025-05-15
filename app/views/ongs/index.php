@@ -10,23 +10,30 @@
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Link para utilização de ícones Font Awesome-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
-        <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav id="menu">
+            <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
             <div id="borda-menu">
-                <a href="<?= BASE_URL ?>/sobre" class="link">Sobre Nós</a>
+                <a href="<?= BASE_URL ?>/sobre" class="link selecionado">Sobre Nós</a>
                 <a href="<?= BASE_URL ?>/Informacoes" class="link">Informações</a>
-                <a href="<?= BASE_URL ?>/ongs" class="link selecionado">Ong's</a>
+                <a href="<?= BASE_URL ?>/ongs" class="link">Ong's</a>
                 <a href="<?= BASE_URL ?>/mapa" class="link">Mapa</a>
+
+                <div class="user-dropdown">
+                    <a class="user-button">
+                        <i class="bi bi-person-fill-check"></i>
+                        <?php echo htmlspecialchars($_SESSION['usuario']['login']); ?>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </a>
+                    <div class="user-submenu">
+                        <a href="/ecoPoint/app/views/editar/editar_perfil.php"><i class="bi bi-pencil-fill"></i> Editar Perfil</a>
+                        <a href="/ecoPoint/logout"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <nav class="sessoes">
-            <ul class="user">
-                <li class="usuario" id="btnPerfil"><img src="./public/imagens/user-icon.png" alt="" id="user-icon"> <?= $_SESSION['usuario']['login']; ?></li>
-                <li class="usuario"><a href="/ecoPoint/logout" class="sair">🔓 Logout</a></li>
-            </ul>
         </nav>
     </header>
     <main>
