@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/05/2025 às 04:37
+-- Tempo de geração: 13/05/2025 às 05:13
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -82,16 +82,17 @@ INSERT INTO `pontos_coleta` (`id`, `usuario_id`, `nome`, `endereco`, `estado`, `
 (34, 18, 'Ecoponto Metropolitano', 'Rua da Independência', 'Paraná', 'São Braz', '', '2025-05-04 18:36:56', 82310, 340, 'Esquina com a Rua Pedro Corrêa da Cruz', 'Curitiba', 'aprovado', -25.42130940, -49.36380760),
 (35, 18, 'DMT Reciclagem', 'Rua Francisco Derosso', 'Paraná', 'Xaxim', '', '2025-05-04 18:40:03', 81710, 3485, '', 'Curitiba', 'aprovado', -25.49656150, -49.27335040),
 (36, 18, 'Reeecicle', 'Rua da Aurora', 'Pernambuco', 'Boa Vista', '', '2025-05-04 18:41:55', 50050, 500, '', 'Recife', 'aprovado', -8.05962370, -34.88007970),
-(37, 18, 'Rapidosucata', 'Estrada do Pêssego', 'São Paulo', 'Colônia (Zona Leste)', '', '2025-05-04 18:43:01', 8260, 1000, '', 'São Paulo', 'aprovado', NULL, NULL),
+(37, 18, 'Rapidosucata', 'Estrada do Pêssego', 'São Paulo', 'Colônia (Zona Leste)', '', '2025-05-04 18:43:01', 8260, 1000, '', 'São Paulo', 'aprovado', -23.56971497, -46.44735160),
 (38, 18, 'E-lixo RJ – Vigário Geral', 'Rua Isidro Rocha', 'Rio de Janeiro', 'Vigário Geral', 'Não realizam coletas em residências.', '2025-05-04 19:00:05', 21241, 70, '', 'Rio de Janeiro', 'aprovado', -22.81011540, -43.31305360),
 (39, 18, 'Green Eletron', 'Estrada da Água Branca', 'Rio de Janeiro', 'Magalhães Bastos', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:01:53', 21735, 1160, '', 'Rio de Janeiro', 'aprovado', -22.86875390, -43.41935400),
-(40, 18, 'Green Eletron', 'Rua Rafael de Almeida Ribeiro', 'Maranhão', 'São Salvador', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:02:13', 65916, 600, '', 'Imperatriz', 'aprovado', NULL, NULL),
-(41, 18, 'Green Eletron', 'Avenida Santos Dumont', 'Bahia', 'Buraquinho', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:03:55', 42710, 7552, '', 'Lauro de Freitas', 'aprovado', NULL, NULL),
+(40, 18, 'Green Eletron', 'Rua Rafael de Almeida Ribeiro', 'Maranhão', 'São Salvador', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:02:13', 65916, 600, '', 'Imperatriz', 'reprovado', NULL, NULL),
+(41, 18, 'Green Eletron', 'Avenida Santos Dumont', 'Bahia', 'Buraquinho', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:03:55', 42710, 7552, '', 'Lauro de Freitas', 'aprovado', -12.86836652, -38.29651569),
 (42, 18, 'Green Eletron', 'Rua Otto Pfuetzenreuter', 'Santa Catarina', 'Costa e Silva', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:04:32', 89219, 59, '', 'Joinville', 'aprovado', -26.27308580, -48.87192890),
-(43, 18, 'Green Eletron', 'Rua Rosa Kasinski', 'São Paulo', 'Capuava', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:05:02', 9380, 1109, '', 'Mauá', 'aprovado', NULL, NULL),
+(43, 18, 'Green Eletron', 'Rua Rosa Kasinski', 'São Paulo', 'Capuava', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:05:02', 9380, 1109, '', 'Mauá', 'aprovado', -23.65798527, -46.49067397),
 (44, 18, 'Green Eletron', 'Rua José de Alencar', 'Minas Gerais', 'São Benedito', 'Coleta em casa: Disponível mediante solicitação.', '2025-05-04 19:05:34', 38022, 157, '', 'Uberaba', 'aprovado', -19.75737790, -47.93609730),
 (45, 18, 'Real Grandeza – Botafogo', 'Rua Mena Barreto', 'Rio de Janeiro', 'Botafogo', 'Possui ponto de arrecadação de lixo eletrônico na entrada do edifício-sede.', '2025-05-04 19:06:29', 22271, 143, '', 'Rio de Janeiro', 'aprovado', -22.95612810, -43.19067010),
-(46, 18, 'Central Log', 'Rua Edmundo Júnior', 'Rio de Janeiro', 'Parque Colúmbia', 'Oferece coleta gratuita para empresas e pessoas físicas.', '2025-05-04 19:07:11', 21535, 289, '', 'Rio de Janeiro', 'aprovado', -22.81569290, -43.34011070);
+(46, 18, 'Central Log', 'Rua Edmundo Júnior', 'Rio de Janeiro', 'Parque Colúmbia', 'Oferece coleta gratuita para empresas e pessoas físicas.', '2025-05-04 19:07:11', 21535, 289, '', 'Rio de Janeiro', 'aprovado', -22.81569290, -43.34011070),
+(47, 21, 'Shopping Nova América', 'Avenida Pastor Martin Luther King Jr', 'Rio de Janeiro', 'Del Castilho', 'No primeiro andar, atrás da praça de alimentação.\r\n\r\nApenas recebe.', '2025-05-13 02:45:53', 20765, 126, 'Shopping', 'Rio de Janeiro', 'aprovado', -22.87782434, -43.27150826);
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,9 @@ INSERT INTO `tokens_recuperacao` (`id`, `email`, `token`, `expiracao`, `usado`, 
 (27, 'alessandracris393@gmail.com', 'fb72e82b3cdec5b4a70fb9d4085e0cb3e610bff8d6ea532ab9a9bb14dd9190b8', '2025-05-04 03:54:46', 1, '2025-05-04 00:54:46', 18),
 (28, 'carlaaafsilva@gmail.com', 'cf397c4e3b4bd4ef62c7a74cf7f839b3917716cd1dcef243c86fbe3d6c3d4f72', '2025-05-04 17:23:07', 0, '2025-05-04 14:23:07', 20),
 (29, 'alessandracris393@gmail.com', 'e0c380e72984336bbf158d24f03450b84e3b9d742822ec97ede06375daa7fb7f', '2025-05-04 17:24:45', 1, '2025-05-04 14:24:45', 18),
-(30, 'alessandracris393@gmail.com', 'b78b3014ab520019975c4c04434b92b10d71269afbc3ca0cfa3ed5b105f52e92', '2025-05-06 02:21:10', 1, '2025-05-05 23:21:10', 18);
+(30, 'alessandracris393@gmail.com', 'b78b3014ab520019975c4c04434b92b10d71269afbc3ca0cfa3ed5b105f52e92', '2025-05-06 02:21:10', 1, '2025-05-05 23:21:10', 18),
+(31, 'alessandracris393@gmail.com', '5fe9f18208da3cade8723c3a4efa7c04278f4fffbd78af4e76fb783ce2461cff', '2025-05-13 05:16:54', 0, '2025-05-13 02:16:54', 18),
+(32, 'fc.alissa13@gmail.com', '4f9f9f49454f5e59c6bd02a654f347dd5373ec41e028a53b836511d4698d08fc', '2025-05-13 05:31:20', 0, '2025-05-13 02:31:20', 21);
 
 -- --------------------------------------------------------
 
@@ -155,7 +158,8 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `cpf`, `login`, `senha`, `endereco
 (11, 'Alessandra Pereira Dias1', 'alesilva@teste.com', '994.776.010-39', 'Ale_silva', '$2y$10$l/DvZXSMkYvA6ZFrciiw4u3372GgzCVVL0o8r3YQksOoUJlCiYVr.', 'Rua Castro Alves', 'Rio de Janeiro', 'Méier', 20775, 126, '301', 0, '2004-07-07', '2025-05-03 02:02:17'),
 (13, 'Larissa G Lima Dias', 'larissagld@gmail.com', '138.968.237-44', 'Lari_Dias', '$2y$10$by8b9e5eUHfBGSOWy9UU5ebQDZvLeEbeJyLIAnWvY9FsB6n.eHURi', 'Rua Castro Alves', 'Rio de Janeiro', 'Méier', 20775, 126, '08', 0, '2004-07-07', '2025-05-03 02:18:16'),
 (18, 'Alessandra Pereira Dias', 'alessandracris393@gmail.com', '480.074.190-47', 'Ale_dias', '$2y$10$upV4LQsIA9pK9BtkCPRwlOUtUK0Z9t0/0Nivinv1WwgQdNF1Bu9RC', '', '', '', 20775, 145, '04', 0, '2004-07-07', '2025-05-03 19:56:46'),
-(20, 'Carla Ferreira da Silva', 'carlaaafsilva@gmail.com', '813.017.700-51', 'Carla_sil', '$2y$10$SE5fV.uNDwWjpr9dEHAbqezRClCGGg4BFYVxfx7Oj2IK9X3vOlMsm', 'Rua Castro Alves', 'Rio de Janeiro', 'Méier', 20775, 126, '', 0, '2004-07-07', '2025-05-04 14:22:10');
+(20, 'Carla Ferreira da Silva', 'carlaaafsilva@gmail.com', '813.017.700-51', 'Carla_sil', '$2y$10$SE5fV.uNDwWjpr9dEHAbqezRClCGGg4BFYVxfx7Oj2IK9X3vOlMsm', 'Rua Castro Alves', 'Rio de Janeiro', 'Méier', 20775, 126, '', 0, '2004-07-07', '2025-05-04 14:22:10'),
+(21, 'Alissa Gabriela Cristina Pereira Dias', 'fcalissa13@gmail.com', '150.641.380-32', 'ali_dias', '$2y$10$b1u0Q1TwIjaDuYP1mAsRUOPKMLED5oLNJK1K3kFDLiTbqoJx28dh6', 'Rua Castro Alves', 'Rio de Janeiro', 'Méier', 20775, 164, 'Sem', 0, '2000-05-12', '2025-05-13 02:28:51');
 
 --
 -- Índices para tabelas despejadas
@@ -194,19 +198,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `pontos_coleta`
 --
 ALTER TABLE `pontos_coleta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de tabela `tokens_recuperacao`
 --
 ALTER TABLE `tokens_recuperacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restrições para tabelas despejadas
