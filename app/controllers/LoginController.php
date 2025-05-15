@@ -2,12 +2,15 @@
 
 require_once __DIR__ . '/../../DAO/usuarioDAO.php';
 
+
 class LoginController extends Controller {
     public function index() {
         $this->view('login/index'); // Carrega a página de login
     }
 
         public function autenticar() {
+     
+    
         //Pega os dados enviados via POST
         $login = trim(strip_tags($_POST['login'] ?? ''));
         $senha = $_POST['senha'] ?? '';
@@ -25,6 +28,7 @@ class LoginController extends Controller {
         // Consulta o banco
         $usuarioDAO = new UsuarioDAO();
 
+
         //Chama o método para buscar o usuário pelo login
 
 
@@ -32,6 +36,7 @@ class LoginController extends Controller {
 
         // Verifica o usuário e a senha
         if ($usuario && password_verify($senha, $usuario['senha'])) {
+            
             $_SESSION['usuario'] = [
                 'id' => $usuario['id'],
                 'nome' => $usuario['nome'],

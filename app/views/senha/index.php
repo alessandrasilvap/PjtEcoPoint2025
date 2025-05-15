@@ -24,8 +24,8 @@
                 </section>
 
                 <section class="input-email">
-                    <label for="esquecisenha" hidden> E-mail </label>
-                    <input type="email" id="esquecisenha" name="email" placeholder="Digite seu e-mail cadastrado" size="50">
+                    <label for="email" hidden> E-mail </label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail cadastrado" size="50" autocomplete="on">
                 </section>
 
                 <section class="botoes">

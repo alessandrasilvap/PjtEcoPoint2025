@@ -2,6 +2,7 @@
 
 require_once(__DIR__ . '/conexao.php');
 
+
 class UsuarioDAO {
     private $conn;
 
@@ -80,6 +81,33 @@ class UsuarioDAO {
             die("Erro ao atualizar a senha: " . $e->getMessage());
         }
     }
+    public function buscarPorId($id) {
+    $sql = "SELECT * FROM usuario WHERE id = :id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function atualizarNomeEmail($usuarioId, $login, $email) {
+    $sql = "UPDATE usuario SET login = ?, email = ? WHERE id = ?";
+    $stmt = $this->conn->prepare($sql);
+    return $stmt->execute([$login, $email, $usuarioId]);
+    }
+
+   public function excluirConta($id) {
+        $sql = "DELETE FROM usuario WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
 
 ?>

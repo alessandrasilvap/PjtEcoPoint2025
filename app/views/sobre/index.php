@@ -10,24 +10,97 @@
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Link para utilização de ícones Font Awesome-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
+<style>
+    #borda-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo do link principal */
+#borda-menu .link {
+    text-decoration: none;
+    color:rgb(255, 255, 255); /* Verde escuro */
+    font-weight: 500;
+    position: relative;
+}
+
+/* Dropdown container */
+.user-dropdown {
+    position: relative;
+}
+
+/* Estilo do botão do usuário */
+.user-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color:rgb(255, 255, 255); /* Verde escuro */
+    text-decoration: none;
+    
+}
+
+/* Submenu oculto por padrão */
+.user-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: #007049; /* Verde médio */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    min-width: 150px;
+    z-index: 10;
+}
+
+/* Links do submenu */
+.user-submenu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.user-submenu a:hover {
+    background-color: green;
+   
+}
+
+/* Exibir submenu ao passar o mouse */
+.user-dropdown:hover .user-submenu {
+    display: block;
+}
+
+</style>
 <body>
+    <!-- Botão com nome do usuário e ícone de lápis -->
     <header>
-        <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
-        <nav id="menu">
-            <div id="borda-menu">
-                <a href="<?= BASE_URL ?>/sobre" class="link selecionado">Sobre Nós</a>
-                <a href="<?= BASE_URL ?>/Informacoes" class="link">Informações</a>
-                <a href="<?= BASE_URL ?>/ongs" class="link">Ong's</a>
-                <a href="<?= BASE_URL ?>/mapa" class="link">Mapa</a>
+        <nav>
+    <div id="borda-menu">
+        <a href="<?= BASE_URL ?>/sobre" class="link selecionado">Sobre Nós</a>
+        <a href="<?= BASE_URL ?>/Informacoes" class="link">Informações</a>
+        <a href="<?= BASE_URL ?>/ongs" class="link">Ong's</a>
+        <a href="<?= BASE_URL ?>/mapa" class="link">Mapa</a>
+
+        <div class="user-dropdown">
+            <a class="user-button">
+                <i class="bi bi-person-fill-check"></i>
+                <?php echo htmlspecialchars($_SESSION['usuario']['login']); ?>
+                <i class="bi bi-caret-down-fill"></i>
+            </a>
+            <div class="user-submenu">
+                <a href="/ecoPoint/app/views/editar/editar_perfil.php"><i class="bi bi-pencil-fill"></i> Editar Perfil</a>
+                <a href="/ecoPoint/logout"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
+                
             </div>
-        </nav>
-        <nav class="sessoes">
-            <ul class="user">
-                <li class="usuario" id="btnPerfil"><img src="./public/imagens/user-icon.png" alt="" id="user-icon"> <?= $_SESSION['usuario']['login']; ?></li>
-                <li class="usuario"><a href="/ecoPoint/logout" class="sair">🔓 Logout</a></li>
-            </ul>
-        </nav>
+        </div>
+    </div>
+</nav>
+
     </header>
 
     <main>
