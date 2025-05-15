@@ -200,16 +200,7 @@ button.btn-danger:hover {
     box-shadow: 0 4px 15px rgba(255, 61, 61, 0.5);
 }
 
-
-
-
 </style>
-<body>
-<h2>Editar Perfil</h2>
-<form method="POST" enctype="">
-
- <link rel="stylesheet" href="/ecoPoint/public/css/editarPerfil.css">
-
 <body>
 
 <h2>Editar Perfil</h2>
@@ -217,20 +208,22 @@ button.btn-danger:hover {
 <form method="POST">
 
     <label for="login">Nome:</label><br>
-    <input type="text" id="login" name="login" value="<?php echo htmlspecialchars($usuario['login']); ?>" required><br><br>
+    <input type="text" id="login" name="login" value="<?php echo htmlspecialchars($usuario['login']); ?>" required maxlength="8"><br><br>
 
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($usuario['email']); ?>" required><br><br>
 
-<div class=".button-group">
-    <button class="atualizar" type="submit" name="atualizar">Atualizar</button>
-    <button type="button" id="btnExcluir" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir Conta</button>
-</div>
+    <div class=".button-group">
+        <button class="atualizar" type="submit" name="atualizar" id="atualizar">Atualizar</button>
+        <button type="button" id="btnExcluir" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir Conta</button>
+    </div>
 </form>
+
  <script src="/ecoPoint/public/js/editarPerfil.js"></script>
- 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
+
 document.getElementById('btnExcluir').addEventListener('click', function() {
     Swal.fire({
         title: 'Tem certeza?',
@@ -254,13 +247,9 @@ document.getElementById('btnExcluir').addEventListener('click', function() {
     <input type="hidden" name="excluirConta" value="1">
 </form>
 
-
-    <button type="submit" name="atualizar">Atualizar</button>
-</form>
 <?php if (isset($_POST['success'])): ?>
     <p>Dados atualizados com sucesso!</p>
 <?php endif; ?>
-
 
 </body>
 </html>

@@ -29,7 +29,7 @@
             
 
             <label for="usuario" hidden>Login</label>
-            <input type="text" id="usuario" name="login" placeholder="Usuário" maxlength="6" size="31">
+            <input type="text" id="usuario" name="login" placeholder="Usuário" maxlength="8" size="31">
 
             <label for="senha" hidden>Senha</label>
             <input type="password" id="senha" name="senha" placeholder="Senha" maxlength="8" size="31">

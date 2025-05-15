@@ -1,10 +1,8 @@
-
-<<<<<<< HEAD
 document.querySelector('form').addEventListener('submit', function(e) {
     const login = document.getElementById('login').value.trim();
     const email = document.getElementById('email').value.trim();
     let mensagens = [];
-
+    
     if (login === "") {
         mensagens.push("O nome não pode ser vazio.");
     }
@@ -17,11 +15,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
         e.preventDefault(); // Impede envio
         alert(mensagens.join("\n"));
     }
+
+
 });
 
-
-
-=======
-
- 
->>>>>>> f4c1993b7b009ff99a0aecef5e67669c7f4e1261
