@@ -227,6 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
             });
         });
     </script>
+
     <form id="formExcluir" method="POST" action="" style="display:none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
         <input type="hidden" name="excluirConta" value="1">

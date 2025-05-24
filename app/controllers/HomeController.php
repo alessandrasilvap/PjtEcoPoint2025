@@ -8,7 +8,7 @@ class HomeController extends Controller {
         // Carrega perguntas do banco
         $pdo = Conexao::getConexao();
         $quizModel = new Quiz($pdo);
-        $perguntas = $quizModel->getPerguntasComAlternativas();
+        $perguntas = $quizModel->buscarPerguntasQuiz(7);
 
         // Carrega a view com as perguntas
         $this->view('home/index', ['perguntas' => $perguntas]);

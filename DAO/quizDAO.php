@@ -3,41 +3,63 @@
 require_once(__DIR__ . '/conexao.php');
 
 class Quiz {
-    private $conn;
+    private $conexao;
 
     public function __construct() {
-        $this->conn = Conexao::getConexao(); //Função de conexão com o banco
+        $this->conexao = Conexao::getConexao();
     }
 
 
-    public function getPerguntasComAlternativas() {
-        $sql = "SELECT p.id AS pergunta_id, p.texto AS pergunta_texto, 
+    public function buscarPerguntasQuiz($limite = 5) { //Adicione um parâmetro para o limite
+        //Seleciona IDs de perguntas aleatórias
+        $sqlPerguntas = "SELECT id FROM perguntas ORDER BY RAND() LIMIT :limite";
+        $stmtPerguntas = $this->conexao->prepare($sqlPerguntas);
+        $stmtPerguntas->bindParam(':limite', $limite, PDO::PARAM_INT);
+        $stmtPerguntas->execute();
+        $idsPerguntas = $stmtPerguntas->fetchAll(PDO::FETCH_COLUMN); //Pega apenas os IDs
+
+        if (empty($idsPerguntas)) {
+            return []; //Nenhuma pergunta encontrada
+        }
+
+        //Converte o array de IDs para uma string para usar na cláusula IN
+        $idsString = implode(',', array_fill(0, count($idsPerguntas), '?'));
+
+        //Agora, seleciona as perguntas completas e suas alternativas usando os IDs selecionados
+        $sql = "SELECT p.id AS pergunta_id, p.texto AS pergunta_texto,
                        a.id AS alternativa_id, a.texto AS alternativa_texto, a.correta
                 FROM perguntas p
                 JOIN alternativas a ON p.id = a.pergunta_id
-                ORDER BY RAND()
-                LIMIT 12";
+                WHERE p.id IN ({$idsString})
+                ORDER BY FIELD(p.id, " . implode(',', $idsPerguntas) . ")"; //Mantém a ordem original das perguntas selecionadas randomicamente
 
-        $stmt = $this->conn->prepare($sql);
+        $stmt = $this->conexao->prepare($sql);
+
+        //Bind dos parâmetros dos IDs (para segurança, mesmo sendo INT)
+        foreach ($idsPerguntas as $k => $id) {
+            $stmt->bindValue(($k+1), $id, PDO::PARAM_INT);
+        }
+
         $stmt->execute();
-        $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $perguntas = [];
+        $perguntasFormatadas = [];
+        foreach ($resultados as $row) {
+            $perguntaId = $row['pergunta_id'];
 
-        foreach ($dados as $linha) {
-            $id = $linha['pergunta_id'];
-            if (!isset($perguntas[$id])) {
-                $perguntas[$id] = [
-                    'question' => $linha['pergunta_texto'],
+            if (!isset($perguntasFormatadas[$perguntaId])) {
+                $perguntasFormatadas[$perguntaId] = [
+                    'question' => $row['pergunta_texto'],
                     'answers' => []
                 ];
             }
-            $perguntas[$id]['answers'][] = [
-                'text' => $linha['alternativa_texto'],
-                'correct' => $linha['correta'] ? true : false
+            $perguntasFormatadas[$perguntaId]['answers'][] = [
+                'text' => $row['alternativa_texto'],
+                'correct' => (bool)$row['correta'] //Converte 0/1 para false/true
             ];
         }
-        return array_values($perguntas);
+        //Reindexar o array para que fique como um array numérico, não associativo por ID
+        return array_values($perguntasFormatadas);
     }
 }
 
