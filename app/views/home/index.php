@@ -13,19 +13,18 @@
     <link rel="stylesheet" href="/ecoPoint/globalstyles.css">
 </head>
 <body>
-<header>
-    <nav class="col-6 menu">
-        <a href="#home" class="link">Home</a>
-        <a href="#quiz" class="link">Quiz</a>
-        <a href="<?= BASE_URL ?>/login" class="link">Login</a>
-        <a href="<?= BASE_URL ?>/cadastro" class="link">Cadastre-se</a>
-    </nav>
-</header>
+    <header>
+        <nav class="col-6 menu">
+            <a href="#home" class="link">Home</a>
+            <a href="#quiz" class="link">Quiz</a>
+            <a href="<?= BASE_URL ?>/login" class="link">Login</a>
+            <a href="<?= BASE_URL ?>/cadastro" class="link">Cadastre-se</a>
+        </nav>
+    </header>
     <div class="bolinha">
     </div>
     <div class="bolinha-dois">
     </div>
-
         <section class="elementos">
             <img src="./public/imagens/logo-ecopoint-dark.png" alt="imagem da logo aqui" class="logo">
             <div class="elemento-texto">
@@ -45,7 +44,6 @@
                     <img src="/ecoPoint/public/imagens/lixo-eletronico.jpg" alt="">
                     <div class="card-content">
                         <h3>Brasil é o maior gerador de resíduo eletrônico da América do Sul</h3>
-                        
                         <a href="" class="btn">Read More</a>
                     </div>
                 </div>
@@ -95,21 +93,17 @@
         <h2 id="quiz">Quiz Eco Point</h2>
         <p>Teste seu conhecimento sobre Reciclagem eletrônica! Você pode ser tornar um especialista no assunto. Participe do nosso Quiz Eco Point e descubra como você pode fazer a diferença!</p>
         <br>
-        <div class="container">
-            <div class="questions-container hide"> <!--Hide serve para esconder a class-->
-                <span class="question">Pergunta aqui?</span>
-                <div class="answers-container">
-                    <button class="answer button">Resposta 1</button>
-                    <button class="answer button">Resposta 2</button>
-                    <button class="answer button">Resposta 3</button>
-                    <button class="answer button">Resposta 4</button>
-                </div>
-            </div>
-            <div class="controls-container">
-                <button class="start-quiz button">Começar Quiz!</button>
-                <button class="next-questin button hide">Próxima pergunta</button>
+        <div class="quiz-container">
+            <button class="start-quiz button">Iniciar Quiz</button>
+            <div class="questions-container hide">
+                <h2 class="question"></h2>
+                <div class="answers-container"></div>
+                <button class="next-question button hide">Próxima pergunta</button>
             </div>
         </div>
+        <script>
+            const questions = <?= json_encode($perguntas); ?>;
+        </script>
         <br>
         <br>
         <footer>
