@@ -21,6 +21,7 @@ class Usuario {
         }
     }
 
+    
     public function setDados($dados) {
         $this->nome = $dados['nome'];
         $this->email = $dados['email'];
@@ -37,7 +38,7 @@ class Usuario {
         $this->nascimento = $dados['nascimento'];
     }
 
-    // Getters
+    //Getters
     public function getNome() { return $this->nome; }
     public function getEmail() { return $this->email; }
     public function getCpf() { return $this->cpf; }
@@ -80,6 +81,7 @@ class Usuario {
         }
     }
 
+
     public function buscarPorEmail($email) {
         $pdo = Conexao::getConexao();
         $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email = :email LIMIT 1");
@@ -87,11 +89,6 @@ class Usuario {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
-
-
-
-     
 }
 
-
+?>

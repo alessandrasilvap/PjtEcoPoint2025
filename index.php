@@ -11,4 +11,5 @@ require_once 'app/core/Controller.php';
 
 //Cria o objeto da aplicação e inicia o roteamento
 $app = new App();
+
 ?>

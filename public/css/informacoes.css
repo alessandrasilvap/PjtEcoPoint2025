@@ -1,10 +1,10 @@
-
 .imagem {
   width: 350px; /*Largura*/
   height: 350px; /*Altura*/
   padding: 5px; /*Espaçamento entre o conteúdo e a borda*/
   float: right; /*Posiciona à direita*/
 }
+
 
 .informacao {
   width: 800px; /*Largura*/
@@ -23,8 +23,6 @@
 .imagree {
   float: left; /*Posiciona à esquerda*/
 }
-
-
 
 
 #listas, p {

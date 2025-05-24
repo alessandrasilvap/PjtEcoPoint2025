@@ -2,13 +2,13 @@
 
 require_once(__DIR__ . '/conexao.php');
 
-
 class UsuarioDAO {
     private $conn;
 
     public function __construct() {
         $this->conn = Conexao::getConexao(); //Função de conexão com o banco
     }
+
 
     public function inserir(Usuario $usuario) {
         //Usando prepared statements e placeholders (interrogações) para a inserção dos dados
@@ -41,6 +41,7 @@ class UsuarioDAO {
         ]);
     }
 
+
     /*No método buscarPorLogin($login), usando prepared statements 
     corretamente com o bindParam, o que já evita SQL Injection. Garantindo
     que o valor do login não seja executado diretamente no SQL*/
@@ -52,6 +53,7 @@ class UsuarioDAO {
         return $stmt->fetch(PDO::FETCH_ASSOC); //Retorna os dados do usuário
     }
 
+
     public function buscarPorCPF($cpf) {
         $sql = "SELECT * FROM usuario WHERE cpf = :cpf";
         $stmt = $this->conn->prepare($sql);
@@ -59,6 +61,7 @@ class UsuarioDAO {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
 
     public function buscarPorEmail($email) {
         try {
@@ -72,6 +75,7 @@ class UsuarioDAO {
         }
     }    
 
+
     public function atualizarSenha($usuarioId, $novaSenhaHash) {
         try {
             $sql = "UPDATE usuario SET senha = ? WHERE id = ?";
@@ -81,20 +85,23 @@ class UsuarioDAO {
             die("Erro ao atualizar a senha: " . $e->getMessage());
         }
     }
+
+
     public function buscarPorId($id) {
-    $sql = "SELECT * FROM usuario WHERE id = :id";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+        $sql = "SELECT * FROM usuario WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
 
     public function atualizarNomeEmail($usuarioId, $login, $email) {
-    $sql = "UPDATE usuario SET login = ?, email = ? WHERE id = ?";
-    $stmt = $this->conn->prepare($sql);
-    return $stmt->execute([$login, $email, $usuarioId]);
-
+        $sql = "UPDATE usuario SET login = ?, email = ? WHERE id = ?";
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute([$login, $email, $usuarioId]);
     }
+
 
    public function excluirConta($id) {
         $sql = "DELETE FROM usuario WHERE id = :id";
@@ -107,8 +114,6 @@ class UsuarioDAO {
             return false;
         }
     }
-
 }
-
 
 ?>

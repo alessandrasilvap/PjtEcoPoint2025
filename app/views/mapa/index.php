@@ -6,11 +6,8 @@
     <title>Mapa - Eco Point</title>
     <link rel="shortcut icon" href="/ecoPoint/public/imagens/icone.ico" type="image/x-icon"> <!--Ícones do site-->
     <link rel="stylesheet" href="/ecoPoint/public/css/mapa.css"> <!--Código CSS do site todo-->
-
     <link rel="stylesheet" href="/ecoPoint/public/css/menu.css"> <!--Código CSS do site todo-->
-
     <link rel="stylesheet" href="/ecoPoint/public/css/cadastrocoleta.css"> <!--Código CSS do site todo-->
-
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--Link para utilização de ícones Font Awesome-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!--Inclui o CSS do Leaflet, onde Leaflet é uma biblioteca JavaScript de código aberto que permite a criação de aplicativos de mapeamento virtuais-->
@@ -60,23 +57,23 @@
                 attribution: '© OpenStreetMap'
                 }).addTo(map);
 
-                // Tenta obter a localização atual do usuário
+                //Tenta obter a localização atual do usuário
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
                         position => {
                             const userLat = position.coords.latitude;
                             const userLng = position.coords.longitude;
 
-                            // Centraliza o mapa na posição do usuário
+                            //Centraliza o mapa na posição do usuário
                             map.setView([userLat, userLng], 13);
 
-                            // Adiciona o marcador "Você está aqui"
+                            //Adiciona o marcador "Você está aqui"
                             const userMarker = L.marker([userLat, userLng]).addTo(map);
                             userMarker.bindPopup('Você está aqui').openPopup();
                         },
                         error => {
                             console.warn('Não foi possível obter a localização:', error);
-                            // Continua com a posição padrão
+                            //Continua com a posição padrão
                         }
                     );
                 } else {
@@ -198,6 +195,6 @@
         </div>
     </div>
     <script src="/ecoPoint/public/js/acessibfeedback.js"></script> <!--Código JS do painel de acessibilidade e da caixa de feedback-->
-    <script src="/ecoPoint/public/js/validacaopontocoleta.js"></script>
+    <script src="/ecoPoint/public/js/validacaopontocoleta.js"></script> <!--Código JS do cadastro de ponto de coleta-->
 </body>
 </html>

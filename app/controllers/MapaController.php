@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../models/usuario.php';  // Carregando o modelo de usuário
-require_once __DIR__ . '/../../DAO/usuarioDAO.php';  // Carregando a classe de acesso ao banco
-require_once __DIR__ . '/../../DAO/pontoColetaDAO.php';  // Carregando a classe de acesso ao banco
+require_once __DIR__ . '/../models/usuario.php';  //Carregando o modelo de usuário
+require_once __DIR__ . '/../../DAO/usuarioDAO.php';  //Carregando a classe de acesso ao banco
+require_once __DIR__ . '/../../DAO/pontoColetaDAO.php';  //Carregando a classe de acesso ao banco
 require_once __DIR__ . '/../middleware/AuthMiddleware.php';
 
 class MapaController extends Controller {
@@ -10,9 +10,11 @@ class MapaController extends Controller {
         AuthMiddleware::check(); //Verifica se o usuário está logado
     }
 
+
     public function index() {
         $this->view('mapa/index'); //Mostra a view da tela de mapa
     }
+
 
     public function cadastrarPonto() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,16 +29,16 @@ class MapaController extends Controller {
             $estado = $_POST['estado'] ?? '';
             $usuario_id = $_SESSION['usuario_id'] ?? null;
 
-            // Validação básica
+            //Validação básica
             if (!$nome || !$cep || !$endereco || !$numero || !$bairro || !$cidade || !$estado) {
                 echo "Preencha todos os campos obrigatórios.";
                 return;
             }
 
-            // Monta endereço completo
+            //Monta endereço completo
             $enderecoCompleto = "$endereco, $numero, $bairro, $cidade, $estado";
 
-            // Chama função para obter coordenadas
+            //Chama função para obter coordenadas
             $coordenadas = $this->obterCoordenadas($enderecoCompleto);
             $latitude = $coordenadas['lat'] ?? null;
             $longitude = $coordenadas['lon'] ?? null;
@@ -44,7 +46,7 @@ class MapaController extends Controller {
             
             $usuario_id = $_SESSION['usuario']['id'];
 
-            // Insere no banco
+            //Insere no banco
             $pdo = Conexao::getConexao();
             $stmt = $pdo->prepare("INSERT INTO pontos_coleta 
                 (usuario_id, nome, observacao, cep, endereco, numero, complemento, bairro, cidade, estado, situacao, latitude, longitude) 
@@ -74,6 +76,7 @@ class MapaController extends Controller {
         }
     }
 
+    
     //API para conseguir latitude e longitude
     private function obterCoordenadas($endereco) {
         $url = "https://nominatim.openstreetmap.org/search?" . http_build_query([

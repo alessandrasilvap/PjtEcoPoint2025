@@ -1,7 +1,7 @@
-
 main {
   margin-left: 10px;
 }
+
 
 #elementos  {
   display: flex;
@@ -11,15 +11,18 @@ main {
   padding: 50px;
 }
 
+
 img { /*Ajeitando as imagens*/
   max-width: 500px; /*Largura*/
 }
+
 
 #titulo { /*Título do site*/
   color: #008049; /*Cor do texto*/
   font-size: 63px;
   text-align: center;
 }
+
 
 #container-sobrenos {
   align-items: center;
@@ -28,15 +31,17 @@ img { /*Ajeitando as imagens*/
   background-color: #008049;
   color: white;
   max-width: 900px;
-  /* height: 459px; */
+  /*height: 459px;*/
   border-radius: 35px;
   padding: 19px;
 }
+
 
 p { /*O texto escrito no site*/
   font-size: 20px;
   margin: 20px; /*Espaço entre caixa e marguem da página*/
 }
+
 
 footer { /*Rodape completo*/
   background-color: #46876e; /*Cor do rodape*/
@@ -52,22 +57,27 @@ footer { /*Rodape completo*/
   margin-left: 250px; /*Move o texto 250px para a esquerda*/
 }
 
+
 .integrantes, .contatos { /*As duas listas*/
   margin: 0 20px; /*Espaço entre caixa e marguem da página*/
 }
 
+
 .contatos { /*Lista de contato*/
   margin-bottom: 10px; /*Margem de botão*/
 }
+
 
 .lista { /*Lista dos nomes*/
   list-style-type: none; /*Maneira abreviada de se escrever uma só declaração para duas das propriedades para listas*/
   padding: 0; /*Espaçamento entre o conteudo e borda*/
 }
 
+
 .nome { /*Os próprios nomes*/
   margin: 5px 0; /*Espaço entre caixa e marguem da página*/
 }
+
 
 .contact-item { /*Os próprios itens*/
   display: flex; /*Utilizada para organizar os elementos*/
@@ -75,14 +85,20 @@ footer { /*Rodape completo*/
   margin: 5px 0; /*Espaço entre caixa e marguem da página*/
 }
 
+
 .contact-item i { /*Icones*/
   margin-right: 5px; /*Move os itens a 5px para a direita*/
   color: #fff; /*Cor do ícone*/
 }
 
+
 .fas, .fab { /*Estilos para ícones*/
   font-size: 120%; /*Tamanho da fonte*/
 }
+
+
+
+
 
 /*Responsividade*/
 /*Computadores*/

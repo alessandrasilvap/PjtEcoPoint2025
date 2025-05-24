@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+
 body {
   height: 100vh;
   display: flex;
@@ -21,6 +22,7 @@ body {
   
 }
 
+
 #logo {
   display: flex;
   flex-direction: column;
@@ -28,10 +30,12 @@ body {
   justify-content: center;
 }
 
+
 .imagem-logo {
   width: 100px;
   border-radius: 50%;
 }
+
 
 .texto-logo {
   text-align: center;
@@ -40,6 +44,7 @@ body {
   color: white;
   margin: 17px -46px;
 }
+
 
 #conteudo > .form { /*Formatação da caixa no meio*/
   display: flex;
@@ -57,18 +62,20 @@ body {
   margin-bottom: 30px;
 }
 
+
 h1 { /*Título*/
   color: rgb(255, 255, 255); /*Cor do texto*/
   margin-left: 6px; /*Move o título 6px para a esquerda*/
   margin-top: 2%; /*Move o título 2% para baixo*/
 }
 
+
 input { /*Links*/
   width: 80%;
   font-size: 18px;
   font-weight: 600;
   height: 40px;
-  /* padding: 13px 10px; */
+  /*padding: 13px 10px;*/
   color: rgb(3, 22, 24);
   border-radius: 17px;
   border: none;
@@ -77,19 +84,22 @@ input { /*Links*/
   transition: background-color 0.3s ease, color 0.2s ease, transform 0.2s ease; 
 }
 
+
 input:hover {
   background-color: #bbd5d8;
 }
+
 
 .botoes{
   margin-bottom: 10px;
 }
 
+
 #botao-criar-conta, #botao-entrar { /*Formatação dos campos de entrada*/
   width: 80%;
   height: 40px;
   border-radius: 17px;
-  /* padding: 13px 10px; */
+  /*padding: 13px 10px;*/
   border: none;
   font-size: 18px;
   text-align: center;
@@ -113,17 +123,10 @@ a {
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
+
 a:hover {
   color: #43a8b6;
 }
-
-
-
-
-
-
-
-
 
 
 

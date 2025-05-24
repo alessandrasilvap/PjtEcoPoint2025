@@ -8,6 +8,7 @@ class SobreController extends Controller {
         AuthMiddleware::check();
     }
 
+    
     public function index() {
         $this->view('sobre/index');
     }

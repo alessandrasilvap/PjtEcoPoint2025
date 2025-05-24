@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+
 body {
   height: 100vh;
   display: flex;
@@ -18,6 +19,7 @@ body {
   overflow-x: hidden;
 }
 
+
 #logo {
   display: flex;
   flex-direction: column;
@@ -25,10 +27,12 @@ body {
   justify-content: center;
 }
 
+
 .imagem-logo {
   width: 100px;
   border-radius: 50%;
 }
+
 
 .texto-logo {
   text-align: center;
@@ -38,10 +42,11 @@ body {
   margin: 17px -46px;
 }
 
+
 .conteudo #senhaForm {
   display: flex;
   flex-direction: column;
-  /* overflow: auto; */
+  /*overflow: auto;*/
   align-items: center;
   justify-content: space-evenly;
   border-radius: 13px;
@@ -60,18 +65,17 @@ body {
 }
 
 
-
-
 .titulos p {
   margin-top: 11px;
 }
+
 
 input { /*Links*/
   width: 80%;
   font-size: 18px;
   font-weight: 600;
   height: 40px;
-  /* padding: 13px 10px; */
+  /*padding: 13px 10px;*/
   color: rgb(3, 22, 24);
   border-radius: 17px;
   border: none;
@@ -79,6 +83,7 @@ input { /*Links*/
   text-align: center;
   transition: background-color 0.3s ease, color 0.2s ease, transform 0.2s ease;
 }
+
 
 input:hover {
   background-color: #bbd5d8;
@@ -89,7 +94,7 @@ input:hover {
   height: 40px;
   width: 100px;
   border-radius: 17px;
-  /* padding: 13px 10px; */
+  /*padding: 13px 10px;*/
   border: none;
   font-size: 18px;
   text-align: center;
@@ -99,6 +104,7 @@ input:hover {
   gap: 10px;
   transition: background-color 0.3s ease, color 0.2s ease, transform 0.2s ease;
 }
+
 
 #enviar:hover {
   background-color: #09334b;
@@ -114,18 +120,10 @@ a {
   margin-left: 20px;
 }
 
+
 a:hover {
   color: #43a8b6;
 }
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,8 +1,8 @@
 document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
+    event.preventDefault(); //Evita o envio padrão do formulário
 
     if (!validarLogin()) {
-        return; // Se a validação falhar, não envia
+        return; //Se a validação falhar, não envia
     }
 
     const usuario = document.getElementById('usuario').value.trim();
@@ -19,15 +19,17 @@ document.querySelector('form').addEventListener('submit', function(event) {
     .then(resposta => resposta.json())
     .then(data => {
         if (data.sucesso) {
-            window.location.href = '/ecoPoint/sobre'; // Redireciona para a próxima página
+            window.location.href = '/ecoPoint/sobre'; //Redireciona para a próxima página
         } else {
-            mostrarErro(data.erro); // Exibe erro de login incorreto
+            mostrarErro(data.erro); //Exibe erro de login incorreto
         }
     })
     .catch(() => {
         mostrarErro('Erro ao tentar fazer login. Tente novamente.');
     });
 });
+
+
 
 function validarLogin() {
     const usuario = document.getElementById('usuario').value.trim();
@@ -48,9 +50,11 @@ function validarLogin() {
         return false;
     }
 
-    esconderErro(); // Tudo certo, esconde mensagens
+    esconderErro(); //Tudo certo, esconde mensagens
     return true;
 }
+
+
 
 function mostrarErro(mensagem) {
     const divErro = document.getElementById('mensagemErro');
@@ -61,6 +65,8 @@ function mostrarErro(mensagem) {
         divErro.style.display = "none";
     }, 4000);
 }
+
+
 
 function esconderErro() {
     const divErro = document.getElementById('mensagemErro');

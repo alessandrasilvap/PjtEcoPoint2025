@@ -14,6 +14,7 @@ class SenhaController extends Controller {
         $this->view('senha/index');
     }
 
+
     public function enviarEmail() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -75,10 +76,10 @@ class SenhaController extends Controller {
                 }
 
             }
-
             echo "<script>alert('Se o e-mail existir no sistema, você receberá um link.'); window.location.href='/ecoPoint/senha';</script>";
         }
     }
+
 
     public function redefinir() {
         $token = $_GET['token'] ?? '';
@@ -96,10 +97,10 @@ class SenhaController extends Controller {
             $now = new DateTime();
     
             if ($now < $expiracao && !$dadosToken['usado']) {
-                // Token válido e não usado → renderiza o formulário de nova senha
+                //Token válido e não usado → renderiza o formulário de nova senha
                 $this->view('senha/redefinir', ['token' => $token]);
             } else {
-                // Token expirado ou já usado
+                //Token expirado ou já usado
                 echo "<script>alert('Token expirado ou já utilizado.'); window.location.href='/ecoPoint/senha';</script>";
             }
         } else {
@@ -114,7 +115,7 @@ class SenhaController extends Controller {
             $novaSenha = $_POST['nova_senha'];
             $confirmaSenha = $_POST['confirma_senha'];
     
-            // Verificação inicial
+            //Verificação inicial
             if (empty($novaSenha) || empty($confirmaSenha)) {
                 echo "<script>alert('Preencha todos os campos.'); window.history.back();</script>";
                 return;
@@ -128,18 +129,18 @@ class SenhaController extends Controller {
             $tokenRecuperacaoDAO = new TokenRecuperacaoDAO();
             $dadosToken = $tokenRecuperacaoDAO->buscarPorToken($token);
     
-            // Validação do token
+            //Validação do token
             if ($dadosToken && !$dadosToken['usado'] && strtotime($dadosToken['expiracao']) > time()) {
                 $usuarioId = $dadosToken['usuario_id'];
     
-                // Criptografar a nova senha
+                //Criptografar a nova senha
                 $senhaCriptografada = password_hash($novaSenha, PASSWORD_DEFAULT);
     
-                // Atualizar senha no banco
+                //Atualizar senha no banco
                 $usuarioDAO = new UsuarioDAO();
                 $usuarioDAO->atualizarSenha($usuarioId, $senhaCriptografada);
     
-                // Marcar o token como usado
+                //Marcar o token como usado
                 $tokenRecuperacaoDAO->marcarComoUsado($token);
     
                 echo "<script>alert('Senha redefinida com sucesso!'); window.location.href='/ecoPoint/login';</script>";
@@ -148,5 +149,6 @@ class SenhaController extends Controller {
             }
         }
     }
-    
 }
+
+?>

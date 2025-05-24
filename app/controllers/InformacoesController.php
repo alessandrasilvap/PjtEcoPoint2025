@@ -7,6 +7,7 @@ class InformacoesController extends Controller {
         AuthMiddleware::check();
     }
 
+    
     public function index() {
         $this->view('informacoes/index');
     }

@@ -104,11 +104,6 @@ function enviarFeedbackAceb() {
 
 
 
-
-
-
-
-
 //Código JavaScript para o painel de feedback
 let feedbackMenuVisible = false;
 

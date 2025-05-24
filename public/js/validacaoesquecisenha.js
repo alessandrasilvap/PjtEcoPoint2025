@@ -3,6 +3,8 @@ document.querySelector('form').addEventListener('submit', function(event) {
     recuperarSenha();
 });
 
+
+
 function recuperarSenha() {
     var email = document.getElementById('email').value;
 

@@ -1,20 +1,20 @@
 <?php
 
-require_once __DIR__ . '/../models/usuario.php';  // Carregando o modelo de usuário
-require_once __DIR__ . '/../../DAO/usuarioDAO.php';  // Carregando a classe de acesso ao banco
+require_once __DIR__ . '/../models/usuario.php';  //Carregando o modelo de usuário
+require_once __DIR__ . '/../../DAO/usuarioDAO.php';  //Carregando a classe de acesso ao banco
 
 class CadastroController extends Controller {
-
     public function index() {
-        // Exibe o formulário de cadastro
+        //Exibe o formulário de cadastro
         $this->view('cadastro/index');
     }
 
+
     public function salvar() {
-        // Verifica se o método de requisição é POST
+        //Verifica se o método de requisição é POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            // Obtém os dados do formulário
+            //Obtém os dados do formulário
             $dados = [
                 'nome' => strip_tags($_POST['nome']),
                 'email' => strip_tags($_POST['email']),
@@ -91,14 +91,14 @@ class CadastroController extends Controller {
                 exit;
             }
 
-            // Validação de CPF inválido
+            //Validação de CPF inválido
             $cpf = $dados['cpf'] ?? '';
             if (!$this->validarCPF($cpf)) {
                 echo "<script>alert('CPF inválido.'); window.history.back();</script>";
                 exit;
             }
 
-            // Criação do objeto UsuarioDAO para verificar duplicidade
+            //Criação do objeto UsuarioDAO para verificar duplicidade
             $usuarioDAO = new UsuarioDAO();
 
             //Verificação de CPF duplicado
@@ -122,6 +122,7 @@ class CadastroController extends Controller {
         }
     }
 
+
     private function validarDados($dados) {
         foreach ($dados as $campo => $valor) {
             if (empty($valor)) {
@@ -134,6 +135,7 @@ class CadastroController extends Controller {
         }
         return true;
     }
+
 
     private function validarCPF($cpf) {
         $cpf = preg_replace('/[^0-9]/', '', $cpf);
@@ -154,4 +156,5 @@ class CadastroController extends Controller {
         return true;
     }
 }
+
 ?> 

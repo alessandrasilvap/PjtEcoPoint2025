@@ -4,27 +4,24 @@
   flex-direction: column;
 }
 
+
 #map {
   display: flex;
   width: 70%; /*Largura*/
   height: 500px; /*Altura*/
-
   border-radius: 20px;
   outline: 2px solid green ;
 }
 
 
-
 .comlurb, p {
   font-size: 127%; /*Tamanho da fonte*/
-
   margin: 20px; /*Espaçamento externo do elementos*/
 }
 
 
 h1 {
   color: #468749; /*Cor do texto*/
-
   font-size: 250%; /*Tamanho da fonte*/
 }
 
@@ -42,7 +39,6 @@ footer {
   width: 70%; /*Largura*/
   margin-left: 250px; /*Move o texto 250px para a esquerda*/
 }
-
 
 
 .integrantes, .contatos {

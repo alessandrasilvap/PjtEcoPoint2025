@@ -9,6 +9,7 @@ class TokenRecuperacaoDAO {
         $this->conn = Conexao::getConexao(); //Função de conexão com o banco
     }
 
+
     public function salvar($usuarioId, $email, $token, $expiracao) {
         try {
             $stmt = $this->conn->prepare("INSERT INTO tokens_recuperacao (usuario_id, email, token, expiracao) VALUES (?, ?, ?, ?)");
@@ -18,15 +19,17 @@ class TokenRecuperacaoDAO {
         }
     }
 
+    
     public function buscarPorToken($token) {
         try {
             $stmt = $this->conn->prepare("SELECT * FROM tokens_recuperacao WHERE token = ? AND expiracao >= NOW() AND usado = 0");
             $stmt->execute([$token]);
-            return $stmt->fetch(PDO::FETCH_ASSOC); // Retorna os dados ou false se não encontrar
+            return $stmt->fetch(PDO::FETCH_ASSOC); //Retorna os dados ou false se não encontrar
         } catch (PDOException $e) {
             die("Erro ao buscar token: " . $e->getMessage());
         }
     }
+
 
     public function marcarComoUsado($token) {
         try {
@@ -37,3 +40,5 @@ class TokenRecuperacaoDAO {
         }
     }
 }
+
+?>

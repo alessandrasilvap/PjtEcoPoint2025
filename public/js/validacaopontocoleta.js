@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+
 function validarPontocoleta(event) {
     event.preventDefault(); //Impede o envio do formulário caso o formulário esteja errado
 

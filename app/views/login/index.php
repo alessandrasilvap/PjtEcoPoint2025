@@ -47,7 +47,7 @@
         </form>
 
         <div id="mensagemErro" style="display: none; color: white; background-color: #d9534f; padding: 10px; border-radius: 5px; margin-top: 15px; text-align: center;">
-        <!-- A mensagem será preenchida via JavaScript -->
+        <!--A mensagem será preenchida via JavaScript-->
         </div>
 
     </div>

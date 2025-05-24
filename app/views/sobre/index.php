@@ -12,14 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<style>
-
-
-
-
-</style>
 <body>
-    <!-- Botão com nome do usuário e ícone de lápis -->
+    <!--Botão com nome do usuário e ícone de lápis-->
     <header>
         <nav id="menu">
             <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
@@ -43,9 +37,7 @@
             </div>
         </nav>
     </header>
-
     <main>
-        
         <h1 id="titulo">Sobre Nós</h1>
         <section id="elementos">
 
@@ -61,9 +53,7 @@
             </section>
 
         </section>
-
         <img src="/ecoPoint/public/imagens/fotosobrenos.jpg" alt="Imagem ilustrativa do site Unsplash">
-
         <h2>Nossos Pilares</h2>
 
         <p>O Eco Point se baseia em três pilares principais:</p>

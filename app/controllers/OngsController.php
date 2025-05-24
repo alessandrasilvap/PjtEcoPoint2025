@@ -7,6 +7,7 @@ class OngsController extends Controller {
         AuthMiddleware::check();
     }
 
+    
     public function index() {
         $this->view('ongs/index');
     }

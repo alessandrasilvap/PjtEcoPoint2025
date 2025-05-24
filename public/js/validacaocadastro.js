@@ -14,6 +14,8 @@ function formatarCPF(input) {
     input.value = cpf;
 }
 
+
+
 function validarCPF(cpf) {
     cpf = cpf.replace(/\D/g, '');
 
@@ -23,7 +25,7 @@ function validarCPF(cpf) {
 
     let soma = 0;
 
-    // Primeiro dígito verificador
+    //Primeiro dígito verificador
     for (let i = 0; i < 9; i++) {
         soma += parseInt(cpf.charAt(i)) * (10 - i);
     }
@@ -33,7 +35,7 @@ function validarCPF(cpf) {
         return false;
     }
 
-    // Segundo dígito verificador
+    //Segundo dígito verificador
     soma = 0;
     for (let i = 0; i < 10; i++) {
         soma += parseInt(cpf.charAt(i)) * (11 - i);
@@ -48,6 +50,7 @@ function validarCPF(cpf) {
 }
 
 
+
 //Formato XXXXX-XXX do CEP
 function formatarCEP(input) {
     let cep = input.value.replace(/\D/g, ''); //Remove caracteres não numéricos
@@ -60,6 +63,7 @@ function formatarCEP(input) {
     }
     input.value = cep;
 }
+
 
 
 document.getElementById('buscar').addEventListener('click', function() {
@@ -84,7 +88,6 @@ document.getElementById('buscar').addEventListener('click', function() {
     });
 });
 
-
 document.getElementById('buscar').addEventListener('click', function() {
 document.getElementById('rua').textContent = '';
 document.getElementById('bairro').textContent = '';
@@ -106,10 +109,14 @@ function formatarTEL(input){
     input.value = tel;
 }
 
+
+
 function validarEmail(email) {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(email);
 }
+
+
 
 function validarIdade(dataNascimento) {
     const data = new Date(dataNascimento);
@@ -123,6 +130,8 @@ function validarIdade(dataNascimento) {
 
     return idade >= 10;
 }
+
+
 
 function validarcadastro(event) {
      event.preventDefault();
@@ -166,6 +175,8 @@ function validarcadastro(event) {
 
     document.getElementById("formCadastro").submit();
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     //Agora o script só será executado após o carregamento do DOM

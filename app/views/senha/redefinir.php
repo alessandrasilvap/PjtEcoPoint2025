@@ -1,23 +1,25 @@
 <?php
-require_once __DIR__ . '/../../../DAO/conexao.php'; // Inclui a classe de conexão
-require_once __DIR__ . '/../../../DAO/tokenRecuperacaoDAO.php'; // Inclui a classe DAO
 
-// Verifica se o token foi fornecido
+require_once __DIR__ . '/../../../DAO/conexao.php'; //Inclui a classe de conexão
+require_once __DIR__ . '/../../../DAO/tokenRecuperacaoDAO.php'; //Inclui a classe DAO
+
+//Verifica se o token foi fornecido
 if (!isset($_GET['token'])) {
     die('Token não fornecido.');
 }
 
 $token = $_GET['token'];
 
-// Cria uma instância do DAO para consultar o token
+//Cria uma instância do DAO para consultar o token
 $tokenRecuperacaoDAO = new TokenRecuperacaoDAO();
 
-// Consulta o token no banco de dados
+//Consulta o token no banco de dados
 $tokenInfo = $tokenRecuperacaoDAO->buscarPorToken($token);
 
 if (!$tokenInfo) {
     die('Token expirado ou inválido.');
 }
+
 ?>
 
 <style>
@@ -31,11 +33,13 @@ if (!$tokenInfo) {
         font-family: Arial, sans-serif;
     }
 
+
     .form-container h2 {
         text-align: center;
         margin-bottom: 20px;
         color: #2e7d32;
     }
+
 
     .form-container label {
         display: block;
@@ -43,6 +47,7 @@ if (!$tokenInfo) {
         font-weight: bold;
         color: #333;
     }
+
 
     .form-container input[type="password"] {
         width: 100%;
@@ -52,6 +57,7 @@ if (!$tokenInfo) {
         border: 1px solid #ccc;
         font-size: 14px;
     }
+
 
     .form-container button {
         width: 100%;
@@ -64,6 +70,7 @@ if (!$tokenInfo) {
         cursor: pointer;
     }
 
+    
     .form-container button:hover {
         background-color: #2e7d32;
     }

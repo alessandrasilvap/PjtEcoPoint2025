@@ -1,13 +1,9 @@
-
-
 .imagree {
   width: 100px; /*Largura*/
   height: 100px; /*Altura*/
   padding: 5px; /*Espaçamento entre o conteudo e borda*/
   float: right; /*Posiciona um elemento no lado direito do seu contêiner*/
 }
-
-
 
 
 p, ol { /*O texto escrito no site*/

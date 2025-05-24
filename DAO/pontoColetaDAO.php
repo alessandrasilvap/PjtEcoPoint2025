@@ -7,10 +7,11 @@ class PontoColeta {
         $this->conn = Conexao::getConexao(); //Função de conexão com o banco
     }
 
+
     public function cadastrar($dados) {
         $sql = "INSERT INTO pontos_coleta (usuario_id, nome, observacao, cep, endereco, numero, complemento, bairro, cidade, estado)
                 VALUES (:usuario_id, :nome, :observacao, :cep, :endereco, :numero, :complemento, :bairro, :cidade, :estado)";
-        
+                
         $stmt = $this->db->prepare($sql);
         return $stmt->execute([
             ':usuario_id' => $dados['usuario_id'],
@@ -26,6 +27,7 @@ class PontoColeta {
         ]);
     }
 
+
     public function verificarDuplicidade($dados) {
         $sql = "SELECT COUNT(*) FROM pontos_coleta 
                 WHERE nome = :nome AND cep = :cep AND numero = :numero";
@@ -39,5 +41,6 @@ class PontoColeta {
     
         return $stmt->fetchColumn() > 0;
     }
-    
 }
+
+?>
