@@ -13,9 +13,7 @@ class Conexao{
             $senha = "";
 
             try {
-
                 self::$instancia = new PDO("mysql:dbname=" . $dbname . ";host=" . $host, $user, $senha);
-
             } catch (Exception $e) {
                 echo 'O Erro é: ' . $e;
             }

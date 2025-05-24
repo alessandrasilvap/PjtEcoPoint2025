@@ -66,8 +66,6 @@ document.getElementById('buscar').addEventListener('click', function() {
     });
 });
 
-
-
 document.getElementById('buscar').addEventListener('click', function() {
 document.getElementById('rua').textContent = '';
 document.getElementById('bairro').textContent = '';

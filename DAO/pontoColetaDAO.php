@@ -38,7 +38,6 @@ class PontoColeta {
             ':cep' => $dados['cep'],
             ':numero' => $dados['numero']
         ]);
-    
         return $stmt->fetchColumn() > 0;
     }
 }

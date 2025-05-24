@@ -92,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -209,8 +208,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
             <button type="button" id="btnExcluir" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Excluir Conta</button>
         </div>
     </form>
-
-    <script src="/ecoPoint/public/js/editarPerfil.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.getElementById('btnExcluir').addEventListener('click', function() {
@@ -230,7 +227,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
             });
         });
     </script>
-
     <form id="formExcluir" method="POST" action="" style="display:none;">
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
         <input type="hidden" name="excluirConta" value="1">
@@ -241,7 +237,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluirConta'])) {
         if (isset($_POST['success'])):
 
     ?>
+
         <p>Dados atualizados com sucesso!</p>
+        
     <?php 
 
         endif;
