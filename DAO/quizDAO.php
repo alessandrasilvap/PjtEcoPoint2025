@@ -15,7 +15,8 @@ class Quiz {
                        a.id AS alternativa_id, a.texto AS alternativa_texto, a.correta
                 FROM perguntas p
                 JOIN alternativas a ON p.id = a.pergunta_id
-                ORDER BY RAND()";
+                ORDER BY RAND()
+                LIMIT 12";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();

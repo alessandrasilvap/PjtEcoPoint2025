@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
         displayNextQuestion();
     }
 
+
+
     function displayNextQuestion() {
         resetState();
 
@@ -41,12 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+
     function resetState() {
         while ($answersContainer.firstChild) {
             $answersContainer.removeChild($answersContainer.firstChild);
         }
         $nextQuestionButton.classList.add('hide');
     }
+
+
 
     function selectAnswer(event) {
         const answerClicked = event.target;
@@ -64,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
         currentQuestionIndex++;
     }
 
+
+    
     function finishGame() {
         const totalQuestion = questions.length;
         const performance = Math.floor(totalCorrect * 100 / totalQuestion);
@@ -71,13 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         switch (true) {
             case (performance < 33):
-                message = 'Iniciante: você está começando a explorar o mundo da reciclagem!';
+                message = '🟢 Iniciante: você está dando os primeiros passos rumo a um planeta mais sustentável. Que tal aprender mais sobre reciclagem e tentar novamente? Cada atitude conta para reduzir o impacto ambiental! 💚';
                 break;
             case (performance < 67):
-                message = 'Intermediário: você está fazendo um ótimo trabalho!';
+                message = '🔄 Intermediário: você já sabe bastante coisa sobre reciclagem eletrônica! Continue assim — pequenas ações geram grandes impactos positivos no meio ambiente! 🌍';
                 break;
             case (performance >= 67):
-                message = 'Especialista: você é um verdadeiro especialista!';
+                message = '🏆 Especialista: parabéns! Você mostra grande conhecimento sobre reciclagem e sustentabilidade. Continue sendo um exemplo e compartilhe essas práticas com outras pessoas! 🤝';
                 break;
             default:
                 message = 'Erro ao calcular desempenho.';

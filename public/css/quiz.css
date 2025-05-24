@@ -3,7 +3,7 @@ button {
 }
 
 
-.container {
+.quiz-container {
     margin: 0 auto; /*Espaçamento externo do elemento*/
     background-color: #e6f0ff; /*Cor de fundo da caixa*/
     color: #333; /*Cor do texto*/
@@ -37,7 +37,7 @@ button {
 
 
 .answers-container {
-    width: 50vh; /*Largura*/
+    width: 80vh; /*Largura*/
     display: grid; /*Permite dimensões, usando uma grade de linhas e colunas*/
     grid-template-columns: 1fr 1fr; /*Define os nomes das linhas e as funções de dimensionamento das colunas do grid*/
     gap: 16px; /*Define o espaçamento entre as linhas e colunas de um grid ou flexbox*/
@@ -46,7 +46,7 @@ button {
 
 
 .answer {
-    width: 30vh; /*Largura*/
+    width: 50vh; /*Largura*/
 }
 
 
@@ -63,7 +63,7 @@ button {
 }
 
 
-.next-questin {
+.next-question {
     margin-top: 32px; /*Move o texto 32px para baixo*/
 }
 
@@ -75,7 +75,7 @@ button {
     font-weight: bold; /*Negrita o texto*/
     border: 0; /*Bordas para as caixas*/
     border-radius: 6px; /*Bordas arredondadas*/
-    height: 55px; /*Altura*/
+    height: 75px; /*Altura*/
     padding: 0 32px; /*Espaçamento entre o conteudo e borda*/
     transition: filter 0.2s; /*Define um efeito de filtro com uma duração de 0,2 segundos*/
 }
