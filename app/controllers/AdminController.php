@@ -1,20 +1,14 @@
 <?php
 
-//Assumindo que UsuarioDAO e Controller estão em locais acessíveis via seu autoloader (preferível)
-//ou que são incluídos manualmente. Exemplo de inclusão manual (não recomendado para autoloader):
-//require_once __DIR__ . '/../DAO/UsuarioDAO.php'; // Ajuste o caminho conforme sua estrutura
-//require_once __DIR__ . '/../core/Controller.php'; // Ajuste o caminho conforme sua estrutura
+require_once __DIR__ . '/../DAO/UsuarioDAO.php'; // Ajuste o caminho conforme sua estrutura
+require_once __DIR__ . '/../core/Controller.php'; // Ajuste o caminho conforme sua estrutura
 
 
 class AdminController extends Controller {
     private $usuarioDAO;
 
     public function __construct() {
-        //Inicializa o UsuarioDAO.
-        //Se UsuarioDAO precisar da conexão, pode ser passado aqui:
-        //$this->usuarioDAO = new UsuarioDAO(Conexao::getConexao());
-        //Assumindo que UsuarioDAO gerencia sua própria conexão ou a recebe via construtor
-        $this->usuarioDAO = new UsuarioDAO();
+        $this->usuarioDAO = new UsuarioDAO(Conexao::getConexao());
     }
 
     
@@ -44,11 +38,9 @@ class AdminController extends Controller {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $login = $_POST['login'] ?? '';
             $email = $_POST['email'] ?? '';
-            //Se você tiver um campo de senha:
-            //$senha = $_POST['senha'] ?? '';
 
             //Validações de Dados
-            if (empty($login) || empty($email)) { //|| empty($senha) se tiver senha
+            if (empty($login) || empty($email)) {
                 $this->gerenciarUsuarios('Login e E-mail são obrigatórios!', 'error');
                 return;
             }
@@ -56,8 +48,6 @@ class AdminController extends Controller {
                 $this->gerenciarUsuarios('Formato de e-mail inválido!', 'error');
                 return;
             }
-            //Adicionar validação de unicidade de login/email no DAO
-            //Adicionar validação de senha (tamanho mínimo, complexidade) e hashing
 
             $existingUser = $this->usuarioDAO->buscarPorLoginOuEmail($login, $email, $id ?? null); //Passe $id em atualização
             if ($existingUser) {
@@ -66,10 +56,6 @@ class AdminController extends Controller {
             }
 
             try {
-                //Se tiver senha, você precisaria fazer o hashing:
-                //$hashedPassword = password_hash($senha, PASSWORD_DEFAULT);
-                //$this->usuarioDAO->criar($login, $email, $hashedPassword);
-
                 $this->usuarioDAO->criar($login, $email); //Chama o método do DAO
                 header("Location: " . BASE_URL . "/admin/gerenciarUsuarios?message=" . urlencode("Usuário '$login' criado com sucesso!") . "&type=success");
                 exit;
