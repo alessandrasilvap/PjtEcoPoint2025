@@ -59,6 +59,12 @@ class AdminController extends Controller {
             //Adicionar validação de unicidade de login/email no DAO
             //Adicionar validação de senha (tamanho mínimo, complexidade) e hashing
 
+            $existingUser = $this->usuarioDAO->buscarPorLoginOuEmail($login, $email, $id ?? null); //Passe $id em atualização
+            if ($existingUser) {
+                $this->gerenciarUsuarios('Login ou E-mail já estão em uso!', 'error');
+                return;
+            }
+
             try {
                 //Se tiver senha, você precisaria fazer o hashing:
                 //$hashedPassword = password_hash($senha, PASSWORD_DEFAULT);
@@ -121,6 +127,12 @@ class AdminController extends Controller {
                 return;
             }
             //Lembre-se de validar a unicidade do login/email, excluindo o próprio usuário da verificação
+
+            $existingUser = $this->usuarioDAO->buscarPorLoginOuEmail($login, $email, $id ?? null); //Passe $id em atualização
+            if ($existingUser) {
+                $this->gerenciarUsuarios('Login ou E-mail já estão em uso!', 'error');
+                return;
+            }
 
             try {
                 $this->usuarioDAO->atualizar($id, $login, $email); //Chama o método do DAO
