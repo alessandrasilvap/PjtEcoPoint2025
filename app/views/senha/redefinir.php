@@ -1,27 +1,3 @@
-<?php
-
-require_once __DIR__ . '/../../../DAO/conexao.php'; //Inclui a classe de conexão
-require_once __DIR__ . '/../../../DAO/tokenRecuperacaoDAO.php'; //Inclui a classe DAO
-
-//Verifica se o token foi fornecido
-if (!isset($_GET['token'])) {
-    die('Token não fornecido.');
-}
-
-$token = $_GET['token'];
-
-//Cria uma instância do DAO para consultar o token
-$tokenRecuperacaoDAO = new TokenRecuperacaoDAO();
-
-//Consulta o token no banco de dados
-$tokenInfo = $tokenRecuperacaoDAO->buscarPorToken($token);
-
-if (!$tokenInfo) {
-    die('Token expirado ou inválido.');
-}
-
-?>
-
 <style>
     .form-container {
         max-width: 400px;
