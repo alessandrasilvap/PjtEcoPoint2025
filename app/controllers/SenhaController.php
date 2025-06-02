@@ -83,28 +83,34 @@ class SenhaController extends Controller {
 
     public function redefinir() {
         $token = $_GET['token'] ?? '';
-    
-        if (!$token) {
+
+        //Validação inicial do token na URL
+        if (empty($token)) { //Usar empty() para checar se a string está vazia ou não definida
             echo "<script>alert('Token inválido.'); window.location.href='/ecoPoint/senha';</script>";
             exit;
         }
-    
+
+        //Busca a validação do token no banco de dados
         $tokenRecuperacaoDAO = new TokenRecuperacaoDAO();
         $dadosToken = $tokenRecuperacaoDAO->buscarPorToken($token);
-    
-        if ($dadosToken) {
-            $expiracao = new DateTime($dadosToken['expiracao']);
-            $now = new DateTime();
-    
-            if ($now < $expiracao && !$dadosToken['usado']) {
-                //Token válido e não usado → renderiza o formulário de nova senha
-                $this->view('senha/redefinir', ['token' => $token]);
-            } else {
-                //Token expirado ou já usado
-                echo "<script>alert('Token expirado ou já utilizado.'); window.location.href='/ecoPoint/senha';</script>";
-            }
+
+        if (!$dadosToken) {
+            echo "<script>alert('Token expirado ou inválido.'); window.location.href='/ecoPoint/senha';</script>";
+            exit;
+        }
+
+        //Validação de expiração e status de uso do token
+        $expiracao = new DateTime($dadosToken['expiracao']);
+        $now = new DateTime();
+
+        if ($now < $expiracao && !$dadosToken['usado']) {
+            //Token válido e não usado → renderiza o formulário de nova senha
+            //A view agora só precisa do token para o campo oculto.
+            $this->view('senha/redefinir', ['token' => $token]);
         } else {
-            echo "<script>alert('Token inválido.'); window.location.href='/ecoPoint/senha';</script>";
+            //Token expirado ou já usado
+            echo "<script>alert('Token expirado ou já utilizado.'); window.location.href='/ecoPoint/senha';</script>";
+            exit;
         }
     }
     
