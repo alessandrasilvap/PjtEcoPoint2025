@@ -130,7 +130,7 @@ class CadastroController extends Controller {
             }
         }
 
-        foreach ($_POST as $campos => $valor) {
+        foreach ($_POST as $campo => $valor) {
             $campo = strip_tags($valor);
         }
         return true;
