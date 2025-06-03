@@ -67,8 +67,8 @@ class UsuarioDAO {
         try {
             $sql = "SELECT * FROM usuario WHERE email = ?";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(':email', $email);
-            $stmt->execute();
+            //$stmt->bindParam(':email', $email);
+            $stmt->execute([$email]);
             return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             die("Erro ao buscar usuário por e-mail: " . $e->getMessage());
