@@ -94,12 +94,12 @@
             
                     <div class="campo">
                         <label for="confirmasenha"> Confirme a senha </label>
-                        <input type="password" id="confirmasenha" name="confirmasenha" placeholder="Confirme sua senha " maxlength="8" size="50">
+                        <input type="password" id="confirmasenha" name="confirmasenha" placeholder="Confirme sua senha " minlength="6" maxlength="10"" size="50">
                     </div>
 
                     <div class="campo">
                         <label for="camposenha"> Senha </label>
-                        <input type="password" id="camposenha" name="senha" placeholder="Crie sua senha" maxlength="8" size="50">
+                        <input type="password" id="camposenha" name="senha" placeholder="Crie sua senha" minlength="6" maxlength="10" size="50">
                     </div>
             
                     

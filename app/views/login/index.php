@@ -32,7 +32,7 @@
             <input type="text" id="usuario" name="login" placeholder="Usuário" maxlength="8" size="31">
 
             <label for="senha" hidden>Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Senha" maxlength="8" size="31">
+            <input type="password" id="senha" name="senha" placeholder="Senha" minlength="6" maxlength="10" size="31">
             
             <button type="submit" id="botao-entrar" name="entrar">
                 Entrar
