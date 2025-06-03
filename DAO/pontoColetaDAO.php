@@ -12,7 +12,7 @@ class PontoColeta {
         $sql = "INSERT INTO pontos_coleta (usuario_id, nome, observacao, cep, endereco, numero, complemento, bairro, cidade, estado)
                 VALUES (:usuario_id, :nome, :observacao, :cep, :endereco, :numero, :complemento, :bairro, :cidade, :estado)";
                 
-        $stmt = $this->db->prepare($sql);
+        $stmt = $this->conn->prepare($sql);
         return $stmt->execute([
             ':usuario_id' => $dados['usuario_id'],
             ':nome' => $dados['nome'],
