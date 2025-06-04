@@ -27,7 +27,7 @@ class MapaController extends Controller {
             $bairro = $_POST['bairro'] ?? '';
             $cidade = $_POST['cidade'] ?? '';
             $estado = $_POST['estado'] ?? '';
-            $usuario_id = $_SESSION['usuario_id'] ?? null;
+            $usuario_id = $_SESSION['usuario']['id'] ?? null;
 
             //Validação básica
             if (!$nome || !$cep || !$endereco || !$numero || !$bairro || !$cidade || !$estado) {
