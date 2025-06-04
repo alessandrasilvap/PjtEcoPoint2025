@@ -102,12 +102,6 @@ class MapaController extends Controller {
                 ];
             }
         }
-
-        if (!$latitude || !$longitude) {
-            echo "Erro ao obter coordenadas.";
-            return;
-        }
-        return null;
     }
 }
 
