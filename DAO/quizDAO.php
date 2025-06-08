@@ -3,7 +3,7 @@
 require_once(__DIR__ . '/conexao.php');
 
 class Quiz {
-    private $conexao;
+    private $conn;
 
     public function __construct() {
         $this->conexao = Conexao::getConexao();
