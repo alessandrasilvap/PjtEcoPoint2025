@@ -32,7 +32,7 @@ class PontoColeta {
         $sql = "SELECT COUNT(*) FROM pontos_coleta 
                 WHERE nome = :nome AND cep = :cep AND numero = :numero";
         
-        $stmt = $this->conn->prepare($sql);
+        $stmt = $this->db->prepare($sql);
         $stmt->execute([
             ':nome' => $dados['nome'],
             ':cep' => $dados['cep'],

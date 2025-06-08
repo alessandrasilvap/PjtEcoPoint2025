@@ -33,7 +33,7 @@ class Quiz {
                 WHERE p.id IN ({$idsString})
                 ORDER BY FIELD(p.id, " . implode(',', $idsPerguntas) . ")"; //Mantém a ordem original das perguntas selecionadas randomicamente
 
-        $stmt = $this->conn->prepare($sql);
+        $stmt = $this->conexao->prepare($sql);
 
         //Bind dos parâmetros dos IDs (para segurança, mesmo sendo INT)
         foreach ($idsPerguntas as $k => $id) {
