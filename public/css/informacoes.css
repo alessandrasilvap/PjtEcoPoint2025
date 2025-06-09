@@ -104,82 +104,55 @@ footer {
 
 
 
-/*Tabela */
-.tabela-materiais {
-  width: 90%; /*Largura*/
-  border-collapse: collapse; /*Colapsa as bordas da tabela*/
-  margin: 40px auto; /*Centraliza a tabela e adiciona margem*/
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 110%;
-}
+/* NOVO CSS PARA A TABELA (Estilo "Excel") */
+        .tabela-materiais-excel {
+            width: 95%; /* Adapta a largura para a tela */
+            border-collapse: collapse; /* Para bordas únicas */
+            margin: 40px auto; /* Centraliza a tabela */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 110%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra para dar profundidade */
+        }
 
+        .tabela-materiais-excel th,
+        .tabela-materiais-excel td {
+            border: 1px solid #c2c2c2; /* Bordas visíveis mais claras */
+            padding: 12px 15px; /* Espaçamento interno */
+            text-align: left;
+            vertical-align: top; /* Alinha o conteúdo ao topo das células */
+        }
 
-.tabela-materiais th, .tabela-materiais td {
-  border: 1px solid #ddd; /*Borda leve*/
-  padding: 12px; /*Espaçamento interno das células*/
-  text-align: left; /*Alinha o texto à esquerda*/
-}
+        .tabela-materiais-excel th {
+            background-color: #468749; /* Cor do cabeçalho */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase; /* Deixa o texto do cabeçalho em maiúsculas */
+        }
 
+        .tabela-materiais-excel tbody tr:nth-child(even) {
+            background-color: #f8f8f8; /* Fundo mais claro para linhas pares */
+        }
 
-.tabela-materiais th {
-  background-color: #468749; /*Cor de fundo*/
-  color: white; /*Cor do texto*/
-  font-weight: bold;
-}
+        .tabela-materiais-excel tbody tr:hover {
+            background-color: #e6ffe6; /* Leve destaque verde ao passar o mouse */
+        }
 
-
-.tabela-materiais tr:nth-child(even) {
-  background-color: #f2f2f2; /*Cor de fundo*/
-}
-
-
-.tabela-materiais tr:hover {
-  background-color: #ddd; /*Cor de fundo*/
-}
-
-
-
-
-
-/*Responsividade*/
-@media (max-width: 768px) {
-  .tabela-materiais, .tabela-materiais thead, .tabela-materiais tbody, .tabela-materiais th, .tabela-materiais td, .tabela-materiais tr {
-    display: block; /*Empilha elementos para telas menores*/
-  }
-
-  .tabela-materiais thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px; /*Esconde o cabeçalho original*/
-  }
-  
-  .tabela-materiais tr {
-    margin-bottom: 15px; /*Espaçamento entre as "linhas" empilhadas*/
-    border: 1px solid #ddd;
-    display: block; /*Garante que a linha seja um bloco*/
-  }
-
-  .tabela-materiais td {
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%; /*Espaço para o "cabeçalho" da célula*/
-    text-align: right;
-  }
-
-  .tabela-materiais td:before {
-    position: absolute;
-    top: 0;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    content: attr(data-label); /*usa o atributo data-label como "cabeçalho"*/
-    font-weight: bold;
-    text-align: left;
-    color: #468749;
-  }
-}
+        /* Responsividade para a tabela (Estilo "Excel") */
+        @media (max-width: 768px) {
+            .tabela-materiais-excel {
+                display: block; /* Permite o scroll horizontal */
+                overflow-x: auto; /* Adiciona barra de rolagem se a tabela for muito larga */
+                width: 100%; /* Ocupa a largura total */
+            }
+            .tabela-materiais-excel thead, .tabela-materiais-excel tbody, .tabela-materiais-excel th, .tabela-materiais-excel td, .tabela-materiais-excel tr {
+                display: initial; /* Reseta o display para permitir o scroll horizontal */
+            }
+            /* Você pode optar por esconder algumas colunas em telas menores para otimizar espaço */
+            .tabela-materiais-excel td:nth-child(3), .tabela-materiais-excel th:nth-child(3), .tabela-materiais-excel td:nth-child(5), .tabela-materiais-excel th:nth-child(5) {
+                /* Exemplo: display: none; */ /* Descomente para esconder em mobile */
+            }
+            /* Se você esconder colunas, considere uma solução como a Opção 2 para detalhes */
+        }
 
 
 
