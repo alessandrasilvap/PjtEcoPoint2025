@@ -108,6 +108,24 @@ class CadastroController extends Controller {
                 exit;
             }
 
+
+
+            
+
+            //Verificação de E-mail duplicado
+            $usuarioExistente = $usuarioDAO->buscarPorEmail($email);
+            if ($usuarioExistente) {
+                echo "<script>alert('Este e-mail já cadastrado.'); window.history.back();</script>";
+                exit;
+            }
+
+
+
+
+
+
+            
+
             //Criação de objeto Usuario
             $usuario = new Usuario();
             $usuario->setDados($dados);
