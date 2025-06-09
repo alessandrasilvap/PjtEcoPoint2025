@@ -105,6 +105,25 @@
             <p>A reciclagem eletrônica é essencial para a sustentabilidade e a proteção do meio ambiente. Ao reciclar dispositivos eletrônicos, você ajuda a preservar recursos, reduzir a poluição e contribuir para um futuro mais sustentável.</p>
             <img class="imagre" src="/ecoPoint/public/imagens/canvain.png" alt="Recicle">
             <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             <h2>Materiais Eletrônicos Recicláveis</h2>
             <table class="tabela-materiais">
                 <thead>
@@ -176,6 +195,18 @@
                     </tr>
                 </tbody>
             </table>
+
+
+
+
+
+
+
+
+
+
+
+            
         </section>
         <br>
     </main>
