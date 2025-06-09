@@ -93,29 +93,54 @@ footer {
 }
 
 
+.tabela-materiais-excel {
+  width: 95%; /*Adapta a largura para a tela*/
+  border-collapse: collapse; /*Para bordas únicas*/
+  margin: 40px auto; /*Centraliza a tabela*/
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 110%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /*Sombra para dar profundidade*/
+}
+
+
+.tabela-materiais-excel th,
+.tabela-materiais-excel td {
+  border: 1px solid #c2c2c2; /*Bordas visíveis mais claras*/
+  padding: 12px 15px; /*Espaçamento interno*/
+  text-align: left;
+  vertical-align: top; /*Alinha o conteúdo ao topo das células*/
+}
+
+
+.tabela-materiais-excel th {
+  background-color: #468749; /*Cor do cabeçalho*/
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase; /*Deixa o texto do cabeçalho em maiúsculas*/
+}
+
+
+.tabela-materiais-excel tbody tr:nth-child(even) {
+  background-color: #f8f8f8; /*Fundo mais claro para linhas pares*/
+}
+
+
+.tabela-materiais-excel tbody tr:hover {
+  background-color: #e6ffe6; /*Leve destaque verde ao passar o mouse*/
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Responsividade*/
+@media (max-width: 768px) {
+  .tabela-materiais-excel {
+    display: block; /*Permite o scroll horizontal*/
+    overflow-x: auto; /*Adiciona barra de rolagem se a tabela for muito larga*/
+    width: 100%; /*Ocupa a largura total em telas menores*/
+  }
+}
 
 
 /*Computadores*/

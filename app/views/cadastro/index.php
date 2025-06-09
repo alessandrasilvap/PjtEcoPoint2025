@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/ecoPoint/public/css/acesibfeedback.css"> <!--Código CSS do painel de acessibilidade e da caixa de feedback-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols para o painel de acessibilidade e da caixa de feedback-->
 </head>
-<body>
+<body class="conteudo">
     <header class="elementos-topo">
         <h1>Cadastre-se</h1>
         <p>Entre em um mundo mais verde</p>

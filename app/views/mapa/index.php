@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<body>
+<body class="conteudo">
     <header>
          <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols-->
     <link rel="stylesheet" href="/ecoPoint/globalstyles.css">
 </head>
-<body>
+<body class="conteudo">
     <header>
         <nav class="col-6 menu">
             <a href="#home" class="link">Home</a>

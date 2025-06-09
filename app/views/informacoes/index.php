@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/> <!--Google Material Symbols para o painel de acessibilidade e da caixa de feedback-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<body>
+<body class="conteudo">
   <header>
          <img src="./public/imagens/logo-ecopoint-white.png" alt="logo do ecopoint" id="logo">
         <nav>
@@ -103,40 +103,58 @@
             <p>Relação de países e seus lixos eletrônicos: ISLÂNDIA e SUÉCIA são os países que mais reciclam lixos eletrônicos; ÁUSTRIA e ALEMANHA são os países com menor quantidade de resíduos eletrônicos; CHINA e EUA são os países com maior quantidade resíduos eletrônicos.</p>
             <br>
             <p>A reciclagem eletrônica é essencial para a sustentabilidade e a proteção do meio ambiente. Ao reciclar dispositivos eletrônicos, você ajuda a preservar recursos, reduzir a poluição e contribuir para um futuro mais sustentável.</p>
+            <hr>
+            <h2>Principais Materiais Eletrônicos Recicláveis</h2>
+            <table class="tabela-materiais-excel">
+                <thead>
+                    <tr>
+                        <th>Nome do Material</th>
+                        <th>Descrição</th>
+                        <th>Exemplos de Itens</th>
+                        <th>Benefícios da Reciclagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Celulares e Tablets</td>
+                        <td>Dispositivos móveis que contêm metais preciosos, plásticos e baterias.</td>
+                        <td>Smartphones, e-readers, tablets.</td>
+                        <td>Recuperação de ouro, prata, cobre; redução da mineração; prevenção da poluição.</td>
+                    </tr>
+                    <tr>
+                        <td>Notebooks e Desktops</td>
+                        <td>Computadores portáteis e de mesa, ricos em diversos componentes recicláveis.</td>
+                        <td>Laptops, PCs de mesa.</td>
+                        <td>Reaproveitamento de metais, plásticos e vidros; economia de energia e recursos naturais.</td>
+                    </tr>
+                    <tr>
+                        <td>Pilhas e Baterias</td>
+                        <td>Baterias de diferentes tipos, com alto teor de metais pesados.</td>
+                        <td>Pilhas AA, AAA, 9V, baterias de celular/notebook.</td>
+                        <td>Minimiza a contaminação ambiental por mercúrio, cádmio, chumbo; recuperação de metais.</td>
+                    </tr>
+                    <tr>
+                        <td>Monitores e Televisores (LCD/LED)</td>
+                        <td>Telas planas que contêm metais, plásticos e vidro.</td>
+                        <td>Monitores de computador, TVs de tela plana.</td>
+                        <td>Reaproveitamento de vidro, plásticos e metais; redução de resíduos em aterros.</td>
+                    </tr>
+                    <tr>
+                        <td>Pequenos Eletrodomésticos</td>
+                        <td>Aparelhos eletrônicos de menor porte para uso doméstico ou pessoal.</td>
+                        <td>Liquidificadores, ferros de passar, secadores de cabelo, cafeteiras.</td>
+                        <td>Recuperação de plásticos e metais; redução da necessidade de novas matérias-primas.</td>
+                    </tr>
+                    <tr>
+                        <td>Fios e Cabos</td>
+                        <td>Cabos de energia, dados, áudio e vídeo, contendo principalmente cobre e plástico.</td>
+                        <td>Cabos USB, HDMI, de força, carregadores.</td>
+                        <td>Recuperação de cobre de alta pureza; redução da produção de plástico virgem.</td>
+                    </tr>
+                </tbody>
+            </table>
             <img class="imagre" src="/ecoPoint/public/imagens/canvain.png" alt="Recicle">
             <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
         </section>
         <br>
     </main>
