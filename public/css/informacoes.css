@@ -96,7 +96,103 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+/*Tabela */
+.tabela-materiais {
+  width: 90%; /*Largura*/
+  border-collapse: collapse; /*Colapsa as bordas da tabela*/
+  margin: 40px auto; /*Centraliza a tabela e adiciona margem*/
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 110%;
+}
+
+
+.tabela-materiais th, .tabela-materiais td {
+  border: 1px solid #ddd; /*Borda leve*/
+  padding: 12px; /*Espaçamento interno das células*/
+  text-align: left; /*Alinha o texto à esquerda*/
+}
+
+
+.tabela-materiais th {
+  background-color: #468749; /*Cor de fundo*/
+  color: white; /*Cor do texto*/
+  font-weight: bold;
+}
+
+
+.tabela-materiais tr:nth-child(even) {
+  background-color: #f2f2f2; /*Cor de fundo*/
+}
+
+
+.tabela-materiais tr:hover {
+  background-color: #ddd; /*Cor de fundo*/
+}
+
+
+
+
+
 /*Responsividade*/
+@media (max-width: 768px) {
+  .tabela-materiais, .tabela-materiais thead, .tabela-materiais tbody, .tabela-materiais th, .tabela-materiais td, .tabela-materiais tr {
+    display: block; /*Empilha elementos para telas menores*/
+  }
+
+  .tabela-materiais thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; /*Esconde o cabeçalho original*/
+  }
+  
+  .tabela-materiais tr {
+    margin-bottom: 15px; /*Espaçamento entre as "linhas" empilhadas*/
+    border: 1px solid #ddd;
+    display: block; /*Garante que a linha seja um bloco*/
+  }
+
+  .tabela-materiais td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; /*Espaço para o "cabeçalho" da célula*/
+    text-align: right;
+  }
+
+  .tabela-materiais td:before {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label); /*usa o atributo data-label como "cabeçalho"*/
+    font-weight: bold;
+    text-align: left;
+    color: #468749;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Computadores*/
 @media (max-width: 1024px) {
   .footer-container {
