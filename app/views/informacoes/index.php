@@ -119,77 +119,7 @@
 
 
 
-            <h2>Materiais Eletrônicos Recicláveis</h2>
-            <table class="tabela-materiais-excel">
-                <thead>
-                    <tr>
-                        <th>Nome do Material</th>
-                        <th>Descrição</th>
-                        <th>Observações para Descarte</th>
-                        <th>Exemplos de Itens</th>
-                        <th>Riscos do Descarte Incorreto</th>
-                        <th>Benefícios da Reciclagem</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Celulares e Tablets</td>
-                        <td>Dispositivos móveis que contêm metais preciosos, plásticos e baterias.</td>
-                        <td>Remova chips e cartões de memória. Apague todos os dados pessoais. Descarte a bateria separadamente, se possível.</td>
-                        <td>Smartphones, feature phones, tablets, e-readers.</td>
-                        <td>Contaminação do solo e água por chumbo, cádmio, mercúrio; perda de dados pessoais.</td>
-                        <td>Recuperação de ouro, prata, cobre, platina; redução da mineração; prevenção da poluição.</td>
-                    </tr>
-                    <tr>
-                        <td>Notebooks e Desktops</td>
-                        <td>Computadores portáteis e de mesa, ricos em diversos componentes recicláveis.</td>
-                        <td>Apague todos os dados do disco rígido. Remova baterias e fontes de alimentação, se possível.</td>
-                        <td>Laptops, netbooks, ultrabooks, PCs de mesa.</td>
-                        <td>Liberação de substâncias tóxicas como chumbo e mercúrio; vazamento de informações.</td>
-                        <td>Reaproveitamento de metais, plásticos e vidros; economia de energia e recursos naturais.</td>
-                    </tr>
-                    <tr>
-                        <td>Fios e Cabos</td>
-                        <td>Cabos de energia, dados, áudio e vídeo, contendo principalmente cobre e plástico.</td>
-                        <td>Separe os cabos de outros eletrônicos. Não é necessário remover as capas plásticas.</td>
-                        <td>Cabos USB, HDMI, de força, de rede, carregadores.</td>
-                        <td>Desperdício de cobre, um metal valioso; poluição por plásticos não biodegradáveis.</td>
-                        <td>Recuperação de cobre de alta pureza; redução da produção de plástico virgem.</td>
-                    </tr>
-                    <tr>
-                        <td>Pilhas e Baterias</td>
-                        <td>Baterias de diferentes tipos, com alto teor de metais pesados.</td>
-                        <td>Nunca jogue no lixo comum. Procure pontos de coleta específicos para pilhas e baterias.</td>
-                        <td>Pilhas AA, AAA, C, D, 9V, baterias de lítio, de carro, de nobreak.</td>
-                        <td>Contaminação severa do solo e da água por mercúrio, cádmio, chumbo; risco de incêndio ou explosão.</td>
-                        <td>Minimiza a contaminação ambiental; recuperação de metais que podem ser reutilizados em novas baterias.</td>
-                    </tr>
-                    <tr>
-                        <td>Monitores e Televisores (LCD/LED)</td>
-                        <td>Telas planas que contêm metais, plásticos e vidro.</td>
-                        <td>Não tente desmontar. Procure pontos de coleta especializados devido ao tamanho e componentes.</td>
-                        <td>Monitores de computador LCD/LED, televisores de tela plana.</td>
-                        <td>Liberação de mercúrio (em algumas telas mais antigas); descarte de vidro e plástico não reciclados.</td>
-                        <td>Reaproveitamento de vidro, plásticos e metais; redução de resíduos em aterros.</td>
-                    </tr>
-                    <tr>
-                        <td>Eletrodomésticos da Linha Branca</td>
-                        <td>Grandes eletrodomésticos como geladeiras, máquinas de lavar, fogões.</td>
-                        <td>Entre em contato com a prefeitura, empresas de reciclagem especializadas ou lojas que aceitam o item antigo na compra de um novo.</td>
-                        <td>Geladeiras, freezers, máquinas de lavar, secadoras, fogões, micro-ondas.</td>
-                        <td>Liberação de gases poluentes (como CFCs de geladeiras antigas); grande volume de lixo.</td>
-                        <td>Recuperação de aço, alumínio, cobre, plástico; tratamento de gases refrigerantes.</td>
-                    </tr>
-                    <tr>
-                        <td>Pequenos Eletrodomésticos</td>
-                        <td>Aparelhos eletrônicos de menor porte para uso doméstico ou pessoal.</td>
-                        <td>Verifique se o fabricante ou a loja possui programa de coleta. Não descarte no lixo comum.</td>
-                        <td>Batedeiras, liquidificadores, ferros de passar, secadores de cabelo, aspiradores de pó, cafeteiras.</td>
-                        <td>Desperdício de recursos; possível liberação de pequenas quantidades de substâncias tóxicas.</td>
-                        <td>Recuperação de plásticos e metais; redução da necessidade de novas matérias-primas.</td>
-                    </tr>
-                </tbody>
-            </table>
+            
 
 
 
