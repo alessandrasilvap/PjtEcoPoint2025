@@ -1,74 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
 body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right,rgb(0, 255, 98),rgb(2, 121, 0)); /* Verde para azul */
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #a8e063, #56ab2f);
-    color: #ffffff;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
+    color: #fff;
+       flex-direction: column;       /* ESSENCIAL: empilha o título e form */
+    justify-content: center;      /* centraliza verticalmente */
+    align-items: center;          /* centraliza horizontalmente */
+    color: #fff;
 }
-
 
 h2 {
+    text-align: center;
     margin-bottom: 20px;
-    font-size: 2rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
-
 
 form {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    width: 300px;
-}
+    color: #fff;
+    width: 350px;
+    align-items: center; /* Centraliza conteúdo horizontalmente */
 
+  
+}
 
 label {
-    font-weight: bold;
-    color: #e6ffe6;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
 }
 
-
-input {
+input[type="text"], input[type="email"] {
+    width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
     outline: none;
-    background: rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-    transition: 0.3s;
 }
 
-
-input:focus {
-    background: rgba(255, 255, 255, 0.6);
-    color: #333;
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    color: #e0e0e0;
 }
+
 
 
 button {
-    padding: 12px;
+    align-items: center; /* Centraliza conteúdo horizontalmente */
+    padding: 12px 20px;
     border: none;
-    border-radius: 10px;
-    background: #00a00d;
-    color: white;
-    font-weight: bold;
+    border-radius: 12px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+ 
+
+   
 }
 
+button.atualizar {
+    background: linear-gradient(135deg,rgba(126, 255, 242, 0.78) 0%, #66a6ff 100%);
+    color: white;
+}
 
-button:hover {
-    background: #388e3c;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+button.atualizar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 166, 255, 0.5);
+}
+
+button.btn-danger {
+    background: linear-gradient(135deg, #ff6a6a 0%, #ff3d3d 100%);
+    color: white;
+}
+
+button.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 61, 61, 0.5);
 }
