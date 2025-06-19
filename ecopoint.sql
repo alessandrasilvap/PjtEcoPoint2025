@@ -78,7 +78,7 @@ INSERT INTO `alternativas` (`id`, `pergunta_id`, `texto`, `correta`) VALUES
 (37, 10, 'Joga-lo no lixo comum, já que não serve mais para você', 0),
 (38, 10, 'Deixar ele guardado em uma gaveta por tempo indeterminado', 0),
 (39, 10, 'Desmontá-lo em casa para tentar aproveitar algumas peças', 0),
-(40, 10, 'Doá-lo, vendê-lo ou entregá-lo em um ponto de coleta de eletrônicos para reuso\nDoá-lo para alguém, vendê-lo ou entregá-lo em um ponto de coleta de eletrônicos para reuso\n', 1),
+(40, 10, 'Doá-lo, vendê-lo ou entregá-lo em um ponto de coleta de eletrônicos para reuso', 1),
 (41, 11, 'Lixo comum', 0),
 (42, 11, 'Entregar em pontos de coleta específicos', 1),
 (43, 11, 'Lixo orgânico', 0),

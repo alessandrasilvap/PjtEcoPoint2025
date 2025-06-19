@@ -44,7 +44,7 @@
                     <img src="/ecoPoint/public/imagens/lixo-eletronico.jpg" alt="">
                     <div class="card-content">
                         <h3>Brasil é o maior gerador de resíduo eletrônico da América do Sul</h3>
-                        <a href="" class="btn">Read More</a>
+                        <a href="https://monitormercantil.com.br/brasil-e-o-maior-gerador-de-residuos-eletronicos-na-america-do-sul/" class="btn" target="_blank">Ler mais</a>
                     </div>
                 </div>
                 <div class="card">
@@ -52,39 +52,63 @@
                     <div class="card-content">
                         <h3>Agenda 2030</h3>
                         <p>A Agenda 2030 da ONU é um plano global para atingirmos em 2030 um mundo melhor para todos os povos e nações. (...)</p>
-                        <a href="" class="btn">Read More</a>
+                        <a href="https://portal.stf.jus.br/hotsites/agenda-2030/" class="btn" target="_blank">Ler mais</a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="/ecoPoint/public/imagens/imglink3.png" alt="">
+                    <img src="/ecoPoint/public/imagens/imglink3.png" alt="" id="img-size">
                     <div class="card-content">
-                        <h3>Card 3</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p>
-                        <a href="" class="btn">Read More</a>
+                        <h3>Maior parte do lixo eletrônico do Brasil é descartada irregularmente</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p> -->
+                        <a href="https://g1.globo.com/jornal-nacional/noticia/2023/12/09/maior-parte-do-lixo-eletronico-do-brasil-e-descartada-irregularmente-mas-poderia-ser-reciclada.ghtml" class="btn" target="_blank">Ler mais</a>
                     </div>
                 </div>
                 <div class="card" onclick="alternarNotícias(this)">
-                    <img src="/ecoPoint/public/imagens/imglink1.png" alt="">
+                    <img src="/ecoPoint/public/imagens/imglink4.png" alt="">
                     <div class="card-content">
-                        <h3>Card 4</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p>
-                        <a href="" class="btn">Read More</a>
+                        <h3>Lixo eletrônico chegou a nível recorde; entenda o problema</h3>
+                        <!-- <p></p> -->
+                        <a href="https://www.cnnbrasil.com.br/tecnologia/lixo-eletronico-chegou-a-nivel-recorde-entenda-o-problema/" class="btn" target="_blank">Ler mais</a>
                     </div>
                 </div>
                 <div class="card" onclick="alternarNotícias(this)">
-                    <img src="/ecoPoint/public/imagens/imglink1.png" alt="">
+                    <img src="/ecoPoint/public/imagens/imglink5.png" alt="">
                     <div class="card-content">
-                        <h3>Card 4</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p>
-                        <a href="" class="btn">Read More</a>
+                        <h3>E-waste Monitor 2024: ONU lança relatório atualizado sobre resíduos eletrônico</h3>
+                        
+                        <a href="" class="btn" target="_blank">Ler mais</a>
                     </div>
                 </div>
                 <div class="card" onclick="alternarNotícias(this)">
-                    <img src="/ecoPoint/public/imagens/imglink1.png" alt="">
+                    <img src="/ecoPoint/public/imagens/imglink6.png" alt="">
                     <div class="card-content">
-                        <h3>Card 4</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p>
-                        <a href="" class="btn">Read More</a>
+                        <h3>Reciclagem de resíduos: 6 benefícios de ser um reciclador de REEE da Rede Circulare</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p> -->
+                        <a href="https://circulare.com.br/reciclagem-de-residuos-beneficios-parceiro-circulare/" class="btn" target="_blank">Ler mais</a>
+                    </div>
+                </div>
+                <div class="card" onclick="alternarNotícias(this)">
+                    <img src="/ecoPoint/public/imagens/imglink7.png" alt="">
+                    <div class="card-content">
+                        <h3>Qual é a legislação no Brasil que trata da gestão do lixo eletrônico?</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p> -->
+                        <a href="https://sucatadigital.com.br/qual-e-a-legislacao-no-brasil-que-trata-da-gestao-do-lixo-eletronico/" class="btn" target="_blank">Ler mais</a>
+                    </div>
+                </div>
+                <div class="card" onclick="alternarNotícias(this)">
+                    <img src="/ecoPoint/public/imagens/imglink8.png" alt="">
+                    <div class="card-content">
+                        <h3>Produção mundial de lixo eletrônico é cinco vezes maior do que sua reciclagem, diz ONU</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p> -->
+                        <a href="https://www.jb.com.br/brasil/meio-ambiente/2024/03/1049208-producao-mundial-de-lixo-eletronico-e-cinco-vezes-maior-do-que-sua-reciclagem-diz-onu.html" class="btn" target="_blank">Ler mais</a>
+                    </div>
+                </div>
+                <div class="card" onclick="alternarNotícias(this)">
+                    <img src="/ecoPoint/public/imagens/imglink12.png" alt="">
+                    <div class="card-content">
+                        <h3>Samsung Recicla: O Programa Samsung Recicla oferece descarte gratuito e ecologicamente correto para produtos eletroeletrônicos (...)</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, porro aliquam? Blanditiis quam quae doloremque. Voluptatibus, distinctio? Ad, amet architecto!</p> -->
+                        <a href="https://www.samsung.com/br/support/programa-reciclagem/?cid=br_paid_digital_google_samsungrecicla_aon_search_2024&gad_source=2&gclid=Cj0KCQjw4Oe4BhCcARIsADQ0csneq__V65LmhbvaRJWnUvUo1DAt35g1MUSJJgx0CUOeR11mx9_T7gwaAlTNEALw_wcB" class="btn" target="_blank">Ler mais</a>
                     </div>
                 </div>
             </div>
