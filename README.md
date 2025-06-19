@@ -1,3 +1,27 @@
+Usuário cadastra um ponto e vai para o banco de dados, o que devo colocar no sql para aprovar:
+
+		UPDATE pontos_coleta SET situacao = 'aprovado' WHERE id = 5;
+
+O que devo colocar no sql para reprovar:
+
+		UPDATE pontos_coleta SET situacao = 'reprovado' WHERE id = 5;
+
+O que deve colocar no sql para adicionar uma pergunta: 
+
+		INSERT INTO perguntas (texto) VALUES ('');
+
+O que deve colocar no sql para adicionar perguntas:
+
+		INSERT INTO alternativas (pergunta_id, texto, correta) VALUES
+		(1, '', 0),
+		(1, '', 0),
+		(1, '', 1),
+		(1, '', 0);
+
+
+
+
+
 ecoPoint/DAO/conexao.php:
 
 Este arquivo PHP é responsável por estabelecer e gerenciar a conexão com o banco de dados MySQL para a aplicação EcoPoint. Ele utiliza o padrão de design Singleton para garantir que exista apenas uma instância da conexão com o banco de dados em toda a aplicação, o que otimiza recursos e evita problemas de múltiplas conexões.
