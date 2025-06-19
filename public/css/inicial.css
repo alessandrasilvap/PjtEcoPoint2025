@@ -361,9 +361,14 @@ footer { /*Rodape completo*/
   font-size: 120%; /*Tamanho da fonte*/
 }
 
+#img-size {
+  width: 700px;;
+}
 
 
-
+h3 {
+  font-weight: 600;
+}
 
 /*Responsividade das caixas de noticias*/
 .col-1 {width: 8.33%;}

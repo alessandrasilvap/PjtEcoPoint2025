@@ -7,8 +7,8 @@ button {
     margin: 0 auto; /*Espaçamento externo do elemento*/
     background-color: #e6f0ff; /*Cor de fundo da caixa*/
     color: #333; /*Cor do texto*/
-    width: 98%; /*Largura*/
-    max-width: 800px; /*Largura máxima*/
+    width: 100%; /*Largura*/
+    max-width: 900px; /*Largura máxima*/
     border: 2px solid black; /*Bordas para as caixas*/
     border-radius: 6px; /*Bordas arredondadas*/
     padding: 16px; /*Espaçamento entre o conteudo e borda*/
@@ -69,7 +69,7 @@ button {
 
 
 .button {
-    background-color: #4863f7; /*Cor de fundo da caixa*/
+    background-color: #468749; /*Cor de fundo da caixa*/
     color: #fff; /*Cor do texto*/
     font-size: 16px; /*Tamanho da letra*/
     font-weight: bold; /*Negrita o texto*/
