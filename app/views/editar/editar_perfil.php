@@ -58,10 +58,3 @@ document.getElementById('btnExcluir').addEventListener('click', function() {
 </form>
 </body>
 </html>
-
-
-
-
-
-
-
